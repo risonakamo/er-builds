@@ -1,9 +1,11 @@
 package main
 
 import (
+	"encoding/json"
 	"io"
 	"net/http"
-	"os"
+
+	"github.com/k0kubun/pp/v3"
 )
 
 // top level response when requesting for routes from route api
@@ -54,11 +56,16 @@ func main() {
 
     data,e:=io.ReadAll(resp.Body)
 
-    wfile,e:=os.Create("test.json")
+    // wfile,e:=os.Create("test.json")
 
-    if e!=nil {
-        panic(e)
-    }
+    // if e!=nil {
+    //     panic(e)
+    // }
 
-    wfile.Write(data)
+    // wfile.Write(data)
+
+    var parsedData ErRouteResponse
+    json.Unmarshal(data,&parsedData)
+
+    pp.Print(parsedData)
 }
