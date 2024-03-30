@@ -1,0 +1,1595 @@
+{
+    "characterName": "Tia",
+    "weaponType": {
+        "id": 3,
+        "key": "Bat",
+        "name": "Bat",
+        "imageUrl": "/assets/er/game-assets/1.18.0/Ico_Ability_Bat.png"
+    },
+    "weaponTypes": [
+        {
+            "id": 3,
+            "key": "Bat",
+            "name": "Bat",
+            "imageUrl": "/assets/er/game-assets/1.18.0/Ico_Ability_Bat.png"
+        }
+    ],
+    "recommendWeaponRouteDtoPage": {
+        "total": 369,
+        "page": 1,
+        "hasNext": true,
+        "items": [
+            {
+                "id": 134006,
+                "title": "两点松鼠",
+                "userNum": 3453338,
+                "userNickname": "lIIIIIIIIl",
+                "characterCode": 48,
+                "slotId": 2,
+                "weaponType": 3,
+                "weaponCodes": "[104408,202412,201410,204303,203403]",
+                "tacticalSkillGroupCode": 0,
+                "paths": "[120,160]",
+                "count": 0,
+                "version": "1.14.0",
+                "teamMode": 0,
+                "languageCode": "zh_CN",
+                "routeVersion": 2,
+                "share": true,
+                "updateDtm": 1707741709000,
+                "v2Like": 0,
+                "v2WinRate": 0,
+                "v2SeasonId": 0,
+                "v2AccumulateLike": 0,
+                "v2AccumulateWinRate": 0,
+                "v2AccumulateSeasonId": 0,
+                "weaponIds": [
+                    104408,
+                    202412,
+                    201410,
+                    204303,
+                    203403
+                ],
+                "pathIds": [
+                    120,
+                    160
+                ]
+            },
+            {
+                "id": 133404,
+                "title": "123",
+                "userNum": 4150879,
+                "userNickname": "MagicPiggy1459",
+                "characterCode": 48,
+                "slotId": 4,
+                "weaponType": 3,
+                "weaponCodes": "[104408,202412,201410,203403,204415]",
+                "tacticalSkillGroupCode": 0,
+                "paths": "[160,60,10]",
+                "count": 0,
+                "version": "1.14.0",
+                "teamMode": 0,
+                "languageCode": "ko",
+                "routeVersion": 10,
+                "share": true,
+                "updateDtm": 1707536599000,
+                "v2Like": 2,
+                "v2WinRate": 40,
+                "v2SeasonId": 0,
+                "v2AccumulateLike": 2,
+                "v2AccumulateWinRate": 40,
+                "v2AccumulateSeasonId": 0,
+                "weaponIds": [
+                    104408,
+                    202412,
+                    201410,
+                    203403,
+                    204415
+                ],
+                "pathIds": [
+                    160,
+                    60,
+                    10
+                ]
+            },
+            {
+                "id": 133332,
+                "title": "병or항",
+                "userNum": 1430709,
+                "userNickname": "IIlllIllIl",
+                "characterCode": 48,
+                "slotId": 2,
+                "weaponType": 3,
+                "weaponCodes": "[104408,202412,201410,203403,204415]",
+                "tacticalSkillGroupCode": 0,
+                "paths": "[160,60,120]",
+                "count": 0,
+                "version": "1.14.0",
+                "teamMode": 0,
+                "languageCode": "ko",
+                "routeVersion": 9,
+                "share": true,
+                "updateDtm": 1707493006000,
+                "v2Like": 0,
+                "v2WinRate": 0,
+                "v2SeasonId": 0,
+                "v2AccumulateLike": 0,
+                "v2AccumulateWinRate": 0,
+                "v2AccumulateSeasonId": 0,
+                "weaponIds": [
+                    104408,
+                    202412,
+                    201410,
+                    203403,
+                    204415
+                ],
+                "pathIds": [
+                    160,
+                    60,
+                    120
+                ]
+            },
+            {
+                "id": 130451,
+                "title": "불굴특공대",
+                "userNum": 3923319,
+                "userNickname": "시로엘",
+                "characterCode": 48,
+                "slotId": 2,
+                "weaponType": 3,
+                "weaponCodes": "[104408,202412,203403,201410,204415]",
+                "tacticalSkillGroupCode": 0,
+                "paths": "[160,60,10]",
+                "count": 0,
+                "version": "1.13.0",
+                "teamMode": 0,
+                "languageCode": "ko",
+                "routeVersion": 9,
+                "share": true,
+                "updateDtm": 1706460275000,
+                "v2Like": 7,
+                "v2WinRate": 26.67,
+                "v2SeasonId": 0,
+                "v2AccumulateLike": 7,
+                "v2AccumulateWinRate": 26.67,
+                "v2AccumulateSeasonId": 0,
+                "weaponIds": [
+                    104408,
+                    202412,
+                    203403,
+                    201410,
+                    204415
+                ],
+                "pathIds": [
+                    160,
+                    60,
+                    10
+                ]
+            },
+            {
+                "id": 129273,
+                "title": "0만",
+                "userNum": 1956834,
+                "userNickname": "청시아",
+                "characterCode": 48,
+                "slotId": 1,
+                "weaponType": 3,
+                "weaponCodes": "[104408,202412,201410,203403,204415]",
+                "tacticalSkillGroupCode": 0,
+                "paths": "[160,60,120]",
+                "count": 0,
+                "version": "1.13.0",
+                "teamMode": 0,
+                "languageCode": "ko",
+                "routeVersion": 10,
+                "share": true,
+                "updateDtm": 1706032509000,
+                "v2Like": 1,
+                "v2WinRate": 0,
+                "v2SeasonId": 0,
+                "v2AccumulateLike": 1,
+                "v2AccumulateWinRate": 0,
+                "v2AccumulateSeasonId": 0,
+                "weaponIds": [
+                    104408,
+                    202412,
+                    201410,
+                    203403,
+                    204415
+                ],
+                "pathIds": [
+                    160,
+                    60,
+                    120
+                ]
+            },
+            {
+                "id": 128956,
+                "title": "123123",
+                "userNum": 3503975,
+                "userNickname": "바람",
+                "characterCode": 48,
+                "slotId": 0,
+                "weaponType": 3,
+                "weaponCodes": "[104408,201410,202412,203403,204415]",
+                "tacticalSkillGroupCode": 0,
+                "paths": "[160,60,120]",
+                "count": 0,
+                "version": "1.13.0",
+                "teamMode": 0,
+                "languageCode": "ko",
+                "routeVersion": 3,
+                "share": true,
+                "updateDtm": 1705936353000,
+                "v2Like": 0,
+                "v2WinRate": 66.67,
+                "v2SeasonId": 0,
+                "v2AccumulateLike": 0,
+                "v2AccumulateWinRate": 66.67,
+                "v2AccumulateSeasonId": 0,
+                "weaponIds": [
+                    104408,
+                    201410,
+                    202412,
+                    203403,
+                    204415
+                ],
+                "pathIds": [
+                    160,
+                    60,
+                    120
+                ]
+            },
+            {
+                "id": 127997,
+                "title": "픽셀아트좋아해",
+                "userNum": 3650540,
+                "userNickname": "트리니티",
+                "characterCode": 48,
+                "slotId": 0,
+                "weaponType": 3,
+                "weaponCodes": "[104408,202412,203403,204415,201410]",
+                "tacticalSkillGroupCode": 0,
+                "paths": "[160,60,120]",
+                "count": 0,
+                "version": "1.13.0",
+                "teamMode": 0,
+                "languageCode": "ko",
+                "routeVersion": 1,
+                "share": true,
+                "updateDtm": 1705684246000,
+                "v2Like": 0,
+                "v2WinRate": 0,
+                "v2SeasonId": 0,
+                "v2AccumulateLike": 0,
+                "v2AccumulateWinRate": 0,
+                "v2AccumulateSeasonId": 0,
+                "weaponIds": [
+                    104408,
+                    202412,
+                    203403,
+                    204415,
+                    201410
+                ],
+                "pathIds": [
+                    160,
+                    60,
+                    120
+                ]
+            },
+            {
+                "id": 127575,
+                "title": "띠띠",
+                "userNum": 3183072,
+                "userNickname": "전자레인지고장남",
+                "characterCode": 48,
+                "slotId": 1,
+                "weaponType": 3,
+                "weaponCodes": "[104408,202412,201410,203403,204415]",
+                "tacticalSkillGroupCode": 0,
+                "paths": "[160,60,10]",
+                "count": 0,
+                "version": "1.13.0",
+                "teamMode": 0,
+                "languageCode": "ko",
+                "routeVersion": 66,
+                "share": true,
+                "updateDtm": 1705626489000,
+                "v2Like": 3,
+                "v2WinRate": 25,
+                "v2SeasonId": 0,
+                "v2AccumulateLike": 3,
+                "v2AccumulateWinRate": 25,
+                "v2AccumulateSeasonId": 0,
+                "weaponIds": [
+                    104408,
+                    202412,
+                    201410,
+                    203403,
+                    204415
+                ],
+                "pathIds": [
+                    160,
+                    60,
+                    10
+                ]
+            },
+            {
+                "id": 125340,
+                "title": "가성비 띠아",
+                "userNum": 3805873,
+                "userNickname": "땨띠아",
+                "characterCode": 48,
+                "slotId": 0,
+                "weaponType": 3,
+                "weaponCodes": "[104408,202412,201410,203306,204406]",
+                "tacticalSkillGroupCode": 0,
+                "paths": "[30,110,80,130]",
+                "count": 0,
+                "version": "1.14.0",
+                "teamMode": 0,
+                "languageCode": "ko",
+                "routeVersion": 10,
+                "share": true,
+                "updateDtm": 1707667716000,
+                "v2Like": 0,
+                "v2WinRate": 0,
+                "v2SeasonId": 0,
+                "v2AccumulateLike": 0,
+                "v2AccumulateWinRate": 0,
+                "v2AccumulateSeasonId": 0,
+                "weaponIds": [
+                    104408,
+                    202412,
+                    201410,
+                    203306,
+                    204406
+                ],
+                "pathIds": [
+                    30,
+                    110,
+                    80,
+                    130
+                ]
+            },
+            {
+                "id": 124850,
+                "title": "아롱앵두",
+                "userNum": 3274884,
+                "userNickname": "전국나나협회장",
+                "characterCode": 48,
+                "slotId": 2,
+                "weaponType": 3,
+                "weaponCodes": "[108501,202412,201410,203403,204406]",
+                "tacticalSkillGroupCode": 0,
+                "paths": "[30,110,80]",
+                "count": 0,
+                "version": "1.12.0",
+                "teamMode": 0,
+                "languageCode": "ko",
+                "routeVersion": 1,
+                "share": true,
+                "updateDtm": 1705031178000,
+                "v2Like": 0,
+                "v2WinRate": 0,
+                "v2SeasonId": 0,
+                "v2AccumulateLike": 0,
+                "v2AccumulateWinRate": 0,
+                "v2AccumulateSeasonId": 0,
+                "weaponIds": [
+                    108501,
+                    202412,
+                    201410,
+                    203403,
+                    204406
+                ],
+                "pathIds": [
+                    30,
+                    110,
+                    80
+                ]
+            },
+            {
+                "id": 123927,
+                "title": "0만",
+                "userNum": 283357,
+                "userNickname": "Twitch니냥",
+                "characterCode": 48,
+                "slotId": 1,
+                "weaponType": 3,
+                "weaponCodes": "[104408,202412,201410,203403,204415]",
+                "tacticalSkillGroupCode": 0,
+                "paths": "[160,60,10]",
+                "count": 0,
+                "version": "1.12.0",
+                "teamMode": 0,
+                "languageCode": "ko",
+                "routeVersion": 7,
+                "share": true,
+                "updateDtm": 1704776707000,
+                "v2Like": 0,
+                "v2WinRate": 0,
+                "v2SeasonId": 0,
+                "v2AccumulateLike": 0,
+                "v2AccumulateWinRate": 0,
+                "v2AccumulateSeasonId": 0,
+                "weaponIds": [
+                    104408,
+                    202412,
+                    201410,
+                    203403,
+                    204415
+                ],
+                "pathIds": [
+                    160,
+                    60,
+                    10
+                ]
+            },
+            {
+                "id": 122614,
+                "title": "묘병절 1배달",
+                "userNum": 2264362,
+                "userNickname": "잎비",
+                "characterCode": 48,
+                "slotId": 2,
+                "weaponType": 3,
+                "weaponCodes": "[201410,203403,104408,202412,204304]",
+                "tacticalSkillGroupCode": 0,
+                "paths": "[150,120,130]",
+                "count": 0,
+                "version": "1.14.0",
+                "teamMode": 0,
+                "languageCode": "ko",
+                "routeVersion": 19,
+                "share": true,
+                "updateDtm": 1707231953000,
+                "v2Like": 20,
+                "v2WinRate": 22.73,
+                "v2SeasonId": 0,
+                "v2AccumulateLike": 20,
+                "v2AccumulateWinRate": 22.73,
+                "v2AccumulateSeasonId": 0,
+                "weaponIds": [
+                    201410,
+                    203403,
+                    104408,
+                    202412,
+                    204304
+                ],
+                "pathIds": [
+                    150,
+                    120,
+                    130
+                ]
+            },
+            {
+                "id": 121848,
+                "title": "짬통",
+                "userNum": 2264362,
+                "userNickname": "잎비",
+                "characterCode": 48,
+                "slotId": 0,
+                "weaponType": 3,
+                "weaponCodes": "[104408,203403,204415,201410,202412]",
+                "tacticalSkillGroupCode": 0,
+                "paths": "[160,60,120]",
+                "count": 0,
+                "version": "1.14.0",
+                "teamMode": 0,
+                "languageCode": "ko",
+                "routeVersion": 13,
+                "share": true,
+                "updateDtm": 1707219847000,
+                "v2Like": 9,
+                "v2WinRate": 35.48,
+                "v2SeasonId": 0,
+                "v2AccumulateLike": 9,
+                "v2AccumulateWinRate": 35.48,
+                "v2AccumulateSeasonId": 0,
+                "weaponIds": [
+                    104408,
+                    203403,
+                    204415,
+                    201410,
+                    202412
+                ],
+                "pathIds": [
+                    160,
+                    60,
+                    120
+                ]
+            },
+            {
+                "id": 120355,
+                "title": "띠아 1등 빌드 카피",
+                "userNum": 608312,
+                "userNickname": "그냥딱대",
+                "characterCode": 48,
+                "slotId": 1,
+                "weaponType": 3,
+                "weaponCodes": "[104408,202412,201410,203403,204415]",
+                "tacticalSkillGroupCode": 0,
+                "paths": "[160,60,10]",
+                "count": 0,
+                "version": "1.11.0",
+                "teamMode": 0,
+                "languageCode": "ko",
+                "routeVersion": 11,
+                "share": true,
+                "updateDtm": 1703907486000,
+                "v2Like": 1,
+                "v2WinRate": 0,
+                "v2SeasonId": 0,
+                "v2AccumulateLike": 1,
+                "v2AccumulateWinRate": 0,
+                "v2AccumulateSeasonId": 0,
+                "weaponIds": [
+                    104408,
+                    202412,
+                    201410,
+                    203403,
+                    204415
+                ],
+                "pathIds": [
+                    160,
+                    60,
+                    10
+                ]
+            },
+            {
+                "id": 119617,
+                "title": "헤에ー",
+                "userNum": 1094650,
+                "userNickname": "헤에ー",
+                "characterCode": 48,
+                "slotId": 0,
+                "weaponType": 3,
+                "weaponCodes": "[104408,202412,203403,201410,204415]",
+                "tacticalSkillGroupCode": 0,
+                "paths": "[160,60,10]",
+                "count": 0,
+                "version": "1.11.0",
+                "teamMode": 0,
+                "languageCode": "ko",
+                "routeVersion": 16,
+                "share": true,
+                "updateDtm": 1703729679000,
+                "v2Like": 1,
+                "v2WinRate": 8.33,
+                "v2SeasonId": 0,
+                "v2AccumulateLike": 1,
+                "v2AccumulateWinRate": 8.33,
+                "v2AccumulateSeasonId": 0,
+                "weaponIds": [
+                    104408,
+                    202412,
+                    203403,
+                    201410,
+                    204415
+                ],
+                "pathIds": [
+                    160,
+                    60,
+                    10
+                ]
+            },
+            {
+                "id": 118776,
+                "title": "Pixel Squad",
+                "userNum": 3316606,
+                "userNickname": "ProjektR",
+                "characterCode": 48,
+                "slotId": 0,
+                "weaponType": 3,
+                "weaponCodes": "[108501,202404,201409,203403,204406]",
+                "tacticalSkillGroupCode": 0,
+                "paths": "[130,190,30]",
+                "count": 0,
+                "version": "1.11.0",
+                "teamMode": 0,
+                "languageCode": "en",
+                "routeVersion": 5,
+                "share": true,
+                "updateDtm": 1703511893000,
+                "v2Like": 3,
+                "v2WinRate": 14.29,
+                "v2SeasonId": 0,
+                "v2AccumulateLike": 3,
+                "v2AccumulateWinRate": 14.29,
+                "v2AccumulateSeasonId": 0,
+                "weaponIds": [
+                    108501,
+                    202404,
+                    201409,
+                    203403,
+                    204406
+                ],
+                "pathIds": [
+                    130,
+                    190,
+                    30
+                ]
+            },
+            {
+                "id": 115001,
+                "title": "3rd Hosp/Dock",
+                "userNum": 391708,
+                "userNickname": "LiIi",
+                "characterCode": 48,
+                "slotId": 1,
+                "weaponType": 3,
+                "weaponCodes": "[104408,202412,204415,201410,203403]",
+                "tacticalSkillGroupCode": 0,
+                "paths": "[160,60,120]",
+                "count": 0,
+                "version": "1.10.0",
+                "teamMode": 0,
+                "languageCode": "en",
+                "routeVersion": 15,
+                "share": false,
+                "updateDtm": 1702694892000,
+                "v2Like": 0,
+                "v2WinRate": 0,
+                "v2SeasonId": 0,
+                "v2AccumulateLike": 0,
+                "v2AccumulateWinRate": 0,
+                "v2AccumulateSeasonId": 0,
+                "weaponIds": [
+                    104408,
+                    202412,
+                    204415,
+                    201410,
+                    203403
+                ],
+                "pathIds": [
+                    160,
+                    60,
+                    120
+                ]
+            },
+            {
+                "id": 114140,
+                "title": "松鼠",
+                "userNum": 4637756,
+                "userNickname": "朝枝竹里",
+                "characterCode": 48,
+                "slotId": 0,
+                "weaponType": 3,
+                "weaponCodes": "[104408,202412,201410,203403,204415]",
+                "tacticalSkillGroupCode": 0,
+                "paths": "[160,60,120]",
+                "count": 0,
+                "version": "1.11.0",
+                "teamMode": 0,
+                "languageCode": "zh_CN",
+                "routeVersion": 6,
+                "share": true,
+                "updateDtm": 1703816994000,
+                "v2Like": 16,
+                "v2WinRate": 7.91,
+                "v2SeasonId": 0,
+                "v2AccumulateLike": 16,
+                "v2AccumulateWinRate": 7.91,
+                "v2AccumulateSeasonId": 0,
+                "weaponIds": [
+                    104408,
+                    202412,
+                    201410,
+                    203403,
+                    204415
+                ],
+                "pathIds": [
+                    160,
+                    60,
+                    120
+                ]
+            },
+            {
+                "id": 113552,
+                "title": "띠아 귀여어\n",
+                "userNum": 3057258,
+                "userNickname": "qtnangja",
+                "characterCode": 48,
+                "slotId": 3,
+                "weaponType": 3,
+                "weaponCodes": "[104408,202412,201410,203410,204412]",
+                "tacticalSkillGroupCode": 0,
+                "paths": "[120,160,60]",
+                "count": 0,
+                "version": "1.10.0",
+                "teamMode": 0,
+                "languageCode": "ko",
+                "routeVersion": 1,
+                "share": true,
+                "updateDtm": 1702423741000,
+                "v2Like": 0,
+                "v2WinRate": 0,
+                "v2SeasonId": 0,
+                "v2AccumulateLike": 0,
+                "v2AccumulateWinRate": 0,
+                "v2AccumulateSeasonId": 0,
+                "weaponIds": [
+                    104408,
+                    202412,
+                    201410,
+                    203410,
+                    204412
+                ],
+                "pathIds": [
+                    120,
+                    160,
+                    60
+                ]
+            },
+            {
+                "id": 112708,
+                "title": "또띠아",
+                "userNum": 3384257,
+                "userNickname": "도마도지바I자",
+                "characterCode": 48,
+                "slotId": 0,
+                "weaponType": 3,
+                "weaponCodes": "[104408,202412,203403,201410,204415]",
+                "tacticalSkillGroupCode": 0,
+                "paths": "[120,160,60]",
+                "count": 0,
+                "version": "1.10.0",
+                "teamMode": 0,
+                "languageCode": "ko",
+                "routeVersion": 6,
+                "share": true,
+                "updateDtm": 1702253272000,
+                "v2Like": 0,
+                "v2WinRate": 0,
+                "v2SeasonId": 0,
+                "v2AccumulateLike": 0,
+                "v2AccumulateWinRate": 0,
+                "v2AccumulateSeasonId": 0,
+                "weaponIds": [
+                    104408,
+                    202412,
+                    203403,
+                    201410,
+                    204415
+                ],
+                "pathIds": [
+                    120,
+                    160,
+                    60
+                ]
+            }
+        ]
+    },
+    "playerByUserNum": {
+        "283357": {
+            "userNum": 283357,
+            "name": "chzzk니냥",
+            "syncedAt": 1711816874000,
+            "lastPlayedSeasonId": 23,
+            "accountLevel": 178
+        },
+        "391708": {
+            "userNum": 391708,
+            "name": "LiIi",
+            "syncedAt": 1709537062000,
+            "lastPlayedSeasonId": 0,
+            "accountLevel": 155
+        },
+        "608312": {
+            "userNum": 608312,
+            "name": "그냥딱대",
+            "syncedAt": 1710146996000,
+            "lastPlayedSeasonId": 23,
+            "accountLevel": 110
+        },
+        "1094650": {
+            "userNum": 1094650,
+            "name": "헤에ー",
+            "syncedAt": 1711289197000,
+            "lastPlayedSeasonId": 23,
+            "accountLevel": 243
+        },
+        "1430709": {
+            "userNum": 1430709,
+            "name": "IIlllIllIl",
+            "syncedAt": 1711556454000,
+            "lastPlayedSeasonId": 23,
+            "accountLevel": 127
+        },
+        "1956834": {
+            "userNum": 1956834,
+            "name": "청시아",
+            "syncedAt": 1711502152000,
+            "lastPlayedSeasonId": 23,
+            "accountLevel": 128
+        },
+        "2264362": {
+            "userNum": 2264362,
+            "name": "잎비",
+            "syncedAt": 1711820813000,
+            "lastPlayedSeasonId": 0,
+            "accountLevel": 149
+        },
+        "3057258": {
+            "userNum": 3057258,
+            "name": "qtnangja",
+            "syncedAt": 1655135401000,
+            "lastPlayedSeasonId": 0,
+            "accountLevel": 33
+        },
+        "3183072": {
+            "userNum": 3183072,
+            "name": "전자레인지고장남",
+            "syncedAt": 1711786411000,
+            "lastPlayedSeasonId": 23,
+            "accountLevel": 136
+        },
+        "3274884": {
+            "userNum": 3274884,
+            "name": "수온",
+            "syncedAt": 1711493326000,
+            "lastPlayedSeasonId": 23,
+            "accountLevel": 57
+        },
+        "3316606": {
+            "userNum": 3316606,
+            "name": "ProjektR",
+            "syncedAt": 1703529793000,
+            "lastPlayedSeasonId": 0,
+            "accountLevel": 59
+        },
+        "3384257": {
+            "userNum": 3384257,
+            "name": "도마도지바I자",
+            "syncedAt": 1703774606000,
+            "lastPlayedSeasonId": 23,
+            "accountLevel": 147
+        },
+        "3453338": {
+            "userNum": 3453338,
+            "name": "lIIIIIIIIl",
+            "syncedAt": 1698351316000,
+            "lastPlayedSeasonId": 23,
+            "accountLevel": 117
+        },
+        "3503975": {
+            "userNum": 3503975,
+            "name": "졸업이안보여요",
+            "syncedAt": 1707216360000,
+            "lastPlayedSeasonId": 0,
+            "accountLevel": 20
+        },
+        "3650540": {
+            "userNum": 3650540,
+            "name": "트리니티",
+            "syncedAt": 1711827251000,
+            "lastPlayedSeasonId": 0,
+            "accountLevel": 209
+        },
+        "3805873": {
+            "userNum": 3805873,
+            "name": "땨띠아",
+            "syncedAt": 1711801512000,
+            "lastPlayedSeasonId": 23,
+            "accountLevel": 189
+        },
+        "3923319": {
+            "userNum": 3923319,
+            "name": "시로엘",
+            "syncedAt": 1710232777000,
+            "lastPlayedSeasonId": 23,
+            "accountLevel": 71
+        },
+        "4150879": {
+            "userNum": 4150879,
+            "name": "MagicPiggy1459",
+            "syncedAt": 1711524178000,
+            "lastPlayedSeasonId": 0,
+            "accountLevel": 117
+        },
+        "4637756": {
+            "userNum": 4637756,
+            "name": "22M一RFT52",
+            "syncedAt": 1703300832000,
+            "lastPlayedSeasonId": 0,
+            "accountLevel": 65
+        }
+    },
+    "playerTierByUserNum": {
+        "283357": {
+            "mmr": 5932,
+            "name": "Diamond 1",
+            "lp": 82,
+            "tierType": 6,
+            "tierGrade": 1,
+            "imageUrl": "/er/images/tier/round/6.png"
+        },
+        "608312": {
+            "mmr": 4208,
+            "name": "Platinum 2",
+            "lp": 8,
+            "tierType": 5,
+            "tierGrade": 2,
+            "imageUrl": "/er/images/tier/round/5.png"
+        },
+        "1094650": {
+            "mmr": 6421,
+            "name": "Mythril",
+            "lp": 221,
+            "tierType": 66,
+            "tierGrade": 1,
+            "imageUrl": "/er/images/tier/round/66.png"
+        },
+        "1430709": {
+            "mmr": 5514,
+            "name": "Diamond 2",
+            "lp": 14,
+            "tierType": 6,
+            "tierGrade": 2,
+            "imageUrl": "/er/images/tier/round/6.png"
+        },
+        "1956834": {
+            "mmr": 6322,
+            "name": "Mythril",
+            "lp": 122,
+            "tierType": 66,
+            "tierGrade": 1,
+            "imageUrl": "/er/images/tier/round/66.png"
+        },
+        "2264362": {
+            "mmr": 6844,
+            "name": "Mythril",
+            "lp": 644,
+            "tierType": 66,
+            "tierGrade": 1,
+            "imageUrl": "/er/images/tier/round/66.png"
+        },
+        "3183072": {
+            "mmr": 4275,
+            "name": "Platinum 2",
+            "lp": 75,
+            "tierType": 5,
+            "tierGrade": 2,
+            "imageUrl": "/er/images/tier/round/5.png"
+        },
+        "3274884": {
+            "mmr": 4858,
+            "name": "Diamond 4",
+            "lp": 58,
+            "tierType": 6,
+            "tierGrade": 4,
+            "imageUrl": "/er/images/tier/round/6.png"
+        },
+        "3384257": {
+            "mmr": 2759,
+            "name": "Gold 4",
+            "lp": 159,
+            "tierType": 4,
+            "tierGrade": 4,
+            "imageUrl": "/er/images/tier/round/4.png"
+        },
+        "3453338": {
+            "mmr": 4074,
+            "name": "Platinum 3",
+            "lp": 174,
+            "tierType": 5,
+            "tierGrade": 3,
+            "imageUrl": "/er/images/tier/round/5.png"
+        },
+        "3650540": {
+            "mmr": 6785,
+            "name": "Mythril",
+            "lp": 585,
+            "tierType": 66,
+            "tierGrade": 1,
+            "imageUrl": "/er/images/tier/round/66.png"
+        },
+        "3805873": {
+            "mmr": 6260,
+            "name": "Mythril",
+            "lp": 60,
+            "tierType": 66,
+            "tierGrade": 1,
+            "imageUrl": "/er/images/tier/round/66.png"
+        },
+        "3923319": {
+            "mmr": 4238,
+            "name": "Platinum 2",
+            "lp": 38,
+            "tierType": 5,
+            "tierGrade": 2,
+            "imageUrl": "/er/images/tier/round/5.png"
+        },
+        "4150879": {
+            "mmr": 4510,
+            "name": "Platinum 1",
+            "lp": 10,
+            "tierType": 5,
+            "tierGrade": 1,
+            "imageUrl": "/er/images/tier/round/5.png"
+        }
+    },
+    "itemById": {
+        "104408": {
+            "id": 104408,
+            "name": "Pakua Chang",
+            "tooltip": "Epic / Bat\n\nAttack Power +26\nSkill Amplification +63\n\n[Primordial Hex]\nHitting an enemy with a skill hexes them for ?s, dealing ? + ? Skill Amplification true damage when the hex expires. Targets cannot be hexed again for ? seconds. (Basic attacks reduce this cooldown by 1s)\n(Cooldown: 2 seconds)\n\nMax quantity : 1\n\nUsed by monks.",
+            "imageUrl": "/assets/er/game-assets/1.18.0/ItemIcon_104408.png",
+            "backgroundImageUrl": "/er/images/item/ico-itemgradebg-04.svg"
+        },
+        "108501": {
+            "id": 108501,
+            "name": "Spy Umbrella",
+            "tooltip": "Epic / Bat\n\nAttack Power +30\nSkill Amplification +62\nCooldown Reduction +15%\n\nMax quantity : 1\n\nThere is a poisoned needle concealed at the tip of the umbrella. You can make use of it when the timing is right. Pretend to accidentally stab your target's foot with the tip while carrying it on a rainy day.",
+            "imageUrl": "/assets/er/game-assets/1.18.0/ItemIcon_108501.png",
+            "backgroundImageUrl": "/er/images/item/ico-itemgradebg-04.svg"
+        },
+        "201409": {
+            "id": 201409,
+            "name": "Imperial Crown",
+            "tooltip": "Epic / Head\n\nDefense +8\nSkill Amplification +63\nCooldown Reduction +15%\n\nMax quantity : 1\n\nA crown built for the first and only monarch of the Kingdom of Finland, Friedrich Karl. However, due to the adoption of the republican constitution before the coronation, the crown has never been used since.",
+            "imageUrl": "/assets/er/game-assets/1.18.0/ItemIcon_201409.png",
+            "backgroundImageUrl": "/er/images/item/ico-itemgradebg-04.svg"
+        },
+        "201410": {
+            "id": 201410,
+            "name": "Imperial Burgonet",
+            "tooltip": "Epic / Head\n\nDefense +6\nSkill Amplification +65\nMax SP +400\nMovement Speed +0.06\nCooldown Reduction +10%\n\nMax quantity : 1\n\nAn extravagant burgonet used by the imperial family. Unlike a basic helmet, it is lavishly decorated.",
+            "imageUrl": "/assets/er/game-assets/1.18.0/ItemIcon_201410.png",
+            "backgroundImageUrl": "/er/images/item/ico-itemgradebg-04.svg"
+        },
+        "202404": {
+            "id": 202404,
+            "name": "Covert Agent Uniform",
+            "tooltip": "Epic / Chest\n\nDefense +16\nSkill Amplification per level +5\nHP Regen +45%\nCooldown Reduction +15%\n\nMax quantity : 1\n\nThe uniform worn by agents that performed special missions for the King. Secretly.",
+            "imageUrl": "/assets/er/game-assets/1.18.0/ItemIcon_202404.png",
+            "backgroundImageUrl": "/er/images/item/ico-itemgradebg-04.svg"
+        },
+        "202412": {
+            "id": 202412,
+            "name": "Commander's Armor",
+            "tooltip": "Epic / Chest\n\nDefense +17\nSkill Amplification +17\nSkill Amplification per level +5\n\nMax quantity : 1\n\nIt's the General's armor, so it gotta be the strongest armor in town.",
+            "imageUrl": "/assets/er/game-assets/1.18.0/ItemIcon_202412.png",
+            "backgroundImageUrl": "/er/images/item/ico-itemgradebg-04.svg"
+        },
+        "203306": {
+            "id": 203306,
+            "name": "Corrupting Touch",
+            "tooltip": "Epic / Arm\n\nDefense +6\nSkill Amplification +53\nCooldown Reduction +10%\n\n[Healing Reduction - Weak]\nDealing damage to a target reduces their healing by 40% for 4 seconds.\n\nMax quantity : 1\n\nCaution: Always wash your hands after use.",
+            "imageUrl": "/assets/er/game-assets/1.18.0/ItemIcon_203306.png",
+            "backgroundImageUrl": "/er/images/item/ico-itemgradebg-04.svg"
+        },
+        "203403": {
+            "id": 203403,
+            "name": "Draupnir",
+            "tooltip": "Epic / Arm\n\nDefense +8\nSkill Amplification +67\nMax SP +300\nHP Regen +30%\n\nMax quantity : 1\n\nThe magical golden bracelet of the Norse God, Odin. It has the power to provide unthinkable riches... and a full stomach.",
+            "imageUrl": "/assets/er/game-assets/1.18.0/ItemIcon_203403.png",
+            "backgroundImageUrl": "/er/images/item/ico-itemgradebg-04.svg"
+        },
+        "203410": {
+            "id": 203410,
+            "name": "Tindalos Band",
+            "tooltip": "Epic / Arm\n\nDefense +6\nSkill Amplification +50\nMax SP +300\nCooldown Reduction +15%\n\nMax quantity : 1\n\nAlthough crafted with the Hounds of Tindalos in mind, this terrifying bracelet somewhat resembles a bat more than a hound.",
+            "imageUrl": "/assets/er/game-assets/1.18.0/ItemIcon_203410.png",
+            "backgroundImageUrl": "/er/images/item/ico-itemgradebg-04.svg"
+        },
+        "204303": {
+            "id": 204303,
+            "name": "Hiking Boots",
+            "tooltip": "Epic / Leg\n\nMax HP +120\nHP Regen +50%\nMovement Speed +0.22\n\nMax quantity : 1",
+            "imageUrl": "/assets/er/game-assets/1.18.0/ItemIcon_204303.png",
+            "backgroundImageUrl": "/er/images/item/ico-itemgradebg-04.svg"
+        },
+        "204304": {
+            "id": 204304,
+            "name": "Glacier Crampons",
+            "tooltip": "Epic / Leg\n\nMovement Speed +0.22\nArmor penetration +9\n\nMax quantity : 1",
+            "imageUrl": "/assets/er/game-assets/1.18.0/ItemIcon_204304.png",
+            "backgroundImageUrl": "/er/images/item/ico-itemgradebg-04.svg"
+        },
+        "204406": {
+            "id": 204406,
+            "name": "Straitjacket Sneakers",
+            "tooltip": "Epic / Leg\n\nSkill Amplification +22\nSP Regen +100%\nMovement Speed +0.22\n\nMax quantity : 1\n\n180,000 miles in a single step?",
+            "imageUrl": "/assets/er/game-assets/1.18.0/ItemIcon_204406.png",
+            "backgroundImageUrl": "/er/images/item/ico-itemgradebg-04.svg"
+        },
+        "204412": {
+            "id": 204412,
+            "name": "Tachyon Brace",
+            "tooltip": "Epic / Leg\n\nDefense +3\nMovement Speed +0.22\nCooldown Reduction +15%\n\nMax quantity : 1\n\nA futuristic exoskeleton that offers both mobility and protection. Once you get used to it and loosen your death grip, it's supposed to be a pretty smooth ride.",
+            "imageUrl": "/assets/er/game-assets/1.18.0/ItemIcon_204412.png",
+            "backgroundImageUrl": "/er/images/item/ico-itemgradebg-04.svg"
+        },
+        "204415": {
+            "id": 204415,
+            "name": "SCV",
+            "tooltip": "Epic / Leg\n\nSkill Amplification +15\nMovement Speed +0.22\n[Unique] Tenacity +20%\n\nMax quantity : 1",
+            "imageUrl": "/assets/er/game-assets/1.18.0/ItemIcon_204415.png",
+            "backgroundImageUrl": "/er/images/item/ico-itemgradebg-04.svg"
+        }
+    },
+    "areaById": {
+        "10": {
+            "id": 10,
+            "name": "Dock",
+            "dto": {
+                "code": 10,
+                "name": "Harbor",
+                "modeType": 7,
+                "maskCode": 3,
+                "startingArea": true,
+                "areaType": "Lumia",
+                "isProvideCollectibleItem": true,
+                "routeCalcBitCode": 1,
+                "isHyperLoopInstalled": false
+            }
+        },
+        "20": {
+            "id": 20,
+            "name": "Warehouse",
+            "dto": {
+                "code": 20,
+                "name": "Warehouse",
+                "modeType": 7,
+                "maskCode": 4,
+                "startingArea": true,
+                "areaType": "Lumia",
+                "isProvideCollectibleItem": true,
+                "routeCalcBitCode": 2,
+                "isHyperLoopInstalled": false
+            }
+        },
+        "30": {
+            "id": 30,
+            "name": "Pond",
+            "dto": {
+                "code": 30,
+                "name": "Pond",
+                "modeType": 7,
+                "maskCode": 5,
+                "startingArea": true,
+                "areaType": "Lumia",
+                "isProvideCollectibleItem": true,
+                "routeCalcBitCode": 4,
+                "isHyperLoopInstalled": false
+            }
+        },
+        "40": {
+            "id": 40,
+            "name": "Stream",
+            "dto": {
+                "code": 40,
+                "name": "Stream",
+                "modeType": 7,
+                "maskCode": 6,
+                "startingArea": true,
+                "areaType": "Lumia",
+                "isProvideCollectibleItem": true,
+                "routeCalcBitCode": 8,
+                "isHyperLoopInstalled": true
+            }
+        },
+        "50": {
+            "id": 50,
+            "name": "Beach",
+            "dto": {
+                "code": 50,
+                "name": "SandyBeach",
+                "modeType": 7,
+                "maskCode": 7,
+                "startingArea": true,
+                "areaType": "Lumia",
+                "isProvideCollectibleItem": true,
+                "routeCalcBitCode": 16,
+                "isHyperLoopInstalled": false
+            }
+        },
+        "60": {
+            "id": 60,
+            "name": "Uptown",
+            "dto": {
+                "code": 60,
+                "name": "Uptown",
+                "modeType": 7,
+                "maskCode": 8,
+                "startingArea": true,
+                "areaType": "Lumia",
+                "isProvideCollectibleItem": true,
+                "routeCalcBitCode": 32,
+                "isHyperLoopInstalled": true
+            }
+        },
+        "70": {
+            "id": 70,
+            "name": "Alley",
+            "dto": {
+                "code": 70,
+                "name": "Alley",
+                "modeType": 7,
+                "maskCode": 9,
+                "startingArea": true,
+                "areaType": "Lumia",
+                "isProvideCollectibleItem": true,
+                "routeCalcBitCode": 64,
+                "isHyperLoopInstalled": true
+            }
+        },
+        "80": {
+            "id": 80,
+            "name": "Gas Station",
+            "dto": {
+                "code": 80,
+                "name": "GasStation",
+                "modeType": 7,
+                "maskCode": 10,
+                "startingArea": true,
+                "areaType": "Lumia",
+                "isProvideCollectibleItem": true,
+                "routeCalcBitCode": 128,
+                "isHyperLoopInstalled": true
+            }
+        },
+        "90": {
+            "id": 90,
+            "name": "Hotel",
+            "dto": {
+                "code": 90,
+                "name": "Hotel",
+                "modeType": 7,
+                "maskCode": 11,
+                "startingArea": true,
+                "areaType": "Lumia",
+                "isProvideCollectibleItem": true,
+                "routeCalcBitCode": 256,
+                "isHyperLoopInstalled": true
+            }
+        },
+        "100": {
+            "id": 100,
+            "name": "Police Station",
+            "dto": {
+                "code": 100,
+                "name": "PoliceStation",
+                "modeType": 7,
+                "maskCode": 12,
+                "startingArea": true,
+                "areaType": "Lumia",
+                "isProvideCollectibleItem": true,
+                "routeCalcBitCode": 512,
+                "isHyperLoopInstalled": false
+            }
+        },
+        "110": {
+            "id": 110,
+            "name": "Fire Station",
+            "dto": {
+                "code": 110,
+                "name": "FireStation",
+                "modeType": 7,
+                "maskCode": 13,
+                "startingArea": true,
+                "areaType": "Lumia",
+                "isProvideCollectibleItem": true,
+                "routeCalcBitCode": 1024,
+                "isHyperLoopInstalled": true
+            }
+        },
+        "120": {
+            "id": 120,
+            "name": "Hospital",
+            "dto": {
+                "code": 120,
+                "name": "Hospital",
+                "modeType": 7,
+                "maskCode": 14,
+                "startingArea": true,
+                "areaType": "Lumia",
+                "isProvideCollectibleItem": true,
+                "routeCalcBitCode": 2048,
+                "isHyperLoopInstalled": true
+            }
+        },
+        "130": {
+            "id": 130,
+            "name": "Temple",
+            "dto": {
+                "code": 130,
+                "name": "Temple",
+                "modeType": 7,
+                "maskCode": 15,
+                "startingArea": true,
+                "areaType": "Lumia",
+                "isProvideCollectibleItem": true,
+                "routeCalcBitCode": 4096,
+                "isHyperLoopInstalled": true
+            }
+        },
+        "140": {
+            "id": 140,
+            "name": "Archery Range",
+            "dto": {
+                "code": 140,
+                "name": "Archery",
+                "modeType": 7,
+                "maskCode": 16,
+                "startingArea": true,
+                "areaType": "Lumia",
+                "isProvideCollectibleItem": true,
+                "routeCalcBitCode": 8192,
+                "isHyperLoopInstalled": false
+            }
+        },
+        "150": {
+            "id": 150,
+            "name": "Cemetery",
+            "dto": {
+                "code": 150,
+                "name": "Cemetery",
+                "modeType": 7,
+                "maskCode": 17,
+                "startingArea": true,
+                "areaType": "Lumia",
+                "isProvideCollectibleItem": true,
+                "routeCalcBitCode": 16384,
+                "isHyperLoopInstalled": false
+            }
+        },
+        "160": {
+            "id": 160,
+            "name": "Forest",
+            "dto": {
+                "code": 160,
+                "name": "Forest",
+                "modeType": 7,
+                "maskCode": 18,
+                "startingArea": true,
+                "areaType": "Lumia",
+                "isProvideCollectibleItem": true,
+                "routeCalcBitCode": 32768,
+                "isHyperLoopInstalled": false
+            }
+        },
+        "170": {
+            "id": 170,
+            "name": "Factory",
+            "dto": {
+                "code": 170,
+                "name": "Factory",
+                "modeType": 7,
+                "maskCode": 19,
+                "startingArea": true,
+                "areaType": "Lumia",
+                "isProvideCollectibleItem": true,
+                "routeCalcBitCode": 65536,
+                "isHyperLoopInstalled": true
+            }
+        },
+        "180": {
+            "id": 180,
+            "name": "Chapel",
+            "dto": {
+                "code": 180,
+                "name": "Church",
+                "modeType": 7,
+                "maskCode": 20,
+                "startingArea": true,
+                "areaType": "Lumia",
+                "isProvideCollectibleItem": true,
+                "routeCalcBitCode": 131072,
+                "isHyperLoopInstalled": true
+            }
+        },
+        "190": {
+            "id": 190,
+            "name": "School",
+            "dto": {
+                "code": 190,
+                "name": "School",
+                "modeType": 7,
+                "maskCode": 21,
+                "startingArea": true,
+                "areaType": "Lumia",
+                "isProvideCollectibleItem": true,
+                "routeCalcBitCode": 262144,
+                "isHyperLoopInstalled": true
+            }
+        },
+        "1000": {
+            "id": 1000,
+            "name": "Research Center",
+            "dto": {
+                "code": 1000,
+                "name": "Laboratory",
+                "modeType": 7,
+                "maskCode": 27,
+                "startingArea": false,
+                "areaType": "Laboratory",
+                "isProvideCollectibleItem": false,
+                "routeCalcBitCode": 0,
+                "isHyperLoopInstalled": false
+            }
+        },
+        "1010": {
+            "id": 1010,
+            "name": "Briefing Room",
+            "dto": {
+                "code": 1010,
+                "name": "BriefingRoom",
+                "modeType": 7,
+                "maskCode": 28,
+                "startingArea": false,
+                "areaType": "BriefingRoom",
+                "isProvideCollectibleItem": false,
+                "routeCalcBitCode": 0,
+                "isHyperLoopInstalled": false
+            }
+        },
+        "1020": {
+            "id": 1020,
+            "name": "???",
+            "dto": {
+                "code": 1020,
+                "name": "EscapeM",
+                "modeType": 7,
+                "maskCode": 29,
+                "startingArea": false,
+                "areaType": "Escape_Wait",
+                "isProvideCollectibleItem": false,
+                "routeCalcBitCode": 0,
+                "isHyperLoopInstalled": false
+            }
+        },
+        "1030": {
+            "id": 1030,
+            "name": "???",
+            "dto": {
+                "code": 1030,
+                "name": "EscapeA",
+                "modeType": 7,
+                "maskCode": 30,
+                "startingArea": false,
+                "areaType": "Escape_Boarding",
+                "isProvideCollectibleItem": false,
+                "routeCalcBitCode": 0,
+                "isHyperLoopInstalled": false
+            }
+        },
+        "1040": {
+            "id": 1040,
+            "name": "???",
+            "dto": {
+                "code": 1040,
+                "name": "EscapeB",
+                "modeType": 7,
+                "maskCode": 31,
+                "startingArea": false,
+                "areaType": "Escape_Boarding",
+                "isProvideCollectibleItem": false,
+                "routeCalcBitCode": 0,
+                "isHyperLoopInstalled": false
+            }
+        },
+        "2010": {
+            "id": 2010,
+            "name": "Right Sector",
+            "dto": {
+                "code": 2010,
+                "name": "Cobalt1",
+                "modeType": 8,
+                "maskCode": 3,
+                "startingArea": false,
+                "areaType": "Cobalt",
+                "isProvideCollectibleItem": false,
+                "routeCalcBitCode": 0,
+                "isHyperLoopInstalled": false
+            }
+        },
+        "2020": {
+            "id": 2020,
+            "name": "Central Sector",
+            "dto": {
+                "code": 2020,
+                "name": "Cobalt2",
+                "modeType": 8,
+                "maskCode": 4,
+                "startingArea": false,
+                "areaType": "Cobalt",
+                "isProvideCollectibleItem": false,
+                "routeCalcBitCode": 0,
+                "isHyperLoopInstalled": false
+            }
+        },
+        "2030": {
+            "id": 2030,
+            "name": "Left Sector",
+            "dto": {
+                "code": 2030,
+                "name": "Cobalt3",
+                "modeType": 8,
+                "maskCode": 5,
+                "startingArea": false,
+                "areaType": "Cobalt",
+                "isProvideCollectibleItem": false,
+                "routeCalcBitCode": 0,
+                "isHyperLoopInstalled": false
+            }
+        },
+        "2040": {
+            "id": 2040,
+            "name": "Safe Zone",
+            "dto": {
+                "code": 2040,
+                "name": "Cobalt4",
+                "modeType": 8,
+                "maskCode": 6,
+                "startingArea": false,
+                "areaType": "TurretArea",
+                "isProvideCollectibleItem": false,
+                "routeCalcBitCode": 0,
+                "isHyperLoopInstalled": false
+            }
+        },
+        "2050": {
+            "id": 2050,
+            "name": "Safe Zone",
+            "dto": {
+                "code": 2050,
+                "name": "Cobalt5",
+                "modeType": 8,
+                "maskCode": 7,
+                "startingArea": false,
+                "areaType": "TurretArea",
+                "isProvideCollectibleItem": false,
+                "routeCalcBitCode": 0,
+                "isHyperLoopInstalled": false
+            }
+        },
+        "2060": {
+            "id": 2060,
+            "name": "Gamma Area",
+            "dto": {
+                "code": 2060,
+                "name": "Cobalt6",
+                "modeType": 8,
+                "maskCode": 8,
+                "startingArea": false,
+                "areaType": "Cobalt",
+                "isProvideCollectibleItem": false,
+                "routeCalcBitCode": 0,
+                "isHyperLoopInstalled": false
+            }
+        },
+        "2070": {
+            "id": 2070,
+            "name": "Control Room",
+            "dto": {
+                "code": 2070,
+                "name": "SituationAreaA",
+                "modeType": 8,
+                "maskCode": 9,
+                "startingArea": true,
+                "areaType": "SituationAreaA",
+                "isProvideCollectibleItem": false,
+                "routeCalcBitCode": 0,
+                "isHyperLoopInstalled": false
+            }
+        },
+        "2080": {
+            "id": 2080,
+            "name": "Control Room",
+            "dto": {
+                "code": 2080,
+                "name": "SituationAreaB",
+                "modeType": 8,
+                "maskCode": 10,
+                "startingArea": true,
+                "areaType": "SituationAreaB",
+                "isProvideCollectibleItem": false,
+                "routeCalcBitCode": 0,
+                "isHyperLoopInstalled": false
+            }
+        }
+    }
+}
