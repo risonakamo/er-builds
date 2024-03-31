@@ -23,4 +23,6 @@ func Test_multiGet(t *testing.T) {
 
     fmt.Println(len(data1))
     fmt.Println(len(data2))
+
+    pp.Print(data2)
 }
