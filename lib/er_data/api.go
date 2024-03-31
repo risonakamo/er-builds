@@ -73,5 +73,5 @@ func getRouteDataMultiPage(
         )
     }
 
-    return routes
+    return purgeDuplicateRoutes(routes)
 }

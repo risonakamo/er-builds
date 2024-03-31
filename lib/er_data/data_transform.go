@@ -2,7 +2,11 @@
 
 package erdata
 
-import "fmt"
+import (
+	"fmt"
+
+	"k8s.io/apimachinery/pkg/util/sets"
+)
 
 // upgrade er route to v2
 func upgradeErRoute(route ErRoute,itemInfo ItemInfoDict) ErRoute2 {
@@ -46,4 +50,25 @@ func extractErRoutes(routeResponse ErRouteResponse) []ErRoute2 {
         routeResponse.RecommendWeaponRouteDtoPage.Items,
         routeResponse.ItemById,
     )
+}
+
+// remove all routes with duplicate ids from list of routes
+func purgeDuplicateRoutes(routes []ErRoute2) []ErRoute2 {
+    var seenRouteIds sets.Set[int]=sets.New[int]()
+
+    var filteredRoutes []ErRoute2
+
+    for i := range routes {
+        // if seen it, skip
+        if seenRouteIds.Has(routes[i].Id) {
+            fmt.Println("found duplicate route:",routes[i].Id)
+            continue
+        }
+
+        // otherwise, collect it
+        seenRouteIds.Insert(routes[i].Id)
+        filteredRoutes=append(filteredRoutes,routes[i])
+    }
+
+    return filteredRoutes
 }
