@@ -4,6 +4,7 @@ package erdata
 
 import (
 	"fmt"
+	"regexp"
 
 	"k8s.io/apimachinery/pkg/util/sets"
 )
@@ -29,7 +30,7 @@ func upgradeErRoute(route ErRoute,itemInfo ItemInfoDict) ErRoute2 {
 
     return ErRoute2 {
         ErRoute: route,
-        WeaponInfos: weapons,
+        WeaponInfos: upgradeAllItems(weapons),
     }
 }
 
@@ -71,4 +72,56 @@ func purgeDuplicateRoutes(routes []ErRoute2) []ErRoute2 {
     }
 
     return filteredRoutes
+}
+
+// add additional fields to item info
+func upgradeItemInfo(item ItemInfo) ItemInfo2 {
+    return ItemInfo2 {
+        ItemInfo: item,
+        ItemType: extractItemType(item),
+    }
+}
+
+// try to determine item type. defaults to weapon
+// todo: get list of all possible weapons to confirm that something is weapon
+func extractItemType(item ItemInfo) ItemType {
+    // matches something like: "Epic / Chest\n\nDefense +16\nSkill Amplification..."
+    // tries to extract the 2nd word which is the item type
+    // [0]: whole match
+    // [1]: the item type
+    var reg *regexp.Regexp=regexp.MustCompile(`\w+ \/ (\w+)`)
+    var matches []string=reg.FindStringSubmatch(item.Tooltip)
+
+    if len(matches)!=2 {
+        fmt.Println("regex extract failed")
+        fmt.Println("bad string:",item.Tooltip)
+        fmt.Println("matches:",matches)
+        panic("bad match")
+    }
+
+    var extractedType string=matches[1]
+
+    switch extractedType {
+        case "Chest":
+            return ItemType_chest
+        case "Head":
+            return ItemType_head
+        case "Arm":
+            return ItemType_arm
+        case "Leg":
+            return ItemType_leg
+    }
+
+    return ItemType_weapon
+}
+
+// convert list of items into item info 2
+func upgradeAllItems(items []ItemInfo) []ItemInfo2 {
+    var newitems []ItemInfo2
+
+    for i := range items {
+        newitems=append(newitems,upgradeItemInfo(items[i]))
+    }
+
+    return newitems
 }

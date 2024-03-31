@@ -7,6 +7,14 @@ package erdata
 // val: the item
 type ItemInfoDict map[string]ItemInfo
 
+// possible types of items
+type ItemType string
+const ItemType_weapon ItemType="weapon"
+const ItemType_head ItemType="head"
+const ItemType_chest ItemType="chest"
+const ItemType_arm ItemType="arm"
+const ItemType_leg ItemType="leg"
+
 // top level response when requesting for routes from route api
 type ErRouteResponse struct {
     CharacterName string `json:"characterName"`
@@ -36,17 +44,27 @@ type ErRoute struct {
     WinRate float32 `json:"v2WinRate"`
 }
 
-// enhanced er route with weapons filled in
+// enhanced er route with items converted into obj form and upgraded
 type ErRoute2 struct {
     ErRoute
 
-    WeaponInfos []ItemInfo
+    WeaponInfos []ItemInfo2
 }
 
 // info about an item
 type ItemInfo struct {
     Id int `json:"id"`
     Name string `json:"name"`
+
+    Tooltip string `json:"tooltip"`
+
     ImageUrl string `json:"imageUrl"`
     BackgroundImageUrl string `json:"backgroundImageUrl"`
+}
+
+// upgraded item with type field added
+type ItemInfo2 struct {
+    ItemInfo
+
+    ItemType ItemType
 }

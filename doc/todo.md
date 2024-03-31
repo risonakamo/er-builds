@@ -14,4 +14,4 @@
         - date
 
 # current issues
-- [ ] for each item, need to parse it's item category from the description
+- [x] for each item, need to parse it's item category from the description
