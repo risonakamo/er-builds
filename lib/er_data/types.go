@@ -7,6 +7,11 @@ package erdata
 // val: the item
 type ItemInfoDict map[string]ItemInfo
 
+// map of multiple item statistics
+// key: item's ID
+// val: the item's statistics
+type ItemStatisticsDict map[int]*ItemsStatistics
+
 // possible types of items
 type ItemType string
 const ItemType_weapon ItemType="weapon"
@@ -67,4 +72,16 @@ type ItemInfo2 struct {
     ItemInfo
 
     ItemType ItemType
+}
+
+// statistics of a certain item. computed from a list of ErRoute2
+type ItemsStatistics struct {
+    Item ItemInfo2
+
+    // number of times this item showed up
+    Total int
+
+    TotalWinRate float32
+    AverageWinRate float32
+    HighestWinRate float32
 }
