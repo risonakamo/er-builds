@@ -48,7 +48,7 @@ type ErRoute struct {
 type ErRoute2 struct {
     ErRoute
 
-    WeaponInfos []ItemInfo2
+    ItemInfos []ItemInfo2
 }
 
 // info about an item

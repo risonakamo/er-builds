@@ -30,7 +30,7 @@ func upgradeErRoute(route ErRoute,itemInfo ItemInfoDict) ErRoute2 {
 
     return ErRoute2 {
         ErRoute: route,
-        WeaponInfos: upgradeAllItems(weapons),
+        ItemInfos: upgradeAllItems(weapons),
     }
 }
 
