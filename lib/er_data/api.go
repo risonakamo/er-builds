@@ -56,3 +56,22 @@ func getRouteData(character string,weapon string,page int) ErRouteResponse {
 
     return routeObj
 }
+
+// get routes from multiple pages, merging them all into ErRoute2 list
+func getRouteDataMultiPage(
+    character string,
+    weapon string,
+    pageStart int,
+    pageEnd int,
+) []ErRoute2 {
+    var routes []ErRoute2
+
+    for i := pageStart; i<=pageEnd ; i++ {
+        routes=append(
+            routes,
+            extractErRoutes(getRouteData(character,weapon,i))...
+        )
+    }
+
+    return routes
+}

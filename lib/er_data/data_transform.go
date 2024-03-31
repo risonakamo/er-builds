@@ -39,3 +39,11 @@ func upgradeErRouteList(routes []ErRoute,itemInfo ItemInfoDict) []ErRoute2 {
 
     return upgradedList
 }
+
+// simplify er route response to just the routes
+func extractErRoutes(routeResponse ErRouteResponse) []ErRoute2 {
+    return upgradeErRouteList(
+        routeResponse.RecommendWeaponRouteDtoPage.Items,
+        routeResponse.ItemById,
+    )
+}
