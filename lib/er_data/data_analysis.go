@@ -52,3 +52,27 @@ func computeItemStatistics(routes []ErRoute2) ItemStatisticsDict {
 
     return collectedStats
 }
+
+// group dict of item statistics into grouped item stats obj
+func groupItemStatistics(itemStats ItemStatisticsDict) GroupedItemStatistics {
+    var grouped GroupedItemStatistics=make(GroupedItemStatistics)
+
+    var itemStat *ItemsStatistics
+    for _,itemStat = range itemStats {
+        var itemType ItemType=itemStat.Item.ItemType
+
+        var in bool
+        _,in=grouped[itemType]
+
+        // initialise group if not seen the item type yet
+        if !in {
+            grouped[itemType]=[]ItemsStatistics{}
+
+        // otherwise add to the group
+        } else {
+            grouped[itemType]=append(grouped[itemType],*itemStat)
+        }
+    }
+
+    return grouped
+}

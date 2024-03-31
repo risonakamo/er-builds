@@ -12,6 +12,11 @@ type ItemInfoDict map[string]ItemInfo
 // val: the item's statistics
 type ItemStatisticsDict map[int]*ItemsStatistics
 
+// list of item statistics grouped by their type
+// key: the item type
+// val: all item statistics objs that have this type
+type GroupedItemStatistics map[ItemType][]ItemsStatistics
+
 // possible types of items
 type ItemType string
 const ItemType_weapon ItemType="weapon"

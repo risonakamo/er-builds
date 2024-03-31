@@ -13,5 +13,8 @@
         - win rate
         - date
 
+# enhancements
+- [ ] internal cache - not really need to continuously be pinging the api. can store data and only refresh from api once in a while
+
 # current issues
 - [x] for each item, need to parse it's item category from the description
