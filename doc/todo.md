@@ -13,6 +13,11 @@
         - win rate
         - date
 
+# idea
+- what if, we select various ppl's builds and look at their games to collect additional information like yellow iteams, augments and tac skill
+    - program ideally go to every build in the list and collect the game history data for each person. but this would be pretty api expensive, even if doing it only once in a while. so what's the best way to do this?
+        - pretty sure dak does it by collecting once in a while from the main game api, then holding onto the data. so pretty much i would have to also do the same in order to not rely on constantly grabbing the data
+
 # todo
 - [ ] tally up likes for each item
 - [ ] data save - not really needed to continuously be pinging the api. can store data and only refresh from api once in a while
