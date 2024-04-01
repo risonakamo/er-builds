@@ -1,0 +1,481 @@
+=== RUN   Test_itemStatPipeline
+found routes: 90
+unique items: 23
+erdata.ItemStatisticsDict{
+    120302: &erdata.ItemsStatistics{
+        Item: erdata.ItemInfo2{
+            ItemInfo: erdata.ItemInfo{Id:120302, Name:"Sword of Justice", Tooltip:"Epic / Rapier\n\nAttack Power +25\nSkill Amplification +60\nSP Regen +100%\nCooldown Reduction +15%\n\nMax quantity : 1\n\nHistorical texts state that Hong Gil-dong, the Robin Hood of ancient Korea, used it.", ImageUrl:"/assets/er/game-assets/1.18.0/ItemIcon_120302.png", BackgroundImageUrl:"/er/images/item/ico-itemgradebg-04.svg"},
+            ItemType: "weapon",
+        },
+        Total:          40,
+        TotalWinRate:   225.4199981689453,
+        AverageWinRate: 5.635499954223633,
+        HighestWinRate: 55.560001373291016,
+    },
+    120406: &erdata.ItemsStatistics{
+        Item: erdata.ItemInfo2{
+            ItemInfo: erdata.ItemInfo{Id:120406, Name:"Red Panther", Tooltip:"Epic / Rapier\n\nAttack Power +28\nSkill Amplification +70\nMax HP +80\n\n[Healing Reduction - Weak]\nDealing damage to a target reduces their healing by 40% for 4 seconds.\n\nMax quantity : 1\n\nA crimson blade capable of slashing through humans, much like its namesake.", ImageUrl:"/assets/er/game-assets/1.18.0/ItemIcon_120406.png", BackgroundImageUrl:"/er/images/item/ico-itemgradebg-04.svg"},
+            ItemType: "weapon",
+        },
+        Total:          50,
+        TotalWinRate:   324.6299743652344,
+        AverageWinRate: 6.4925994873046875,
+        HighestWinRate: 50,
+    },
+    201407: &erdata.ItemsStatistics{
+        Item: erdata.ItemInfo2{
+            ItemInfo: erdata.ItemInfo{Id:201407, Name:"Helm of Banneret", Tooltip:"Epic / Head\n\nDefense +16\nMax HP +100\nMax SP +200\nCooldown Reduction +15%\n\nMax quantity : 1\n\nThe war has begun and the righteous knight stands at the vanguard. May the blessings of victory be upon him.", ImageUrl:"/assets/er/game-assets/1.18.0/ItemIcon_201407.png", BackgroundImageUrl:"/er/images/item/ico-itemgradebg-04.svg"},
+            ItemType: "head",
+        },
+        Total:          3,
+        TotalWinRate:   0,
+        AverageWinRate: 0,
+        HighestWinRate: 0,
+    },
+    201409: &erdata.ItemsStatistics{
+        Item: erdata.ItemInfo2{
+            ItemInfo: erdata.ItemInfo{Id:201409, Name:"Imperial Crown", Tooltip:"Epic / Head\n\nDefense +8\nSkill Amplification +63\nCooldown Reduction +15%\n\nMax quantity : 1\n\nA crown built for the first and only monarch of the Kingdom of Finland, Friedrich Karl. However, due to the adoption of the republican constitution before the coronation, the crown has never been used since.", ImageUrl:"/assets/er/game-assets/1.18.0/ItemIcon_201409.png", BackgroundImageUrl:"/er/images/item/ico-itemgradebg-04.svg"},
+            ItemType: "head",
+        },
+        Total:          18,
+        TotalWinRate:   143.75999450683594,
+        AverageWinRate: 7.986666202545166,
+        HighestWinRate: 50,
+    },
+    201410: &erdata.ItemsStatistics{
+        Item: erdata.ItemInfo2{
+            ItemInfo: erdata.ItemInfo{Id:201410, Name:"Imperial Burgonet", Tooltip:"Epic / Head\n\nDefense +6\nSkill Amplification +65\nMax SP +400\nMovement Speed +0.06\nCooldown Reduction +10%\n\nMax quantity : 1\n\nAn extravagant burgonet used by the imperial family. Unlike a basic helmet, it is lavishly decorated.", ImageUrl:"/assets/er/game-assets/1.18.0/ItemIcon_201410.png", BackgroundImageUrl:"/er/images/item/ico-itemgradebg-04.svg"},
+            ItemType: "head",
+        },
+        Total:          5,
+        TotalWinRate:   0,
+        AverageWinRate: 0,
+        HighestWinRate: 50,
+    },
+    201412: &erdata.ItemsStatistics{
+        Item: erdata.ItemInfo2{
+            ItemInfo: erdata.ItemInfo{Id:201412, Name:"Mohawk Headgear", Tooltip:"Epic / Head\n\nDefense +13\nMax HP +200\nSP Regen +50%\n\n[Reflection]\nWhen hit by a basic attack, reflect ? true damage to the attacker and reduce their healing by ? for ? seconds. Taking ? or more damage over 4 seconds deals ? skill damage to nearby enemies. (Cooldown: 3s)\n\nMax quantity : 1\n\nNamed after the indigenous Keepers of the Eastern Door, it's a unique helmet with unique sensibilities.", ImageUrl:"/assets/er/game-assets/1.18.0/ItemIcon_201412.png", BackgroundImageUrl:"/er/images/item/ico-itemgradebg-04.svg"},
+            ItemType: "head",
+        },
+        Total:          4,
+        TotalWinRate:   0,
+        AverageWinRate: 0,
+        HighestWinRate: 0,
+    },
+    201413: &erdata.ItemsStatistics{
+        Item: erdata.ItemInfo2{
+            ItemInfo: erdata.ItemInfo{Id:201413, Name:"Vigilante", Tooltip:"Epic / Head\n\nDefense +10\nSkill Amplification +59\nMax HP +110\nSP Regen +50%\n\nMax quantity : 1\n\nIf you shout \"Help!\", a superhero wearing this helmet will arrive.", ImageUrl:"/assets/er/game-assets/1.18.0/ItemIcon_201413.png", BackgroundImageUrl:"/er/images/item/ico-itemgradebg-04.svg"},
+            ItemType: "head",
+        },
+        Total:          60,
+        TotalWinRate:   406.2900390625,
+        AverageWinRate: 6.771500587463379,
+        HighestWinRate: 55.560001373291016,
+    },
+    202307: &erdata.ItemsStatistics{
+        Item: erdata.ItemInfo2{
+            ItemInfo: erdata.ItemInfo{Id:202307, Name:"Cardinal Robes", Tooltip:"Epic / Chest\n\nDefense +15\nSkill Amplification +14\nSkill Amplification per level +5\n\n[Healing Reduction - Weak]\nDealing damage to a target reduces their healing by 40% for 4 seconds.\n\nMax quantity : 1\n\nA priest's robe with a small hooded short cape attached, unlike regular priestly robes.", ImageUrl:"/assets/er/game-assets/1.18.0/ItemIcon_202307.png", BackgroundImageUrl:"/er/images/item/ico-itemgradebg-04.svg"},
+            ItemType: "chest",
+        },
+        Total:          2,
+        TotalWinRate:   0,
+        AverageWinRate: 0,
+        HighestWinRate: 0,
+    },
+    202402: &erdata.ItemsStatistics{
+        Item: erdata.ItemInfo2{
+            ItemInfo: erdata.ItemInfo{Id:202402, Name:"Sunset Armor", Tooltip:"Epic / Chest\n\nDefense +20\nMax HP per level +20\nVision Range +1\n\n[Flame Barrier]\nDamages enemies in a ?m range every ? second when in combat.\nMelee: Deals ? of your Max HP skill damage.｜Ranged: Deals ? of your Max HP skill damage.\n\nMax quantity : 1\n\nMade of leather, it features a ruby that shines like a bright, red sun.", ImageUrl:"/assets/er/game-assets/1.18.0/ItemIcon_202402.png", BackgroundImageUrl:"/er/images/item/ico-itemgradebg-04.svg"},
+            ItemType: "chest",
+        },
+        Total:          61,
+        TotalWinRate:   406.28997802734375,
+        AverageWinRate: 6.660491466522217,
+        HighestWinRate: 55.560001373291016,
+    },
+    202408: &erdata.ItemsStatistics{
+        Item: erdata.ItemInfo2{
+            ItemInfo: erdata.ItemInfo{Id:202408, Name:"Crusader Armor", Tooltip:"Epic / Chest\n\nDefense +30\nMax HP per level +17\nHP Regen +200%\n\nMax quantity : 1\n\nSome say that this armor provides special protection from the undead. It's a shame there's no zombies around here.", ImageUrl:"/assets/er/game-assets/1.18.0/ItemIcon_202408.png", BackgroundImageUrl:"/er/images/item/ico-itemgradebg-04.svg"},
+            ItemType: "chest",
+        },
+        Total:          10,
+        TotalWinRate:   43.22999954223633,
+        AverageWinRate: 4.322999954223633,
+        HighestWinRate: 40,
+    },
+    202410: &erdata.ItemsStatistics{
+        Item: erdata.ItemInfo2{
+            ItemInfo: erdata.ItemInfo{Id:202410, Name:"Amazoness Armor", Tooltip:"Epic / Chest\n\nDefense +18\nMax HP per level +14\nCooldown Reduction +10%\n\n[Reflection]\nWhen hit by a basic attack, reflect ? true damage to the attacker and reduce their healing by ? for ? seconds. Taking ? or more damage over 4 seconds deals ? skill damage to nearby enemies. (Cooldown: 3s)\n\nMax quantity : 1\n\nArmor bestowed upon female warriors with outstanding archery ability and agility. Allows for flexibility and protection.", ImageUrl:"/assets/er/game-assets/1.18.0/ItemIcon_202410.png", BackgroundImageUrl:"/er/images/item/ico-itemgradebg-04.svg"},
+            ItemType: "chest",
+        },
+        Total:          2,
+        TotalWinRate:   0,
+        AverageWinRate: 0,
+        HighestWinRate: 0,
+    },
+    202417: &erdata.ItemsStatistics{
+        Item: erdata.ItemInfo2{
+            ItemInfo: erdata.ItemInfo{Id:202417, Name:"EOD Suit", Tooltip:"Epic / Chest\n\nDefense +22\nMax HP per level +14\nHP Regen +60%\nCooldown Reduction +15%\n\nMax quantity : 1\n\nOriginally developed as a bulletproof vest, often used at bomb disposal sites due to its protection.", ImageUrl:"/assets/er/game-assets/1.18.0/ItemIcon_202417.png", BackgroundImageUrl:"/er/images/item/ico-itemgradebg-04.svg"},
+            ItemType: "chest",
+        },
+        Total:          15,
+        TotalWinRate:   60.529998779296875,
+        AverageWinRate: 4.035333156585693,
+        HighestWinRate: 50,
+    },
+    203306: &erdata.ItemsStatistics{
+        Item: erdata.ItemInfo2{
+            ItemInfo: erdata.ItemInfo{Id:203306, Name:"Corrupting Touch", Tooltip:"Epic / Arm\n\nDefense +6\nSkill Amplification +53\nCooldown Reduction +10%\n\n[Healing Reduction - Weak]\nDealing damage to a target reduces their healing by 40% for 4 seconds.\n\nMax quantity : 1\n\nCaution: Always wash your hands after use.", ImageUrl:"/assets/er/game-assets/1.18.0/ItemIcon_203306.png", BackgroundImageUrl:"/er/images/item/ico-itemgradebg-04.svg"},
+            ItemType: "arm",
+        },
+        Total:          1,
+        TotalWinRate:   0,
+        AverageWinRate: 0,
+        HighestWinRate: 0,
+    },
+    203402: &erdata.ItemsStatistics{
+        Item: erdata.ItemInfo2{
+            ItemInfo: erdata.ItemInfo{Id:203402, Name:"Sword Stopper", Tooltip:"Epic / Arm\n\nDefense +20\nMax HP +100\n\n[Reflection]\nWhen hit by a basic attack, reflect ? true damage to the attacker and reduce their healing by ? for ? seconds. Taking ? or more damage over 4 seconds deals ? skill damage to nearby enemies. (Cooldown: 3s)\n\nMax quantity : 1\n\nIt is, quite literally, armor that protects from swords. The hooks on it catch and entangle blades", ImageUrl:"/assets/er/game-assets/1.18.0/ItemIcon_203402.png", BackgroundImageUrl:"/er/images/item/ico-itemgradebg-04.svg"},
+            ItemType: "arm",
+        },
+        Total:          23,
+        TotalWinRate:   128.85000610351562,
+        AverageWinRate: 5.602174282073975,
+        HighestWinRate: 40,
+    },
+    203403: &erdata.ItemsStatistics{
+        Item: erdata.ItemInfo2{
+            ItemInfo: erdata.ItemInfo{Id:203403, Name:"Draupnir", Tooltip:"Epic / Arm\n\nDefense +8\nSkill Amplification +67\nMax SP +300\nHP Regen +30%\n\nMax quantity : 1\n\nThe magical golden bracelet of the Norse God, Odin. It has the power to provide unthinkable riches... and a full stomach.", ImageUrl:"/assets/er/game-assets/1.18.0/ItemIcon_203403.png", BackgroundImageUrl:"/er/images/item/ico-itemgradebg-04.svg"},
+            ItemType: "arm",
+        },
+        Total:          12,
+        TotalWinRate:   116.56999969482422,
+        AverageWinRate: 9.714166641235352,
+        HighestWinRate: 55.560001373291016,
+    },
+    203409: &erdata.ItemsStatistics{
+        Item: erdata.ItemInfo2{
+            ItemInfo: erdata.ItemInfo{Id:203409, Name:"Burnished Aegis", Tooltip:"Epic / Arm\n\nDefense +19\nMax HP +200\nMax SP +300\n\nMax quantity : 1\n\nCrafted by Hephaestus, the Greek god of blacksmiths on the behest of Athena, the goddess of war.", ImageUrl:"/assets/er/game-assets/1.18.0/ItemIcon_203409.png", BackgroundImageUrl:"/er/images/item/ico-itemgradebg-04.svg"},
+            ItemType: "arm",
+        },
+        Total:          9,
+        TotalWinRate:   50,
+        AverageWinRate: 5.55555534362793,
+        HighestWinRate: 50,
+    },
+    203410: &erdata.ItemsStatistics{
+        Item: erdata.ItemInfo2{
+            ItemInfo: erdata.ItemInfo{Id:203410, Name:"Tindalos Band", Tooltip:"Epic / Arm\n\nDefense +6\nSkill Amplification +50\nMax SP +300\nCooldown Reduction +15%\n\nMax quantity : 1\n\nAlthough crafted with the Hounds of Tindalos in mind, this terrifying bracelet somewhat resembles a bat more than a hound.", ImageUrl:"/assets/er/game-assets/1.18.0/ItemIcon_203410.png", BackgroundImageUrl:"/er/images/item/ico-itemgradebg-04.svg"},
+            ItemType: "arm",
+        },
+        Total:          44,
+        TotalWinRate:   214.6300048828125,
+        AverageWinRate: 4.877954483032227,
+        HighestWinRate: 50,
+    },
+    203411: &erdata.ItemsStatistics{
+        Item: erdata.ItemInfo2{
+            ItemInfo: erdata.ItemInfo{Id:203411, Name:"Nightingale", Tooltip:"Epic / Arm\n\nDefense +6\nSkill Amplification +62\nHealing Power +12%\n\nMax quantity : 1", ImageUrl:"/assets/er/game-assets/1.18.0/ItemIcon_203411.png", BackgroundImageUrl:"/er/images/item/ico-itemgradebg-04.svg"},
+            ItemType: "arm",
+        },
+        Total:          1,
+        TotalWinRate:   0,
+        AverageWinRate: 50,
+        HighestWinRate: 50,
+    },
+    204303: &erdata.ItemsStatistics{
+        Item: erdata.ItemInfo2{
+            ItemInfo: erdata.ItemInfo{Id:204303, Name:"Hiking Boots", Tooltip:"Epic / Leg\n\nMax HP +120\nHP Regen +50%\nMovement Speed +0.22\n\nMax quantity : 1", ImageUrl:"/assets/er/game-assets/1.18.0/ItemIcon_204303.png", BackgroundImageUrl:"/er/images/item/ico-itemgradebg-04.svg"},
+            ItemType: "leg",
+        },
+        Total:          8,
+        TotalWinRate:   0,
+        AverageWinRate: 0,
+        HighestWinRate: 50,
+    },
+    204406: &erdata.ItemsStatistics{
+        Item: erdata.ItemInfo2{
+            ItemInfo: erdata.ItemInfo{Id:204406, Name:"Straitjacket Sneakers", Tooltip:"Epic / Leg\n\nSkill Amplification +22\nSP Regen +100%\nMovement Speed +0.22\n\nMax quantity : 1\n\n180,000 miles in a single step?", ImageUrl:"/assets/er/game-assets/1.18.0/ItemIcon_204406.png", BackgroundImageUrl:"/er/images/item/ico-itemgradebg-04.svg"},
+            ItemType: "leg",
+        },
+        Total:          1,
+        TotalWinRate:   0,
+        AverageWinRate: 23.229999542236328,
+        HighestWinRate: 23.229999542236328,
+    },
+    204409: &erdata.ItemsStatistics{
+        Item: erdata.ItemInfo2{
+            ItemInfo: erdata.ItemInfo{Id:204409, Name:"EOD Boots", Tooltip:"Epic / Leg\n\nDefense +10\nMovement Speed +0.22\n[Unique] Tenacity +20%\n\nMax quantity : 1\n\nBoots worn by explosives disposal teams. They protect the wearer's legs from shrapnel if something goes wrong.", ImageUrl:"/assets/er/game-assets/1.18.0/ItemIcon_204409.png", BackgroundImageUrl:"/er/images/item/ico-itemgradebg-04.svg"},
+            ItemType: "leg",
+        },
+        Total:          26,
+        TotalWinRate:   62.900001525878906,
+        AverageWinRate: 2.4192309379577637,
+        HighestWinRate: 50,
+    },
+    204412: &erdata.ItemsStatistics{
+        Item: erdata.ItemInfo2{
+            ItemInfo: erdata.ItemInfo{Id:204412, Name:"Tachyon Brace", Tooltip:"Epic / Leg\n\nDefense +3\nMovement Speed +0.22\nCooldown Reduction +15%\n\nMax quantity : 1\n\nA futuristic exoskeleton that offers both mobility and protection. Once you get used to it and loosen your death grip, it's supposed to be a pretty smooth ride.", ImageUrl:"/assets/er/game-assets/1.18.0/ItemIcon_204412.png", BackgroundImageUrl:"/er/images/item/ico-itemgradebg-04.svg"},
+            ItemType: "leg",
+        },
+        Total:          54,
+        TotalWinRate:   413.3900146484375,
+        AverageWinRate: 7.655370712280273,
+        HighestWinRate: 55.560001373291016,
+    },
+    204415: &erdata.ItemsStatistics{
+        Item: erdata.ItemInfo2{
+            ItemInfo: erdata.ItemInfo{Id:204415, Name:"SCV", Tooltip:"Epic / Leg\n\nSkill Amplification +15\nMovement Speed +0.22\n[Unique] Tenacity +20%\n\nMax quantity : 1", ImageUrl:"/assets/er/game-assets/1.18.0/ItemIcon_204415.png", BackgroundImageUrl:"/er/images/item/ico-itemgradebg-04.svg"},
+            ItemType: "leg",
+        },
+        Total:          1,
+        TotalWinRate:   0,
+        AverageWinRate: 10.529999732971191,
+        HighestWinRate: 10.529999732971191,
+    },
+}
+grouped
+erdata.GroupedItemStatistics{
+    "arm": {
+        {
+            Item: erdata.ItemInfo2{
+                ItemInfo: erdata.ItemInfo{Id:203402, Name:"Sword Stopper", Tooltip:"Epic / Arm\n\nDefense +20\nMax HP +100\n\n[Reflection]\nWhen hit by a basic attack, reflect ? true damage to the attacker and reduce their healing by ? for ? seconds. Taking ? or more damage over 4 seconds deals ? skill damage to nearby enemies. (Cooldown: 3s)\n\nMax quantity : 1\n\nIt is, quite literally, armor that protects from swords. The hooks on it catch and entangle blades", ImageUrl:"/assets/er/game-assets/1.18.0/ItemIcon_203402.png", BackgroundImageUrl:"/er/images/item/ico-itemgradebg-04.svg"},
+                ItemType: "arm",
+            },
+            Total:          23,
+            TotalWinRate:   128.85000610351562,
+            AverageWinRate: 5.602174282073975,
+            HighestWinRate: 40,
+        },
+        {
+            Item: erdata.ItemInfo2{
+                ItemInfo: erdata.ItemInfo{Id:203411, Name:"Nightingale", Tooltip:"Epic / Arm\n\nDefense +6\nSkill Amplification +62\nHealing Power +12%\n\nMax quantity : 1", ImageUrl:"/assets/er/game-assets/1.18.0/ItemIcon_203411.png", BackgroundImageUrl:"/er/images/item/ico-itemgradebg-04.svg"},
+                ItemType: "arm",
+            },
+            Total:          1,
+            TotalWinRate:   0,
+            AverageWinRate: 50,
+            HighestWinRate: 50,
+        },
+        {
+            Item: erdata.ItemInfo2{
+                ItemInfo: erdata.ItemInfo{Id:203409, Name:"Burnished Aegis", Tooltip:"Epic / Arm\n\nDefense +19\nMax HP +200\nMax SP +300\n\nMax quantity : 1\n\nCrafted by Hephaestus, the Greek god of blacksmiths on the behest of Athena, the goddess of war.", ImageUrl:"/assets/er/game-assets/1.18.0/ItemIcon_203409.png", BackgroundImageUrl:"/er/images/item/ico-itemgradebg-04.svg"},
+                ItemType: "arm",
+            },
+            Total:          9,
+            TotalWinRate:   50,
+            AverageWinRate: 5.55555534362793,
+            HighestWinRate: 50,
+        },
+        {
+            Item: erdata.ItemInfo2{
+                ItemInfo: erdata.ItemInfo{Id:203410, Name:"Tindalos Band", Tooltip:"Epic / Arm\n\nDefense +6\nSkill Amplification +50\nMax SP +300\nCooldown Reduction +15%\n\nMax quantity : 1\n\nAlthough crafted with the Hounds of Tindalos in mind, this terrifying bracelet somewhat resembles a bat more than a hound.", ImageUrl:"/assets/er/game-assets/1.18.0/ItemIcon_203410.png", BackgroundImageUrl:"/er/images/item/ico-itemgradebg-04.svg"},
+                ItemType: "arm",
+            },
+            Total:          44,
+            TotalWinRate:   214.6300048828125,
+            AverageWinRate: 4.877954483032227,
+            HighestWinRate: 50,
+        },
+        {
+            Item: erdata.ItemInfo2{
+                ItemInfo: erdata.ItemInfo{Id:203403, Name:"Draupnir", Tooltip:"Epic / Arm\n\nDefense +8\nSkill Amplification +67\nMax SP +300\nHP Regen +30%\n\nMax quantity : 1\n\nThe magical golden bracelet of the Norse God, Odin. It has the power to provide unthinkable riches... and a full stomach.", ImageUrl:"/assets/er/game-assets/1.18.0/ItemIcon_203403.png", BackgroundImageUrl:"/er/images/item/ico-itemgradebg-04.svg"},
+                ItemType: "arm",
+            },
+            Total:          12,
+            TotalWinRate:   116.56999969482422,
+            AverageWinRate: 9.714166641235352,
+            HighestWinRate: 55.560001373291016,
+        },
+        {
+            Item: erdata.ItemInfo2{
+                ItemInfo: erdata.ItemInfo{Id:203306, Name:"Corrupting Touch", Tooltip:"Epic / Arm\n\nDefense +6\nSkill Amplification +53\nCooldown Reduction +10%\n\n[Healing Reduction - Weak]\nDealing damage to a target reduces their healing by 40% for 4 seconds.\n\nMax quantity : 1\n\nCaution: Always wash your hands after use.", ImageUrl:"/assets/er/game-assets/1.18.0/ItemIcon_203306.png", BackgroundImageUrl:"/er/images/item/ico-itemgradebg-04.svg"},
+                ItemType: "arm",
+            },
+            Total:          1,
+            TotalWinRate:   0,
+            AverageWinRate: 0,
+            HighestWinRate: 0,
+        },
+    },
+    "chest": {
+        {
+            Item: erdata.ItemInfo2{
+                ItemInfo: erdata.ItemInfo{Id:202402, Name:"Sunset Armor", Tooltip:"Epic / Chest\n\nDefense +20\nMax HP per level +20\nVision Range +1\n\n[Flame Barrier]\nDamages enemies in a ?m range every ? second when in combat.\nMelee: Deals ? of your Max HP skill damage.｜Ranged: Deals ? of your Max HP skill damage.\n\nMax quantity : 1\n\nMade of leather, it features a ruby that shines like a bright, red sun.", ImageUrl:"/assets/er/game-assets/1.18.0/ItemIcon_202402.png", BackgroundImageUrl:"/er/images/item/ico-itemgradebg-04.svg"},
+                ItemType: "chest",
+            },
+            Total:          61,
+            TotalWinRate:   406.28997802734375,
+            AverageWinRate: 6.660491466522217,
+            HighestWinRate: 55.560001373291016,
+        },
+        {
+            Item: erdata.ItemInfo2{
+                ItemInfo: erdata.ItemInfo{Id:202410, Name:"Amazoness Armor", Tooltip:"Epic / Chest\n\nDefense +18\nMax HP per level +14\nCooldown Reduction +10%\n\n[Reflection]\nWhen hit by a basic attack, reflect ? true damage to the attacker and reduce their healing by ? for ? seconds. Taking ? or more damage over 4 seconds deals ? skill damage to nearby enemies. (Cooldown: 3s)\n\nMax quantity : 1\n\nArmor bestowed upon female warriors with outstanding archery ability and agility. Allows for flexibility and protection.", ImageUrl:"/assets/er/game-assets/1.18.0/ItemIcon_202410.png", BackgroundImageUrl:"/er/images/item/ico-itemgradebg-04.svg"},
+                ItemType: "chest",
+            },
+            Total:          2,
+            TotalWinRate:   0,
+            AverageWinRate: 0,
+            HighestWinRate: 0,
+        },
+        {
+            Item: erdata.ItemInfo2{
+                ItemInfo: erdata.ItemInfo{Id:202408, Name:"Crusader Armor", Tooltip:"Epic / Chest\n\nDefense +30\nMax HP per level +17\nHP Regen +200%\n\nMax quantity : 1\n\nSome say that this armor provides special protection from the undead. It's a shame there's no zombies around here.", ImageUrl:"/assets/er/game-assets/1.18.0/ItemIcon_202408.png", BackgroundImageUrl:"/er/images/item/ico-itemgradebg-04.svg"},
+                ItemType: "chest",
+            },
+            Total:          10,
+            TotalWinRate:   43.22999954223633,
+            AverageWinRate: 4.322999954223633,
+            HighestWinRate: 40,
+        },
+        {
+            Item: erdata.ItemInfo2{
+                ItemInfo: erdata.ItemInfo{Id:202417, Name:"EOD Suit", Tooltip:"Epic / Chest\n\nDefense +22\nMax HP per level +14\nHP Regen +60%\nCooldown Reduction +15%\n\nMax quantity : 1\n\nOriginally developed as a bulletproof vest, often used at bomb disposal sites due to its protection.", ImageUrl:"/assets/er/game-assets/1.18.0/ItemIcon_202417.png", BackgroundImageUrl:"/er/images/item/ico-itemgradebg-04.svg"},
+                ItemType: "chest",
+            },
+            Total:          15,
+            TotalWinRate:   60.529998779296875,
+            AverageWinRate: 4.035333156585693,
+            HighestWinRate: 50,
+        },
+        {
+            Item: erdata.ItemInfo2{
+                ItemInfo: erdata.ItemInfo{Id:202307, Name:"Cardinal Robes", Tooltip:"Epic / Chest\n\nDefense +15\nSkill Amplification +14\nSkill Amplification per level +5\n\n[Healing Reduction - Weak]\nDealing damage to a target reduces their healing by 40% for 4 seconds.\n\nMax quantity : 1\n\nA priest's robe with a small hooded short cape attached, unlike regular priestly robes.", ImageUrl:"/assets/er/game-assets/1.18.0/ItemIcon_202307.png", BackgroundImageUrl:"/er/images/item/ico-itemgradebg-04.svg"},
+                ItemType: "chest",
+            },
+            Total:          2,
+            TotalWinRate:   0,
+            AverageWinRate: 0,
+            HighestWinRate: 0,
+        },
+    },
+    "head": {
+        {
+            Item: erdata.ItemInfo2{
+                ItemInfo: erdata.ItemInfo{Id:201409, Name:"Imperial Crown", Tooltip:"Epic / Head\n\nDefense +8\nSkill Amplification +63\nCooldown Reduction +15%\n\nMax quantity : 1\n\nA crown built for the first and only monarch of the Kingdom of Finland, Friedrich Karl. However, due to the adoption of the republican constitution before the coronation, the crown has never been used since.", ImageUrl:"/assets/er/game-assets/1.18.0/ItemIcon_201409.png", BackgroundImageUrl:"/er/images/item/ico-itemgradebg-04.svg"},
+                ItemType: "head",
+            },
+            Total:          18,
+            TotalWinRate:   143.75999450683594,
+            AverageWinRate: 7.986666202545166,
+            HighestWinRate: 50,
+        },
+        {
+            Item: erdata.ItemInfo2{
+                ItemInfo: erdata.ItemInfo{Id:201410, Name:"Imperial Burgonet", Tooltip:"Epic / Head\n\nDefense +6\nSkill Amplification +65\nMax SP +400\nMovement Speed +0.06\nCooldown Reduction +10%\n\nMax quantity : 1\n\nAn extravagant burgonet used by the imperial family. Unlike a basic helmet, it is lavishly decorated.", ImageUrl:"/assets/er/game-assets/1.18.0/ItemIcon_201410.png", BackgroundImageUrl:"/er/images/item/ico-itemgradebg-04.svg"},
+                ItemType: "head",
+            },
+            Total:          5,
+            TotalWinRate:   0,
+            AverageWinRate: 0,
+            HighestWinRate: 50,
+        },
+        {
+            Item: erdata.ItemInfo2{
+                ItemInfo: erdata.ItemInfo{Id:201413, Name:"Vigilante", Tooltip:"Epic / Head\n\nDefense +10\nSkill Amplification +59\nMax HP +110\nSP Regen +50%\n\nMax quantity : 1\n\nIf you shout \"Help!\", a superhero wearing this helmet will arrive.", ImageUrl:"/assets/er/game-assets/1.18.0/ItemIcon_201413.png", BackgroundImageUrl:"/er/images/item/ico-itemgradebg-04.svg"},
+                ItemType: "head",
+            },
+            Total:          60,
+            TotalWinRate:   406.2900390625,
+            AverageWinRate: 6.771500587463379,
+            HighestWinRate: 55.560001373291016,
+        },
+        {
+            Item: erdata.ItemInfo2{
+                ItemInfo: erdata.ItemInfo{Id:201412, Name:"Mohawk Headgear", Tooltip:"Epic / Head\n\nDefense +13\nMax HP +200\nSP Regen +50%\n\n[Reflection]\nWhen hit by a basic attack, reflect ? true damage to the attacker and reduce their healing by ? for ? seconds. Taking ? or more damage over 4 seconds deals ? skill damage to nearby enemies. (Cooldown: 3s)\n\nMax quantity : 1\n\nNamed after the indigenous Keepers of the Eastern Door, it's a unique helmet with unique sensibilities.", ImageUrl:"/assets/er/game-assets/1.18.0/ItemIcon_201412.png", BackgroundImageUrl:"/er/images/item/ico-itemgradebg-04.svg"},
+                ItemType: "head",
+            },
+            Total:          4,
+            TotalWinRate:   0,
+            AverageWinRate: 0,
+            HighestWinRate: 0,
+        },
+        {
+            Item: erdata.ItemInfo2{
+                ItemInfo: erdata.ItemInfo{Id:201407, Name:"Helm of Banneret", Tooltip:"Epic / Head\n\nDefense +16\nMax HP +100\nMax SP +200\nCooldown Reduction +15%\n\nMax quantity : 1\n\nThe war has begun and the righteous knight stands at the vanguard. May the blessings of victory be upon him.", ImageUrl:"/assets/er/game-assets/1.18.0/ItemIcon_201407.png", BackgroundImageUrl:"/er/images/item/ico-itemgradebg-04.svg"},
+                ItemType: "head",
+            },
+            Total:          3,
+            TotalWinRate:   0,
+            AverageWinRate: 0,
+            HighestWinRate: 0,
+        },
+    },
+    "leg": {
+        {
+            Item: erdata.ItemInfo2{
+                ItemInfo: erdata.ItemInfo{Id:204406, Name:"Straitjacket Sneakers", Tooltip:"Epic / Leg\n\nSkill Amplification +22\nSP Regen +100%\nMovement Speed +0.22\n\nMax quantity : 1\n\n180,000 miles in a single step?", ImageUrl:"/assets/er/game-assets/1.18.0/ItemIcon_204406.png", BackgroundImageUrl:"/er/images/item/ico-itemgradebg-04.svg"},
+                ItemType: "leg",
+            },
+            Total:          1,
+            TotalWinRate:   0,
+            AverageWinRate: 23.229999542236328,
+            HighestWinRate: 23.229999542236328,
+        },
+        {
+            Item: erdata.ItemInfo2{
+                ItemInfo: erdata.ItemInfo{Id:204415, Name:"SCV", Tooltip:"Epic / Leg\n\nSkill Amplification +15\nMovement Speed +0.22\n[Unique] Tenacity +20%\n\nMax quantity : 1", ImageUrl:"/assets/er/game-assets/1.18.0/ItemIcon_204415.png", BackgroundImageUrl:"/er/images/item/ico-itemgradebg-04.svg"},
+                ItemType: "leg",
+            },
+            Total:          1,
+            TotalWinRate:   0,
+            AverageWinRate: 10.529999732971191,
+            HighestWinRate: 10.529999732971191,
+        },
+        {
+            Item: erdata.ItemInfo2{
+                ItemInfo: erdata.ItemInfo{Id:204412, Name:"Tachyon Brace", Tooltip:"Epic / Leg\n\nDefense +3\nMovement Speed +0.22\nCooldown Reduction +15%\n\nMax quantity : 1\n\nA futuristic exoskeleton that offers both mobility and protection. Once you get used to it and loosen your death grip, it's supposed to be a pretty smooth ride.", ImageUrl:"/assets/er/game-assets/1.18.0/ItemIcon_204412.png", BackgroundImageUrl:"/er/images/item/ico-itemgradebg-04.svg"},
+                ItemType: "leg",
+            },
+            Total:          54,
+            TotalWinRate:   413.3900146484375,
+            AverageWinRate: 7.655370712280273,
+            HighestWinRate: 55.560001373291016,
+        },
+        {
+            Item: erdata.ItemInfo2{
+                ItemInfo: erdata.ItemInfo{Id:204303, Name:"Hiking Boots", Tooltip:"Epic / Leg\n\nMax HP +120\nHP Regen +50%\nMovement Speed +0.22\n\nMax quantity : 1", ImageUrl:"/assets/er/game-assets/1.18.0/ItemIcon_204303.png", BackgroundImageUrl:"/er/images/item/ico-itemgradebg-04.svg"},
+                ItemType: "leg",
+            },
+            Total:          8,
+            TotalWinRate:   0,
+            AverageWinRate: 0,
+            HighestWinRate: 50,
+        },
+        {
+            Item: erdata.ItemInfo2{
+                ItemInfo: erdata.ItemInfo{Id:204409, Name:"EOD Boots", Tooltip:"Epic / Leg\n\nDefense +10\nMovement Speed +0.22\n[Unique] Tenacity +20%\n\nMax quantity : 1\n\nBoots worn by explosives disposal teams. They protect the wearer's legs from shrapnel if something goes wrong.", ImageUrl:"/assets/er/game-assets/1.18.0/ItemIcon_204409.png", BackgroundImageUrl:"/er/images/item/ico-itemgradebg-04.svg"},
+                ItemType: "leg",
+            },
+            Total:          26,
+            TotalWinRate:   62.900001525878906,
+            AverageWinRate: 2.4192309379577637,
+            HighestWinRate: 50,
+        },
+    },
+    "weapon": {
+        {
+            Item: erdata.ItemInfo2{
+                ItemInfo: erdata.ItemInfo{Id:120302, Name:"Sword of Justice", Tooltip:"Epic / Rapier\n\nAttack Power +25\nSkill Amplification +60\nSP Regen +100%\nCooldown Reduction +15%\n\nMax quantity : 1\n\nHistorical texts state that Hong Gil-dong, the Robin Hood of ancient Korea, used it.", ImageUrl:"/assets/er/game-assets/1.18.0/ItemIcon_120302.png", BackgroundImageUrl:"/er/images/item/ico-itemgradebg-04.svg"},
+                ItemType: "weapon",
+            },
+            Total:          40,
+            TotalWinRate:   225.4199981689453,
+            AverageWinRate: 5.635499954223633,
+            HighestWinRate: 55.560001373291016,
+        },
+        {
+            Item: erdata.ItemInfo2{
+                ItemInfo: erdata.ItemInfo{Id:120406, Name:"Red Panther", Tooltip:"Epic / Rapier\n\nAttack Power +28\nSkill Amplification +70\nMax HP +80\n\n[Healing Reduction - Weak]\nDealing damage to a target reduces their healing by 40% for 4 seconds.\n\nMax quantity : 1\n\nA crimson blade capable of slashing through humans, much like its namesake.", ImageUrl:"/assets/er/game-assets/1.18.0/ItemIcon_120406.png", BackgroundImageUrl:"/er/images/item/ico-itemgradebg-04.svg"},
+                ItemType: "weapon",
+            },
+            Total:          50,
+            TotalWinRate:   324.6299743652344,
+            AverageWinRate: 6.4925994873046875,
+            HighestWinRate: 50,
+        },
+    },
+}
+--- PASS: Test_itemStatPipeline (4.04s)
+PASS
+ok  	er-builds/lib/er_data	4.204s

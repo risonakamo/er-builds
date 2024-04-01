@@ -7,6 +7,7 @@ import (
 	"testing"
 
 	"github.com/k0kubun/pp/v3"
+	"github.com/kr/pretty"
 )
 
 // test getting data and printing it
@@ -25,4 +26,30 @@ func Test_multiGet(t *testing.T) {
     fmt.Println(len(data2))
 
     pp.Print(data2)
+}
+
+// test going through item pipeline
+func Test_itemStatPipeline(t *testing.T) {
+    var data []ErRoute2=getRouteDataMultiPage("Elena","Rapier",1,10)
+
+    var filtered []ErRoute2=filterByVersion(
+        data,
+        []string{
+            "1.17.0",
+            "1.18.0",
+        },
+    )
+
+    // pp.Print(filtered)
+    fmt.Println("found routes:",len(filtered))
+
+    var itemStats ItemStatisticsDict=computeItemStatistics(filtered)
+
+    fmt.Println("unique items:",len(itemStats))
+    pretty.Println(itemStats)
+
+    var groupedStats GroupedItemStatistics=groupItemStatistics(itemStats)
+
+    fmt.Println("grouped")
+    pretty.Println(groupedStats)
 }

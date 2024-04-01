@@ -2,12 +2,17 @@
 
 package erdata
 
-// filter list of routes to only routes with a specified version
-func filterByVersion(routes []ErRoute2,version string) []ErRoute2 {
+import (
+	"k8s.io/apimachinery/pkg/util/sets"
+)
+
+// filter list of routes to only routes with any of the specified versions
+func filterByVersion(routes []ErRoute2,versions []string) []ErRoute2 {
+    var versionsSet sets.Set[string]=sets.New[string](versions...)
     var newroutes []ErRoute2
 
     for i := range routes {
-        if routes[i].Version==version {
+        if versionsSet.Has(routes[i].Version) {
             newroutes=append(newroutes,routes[i])
         }
     }
@@ -24,6 +29,10 @@ func computeItemStatistics(routes []ErRoute2) ItemStatisticsDict {
         var route ErRoute2=routes[i]
 
         // for all items in a single route
+        if len(routes[i].ItemInfos)!=5 {
+            panic("strange item length")
+        }
+
         for i2 := range routes[i].ItemInfos {
             var item ItemInfo2=routes[i].ItemInfos[i2]
 
@@ -67,11 +76,10 @@ func groupItemStatistics(itemStats ItemStatisticsDict) GroupedItemStatistics {
         // initialise group if not seen the item type yet
         if !in {
             grouped[itemType]=[]ItemsStatistics{}
-
-        // otherwise add to the group
-        } else {
-            grouped[itemType]=append(grouped[itemType],*itemStat)
         }
+
+        // always add the item to the group
+        grouped[itemType]=append(grouped[itemType],*itemStat)
     }
 
     return grouped

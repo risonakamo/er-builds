@@ -85,6 +85,11 @@ type ItemsStatistics struct {
 
     // number of times this item showed up
     Total int
+    // out of the number of builds used to calculate these stats, what is
+    // the percentage of this item appearing in those builds
+    PercentageOfResults float32
+
+    Likes int
 
     TotalWinRate float32
     AverageWinRate float32
