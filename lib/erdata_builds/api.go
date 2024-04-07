@@ -57,6 +57,7 @@ func getRouteData(character string,weapon string,page int) ErRouteResponse {
     return routeObj
 }
 
+// main fetch function, fetching and transforming into the better looking data type.
 // get routes from multiple pages, merging them all into ErRoute2 list
 func getRouteDataMultiPage(
     character string,
