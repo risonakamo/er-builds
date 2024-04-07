@@ -12,6 +12,11 @@
         - number of likes
         - win rate
         - date
+- the following will need collection of user match data, since it doesn't seem to appear in the build lists
+    - want to be able to see all the augments people are picking
+    - want to see the tac skills people are picking
+    - want to see yellow items being picked
+    - maybe the process to collect data from user matches kind of overrides the build list?
 
 # idea
 - what if, we select various ppl's builds and look at their games to collect additional information like yellow iteams, augments and tac skill
