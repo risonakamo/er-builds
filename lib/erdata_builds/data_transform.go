@@ -54,6 +54,7 @@ func extractErRoutes(routeResponse ErRouteResponse) []ErRoute2 {
 }
 
 // remove all routes with duplicate ids from list of routes
+// creates new array
 func purgeDuplicateRoutes(routes []ErRoute2) []ErRoute2 {
     var seenRouteIds sets.Set[int]=sets.New[int]()
 
@@ -62,7 +63,7 @@ func purgeDuplicateRoutes(routes []ErRoute2) []ErRoute2 {
     for i := range routes {
         // if seen it, skip
         if seenRouteIds.Has(routes[i].Id) {
-            fmt.Println("found duplicate route:",routes[i].Id)
+            // fmt.Println("found duplicate route:",routes[i].Id)
             continue
         }
 
@@ -83,7 +84,9 @@ func upgradeItemInfo(item ItemInfo) ItemInfo2 {
 }
 
 // try to determine item type. defaults to weapon
-// todo: get list of all possible weapons to confirm that something is weapon
+// todo: get list of all possible weapons to confirm that something is weapon. right
+// now it defaults to weapon if it doesn't recognise the type - might be an issue if
+// one of the non weapon types changes
 func extractItemType(item ItemInfo) ItemType {
     // matches something like: "Epic / Chest\n\nDefense +16\nSkill Amplification..."
     // tries to extract the 2nd word which is the item type
