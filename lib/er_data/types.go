@@ -1,6 +1,6 @@
 // er data types
 
-package erdata
+package erdata_builds
 
 // item info dict
 // key: item's id

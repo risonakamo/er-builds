@@ -1,6 +1,6 @@
 // functions for performing analysis on ErRoute2 lists
 
-package erdata
+package erdata_builds
 
 import (
 	"k8s.io/apimachinery/pkg/util/sets"

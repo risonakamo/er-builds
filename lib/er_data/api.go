@@ -1,6 +1,6 @@
 // functions to fetch from er api
 
-package erdata
+package erdata_builds
 
 import (
 	"encoding/json"

@@ -1,6 +1,6 @@
 // erdata lib tests
 
-package erdata
+package erdata_builds
 
 import (
 	"fmt"

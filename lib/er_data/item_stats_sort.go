@@ -1,6 +1,6 @@
 // functions for sorting item statistics lists
 
-package erdata
+package erdata_builds
 
 import "sort"
 

@@ -1,6 +1,6 @@
 // data manipulation functions
 
-package erdata
+package erdata_builds
 
 import (
 	"fmt"
