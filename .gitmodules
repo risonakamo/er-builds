@@ -1,0 +1,3 @@
+[submodule "er-builds-web"]
+	path = er-builds-web
+	url = https://github.com/risonakamo/er-builds-web.git

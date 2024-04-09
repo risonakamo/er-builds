@@ -1,3 +1,4 @@
 *.exe
 **/testdata/*
 !**/testdata/keep.txt
+*storybook.log
