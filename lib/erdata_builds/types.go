@@ -76,22 +76,22 @@ type ItemInfo struct {
 type ItemInfo2 struct {
     ItemInfo
 
-    ItemType ItemType
+    ItemType ItemType `json:"itemType"`
 }
 
 // statistics of a certain item. computed from a list of ErRoute2
 type ItemsStatistics struct {
-    Item ItemInfo2
+    Item ItemInfo2 `json:"itemInfo"`
 
     // number of times this item showed up
-    Total int
+    Total int `json:"totalBuilds"`
     // out of the number of builds used to calculate these stats, what is
     // the percentage of this item appearing in those builds
-    PercentageOfResults float32
+    PercentageOfResults float32 `json:"buildsPercentage"`
 
-    Likes int
+    Likes int `json:"likes"`
 
-    TotalWinRate float32
-    AverageWinRate float32
-    HighestWinRate float32
+    TotalWinRate float32 `json:"totalWinRate"`
+    AverageWinRate float32 `json:"averageWinRate"`
+    HighestWinRate float32 `json:"highestWinRate"`
 }
