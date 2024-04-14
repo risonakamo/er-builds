@@ -87,7 +87,7 @@ type ItemsStatistics struct {
     Total int `json:"totalBuilds"`
     // out of the number of builds used to calculate these stats, what is
     // the percentage of this item appearing in those builds
-    PercentageOfResults float32 `json:"buildsPercentage"`
+    BuildsPercentage float32 `json:"buildsPercentage"`
 
     Likes int `json:"likes"`
 

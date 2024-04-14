@@ -45,19 +45,23 @@ func computeItemStatistics(routes []ErRoute2) ItemStatisticsDict {
                 collectedStats[item.Id]=&ItemsStatistics {
                     Item: item,
 
-                    Total: 1,
+                    Total: 0,
                     Likes: 0,
-                    AverageWinRate: route.WinRate,
-                    HighestWinRate: route.WinRate,
+                    BuildsPercentage: 0,
+
+                    TotalWinRate: 0,
+                    AverageWinRate: 0,
+                    HighestWinRate: 0,
                 }
-            } else {
-                var stats *ItemsStatistics=collectedStats[item.Id]
-                stats.Total+=1
-                stats.Likes+=route.Likes
-                stats.TotalWinRate+=route.WinRate
-                stats.AverageWinRate=stats.TotalWinRate/float32(stats.Total)
-                stats.HighestWinRate=max(stats.HighestWinRate,route.WinRate)
             }
+
+            var stats *ItemsStatistics=collectedStats[item.Id]
+            stats.Total+=1
+            stats.Likes+=route.Likes
+            stats.BuildsPercentage=(float32(stats.Total)/float32(len(routes)))*100
+            stats.TotalWinRate+=route.WinRate
+            stats.AverageWinRate=stats.TotalWinRate/float32(stats.Total)
+            stats.HighestWinRate=max(stats.HighestWinRate,route.WinRate)
         }
     }
 
