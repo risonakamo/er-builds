@@ -29,6 +29,7 @@ func Test_multiGet(t *testing.T) {
 }
 
 // test going through item pipeline
+// writes items.json. check to see if data is correct
 func Test_itemStatPipeline(t *testing.T) {
     var data []ErRoute2=getRouteDataMultiPage("Elena","Rapier",1,10)
 
@@ -49,6 +50,8 @@ func Test_itemStatPipeline(t *testing.T) {
     pretty.Println(itemStats)
 
     var groupedStats GroupedItemStatistics=groupItemStatistics(itemStats)
+
+    writeItemStatistics(groupedStats,"testdata/items.json")
 
     fmt.Println("grouped")
     pretty.Println(groupedStats)

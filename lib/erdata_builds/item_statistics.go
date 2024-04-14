@@ -46,12 +46,14 @@ func computeItemStatistics(routes []ErRoute2) ItemStatisticsDict {
                     Item: item,
 
                     Total: 1,
+                    Likes: 0,
                     AverageWinRate: route.WinRate,
                     HighestWinRate: route.WinRate,
                 }
             } else {
                 var stats *ItemsStatistics=collectedStats[item.Id]
                 stats.Total+=1
+                stats.Likes+=route.Likes
                 stats.TotalWinRate+=route.WinRate
                 stats.AverageWinRate=stats.TotalWinRate/float32(stats.Total)
                 stats.HighestWinRate=max(stats.HighestWinRate,route.WinRate)

@@ -68,3 +68,26 @@ func writeRouteDataFile(data []ErRoute2,datafile string) {
 
     wfile.Write(jsondata)
 }
+
+// write item statistics to json. mostly used for debug, don't actually want to
+// ever save these except maybe for cache optimisation
+func writeItemStatistics(itemStats GroupedItemStatistics,filename string) {
+    var wfile *os.File
+    var e error
+    wfile,e=os.Create(filename)
+
+    if e!=nil {
+        panic(e)
+    }
+
+    defer wfile.Close()
+
+    var jsondata []byte
+    jsondata,e=json.Marshal(itemStats)
+
+    if e!=nil {
+        panic(e)
+    }
+
+    wfile.Write(jsondata)
+}
