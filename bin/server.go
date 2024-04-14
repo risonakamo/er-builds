@@ -1,15 +1,18 @@
 package main
 
 import (
+	"er-builds/lib/erdata_builds"
+	go_utils "er-builds/lib/utils"
 	"fmt"
 	"path/filepath"
-	"runtime"
 
 	"github.com/gofiber/fiber/v3"
 )
 
 func main() {
-    var here string=getHereDir()
+    var here string=go_utils.GetHereDir()
+
+    var datadir string=filepath.Join(here,"../data")
 
     var app *fiber.App=fiber.New(fiber.Config{
         CaseSensitive: true,
@@ -20,15 +23,29 @@ func main() {
         },
     })
 
+
+    // ---- apis ----
+    // get routes for a character/weapon
+    app.Get("/get-routes",func(c fiber.Ctx) error {
+        var character string=c.Query("character")
+        var weapon string=c.Query("weapon")
+
+        var datafileName string=erdata_builds.GetRouteDataFileName(
+            character,
+            weapon,
+            datadir,
+        )
+
+        var routeData []erdata_builds.ErRoute2=erdata_builds.ReadRouteDataFile(
+            datafileName,
+        )
+
+        return c.JSON(routeData)
+    })
+
+
+    // ---- static ----
     app.Static("/",filepath.Join(here,"../er-builds-web/build"))
 
     app.Listen(":4200")
-}
-
-// get directory of main function
-func getHereDir() string {
-    var selfFilepath string
-    _, selfFilepath, _, _ = runtime.Caller(0)
-
-    return filepath.Dir(selfFilepath)
 }

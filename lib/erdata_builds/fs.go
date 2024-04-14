@@ -8,6 +8,7 @@ import (
 	"fmt"
 	"io/fs"
 	"os"
+	"path/filepath"
 )
 
 // given er route data, try to merge it into the data in the target file,
@@ -15,7 +16,7 @@ import (
 // if the file does not exist, will be created
 // merged data will ensure no duplicate Route ids
 func MergeDataIntoFile(data []ErRoute2,datafile string) {
-    var readData []ErRoute2=readRouteDataFile(datafile)
+    var readData []ErRoute2=ReadRouteDataFile(datafile)
     var originalLen int=len(readData)
 
     readData=append(readData,data...)
@@ -28,7 +29,7 @@ func MergeDataIntoFile(data []ErRoute2,datafile string) {
 }
 
 // read er route data file. if file does not exist, returns empty
-func readRouteDataFile(datafile string) []ErRoute2 {
+func ReadRouteDataFile(datafile string) []ErRoute2 {
     var data []byte
     var e error
     data,e=os.ReadFile(datafile)
@@ -45,6 +46,20 @@ func readRouteDataFile(datafile string) []ErRoute2 {
     var parsedData []ErRoute2
     json.Unmarshal(data,&parsedData)
     return parsedData
+}
+
+// generate the correct name to access a character/weapon's route data.
+// data files should be made with this name
+// todo: watch out for characters/weapons with spaces. convert to underscores?
+func GetRouteDataFileName(
+    character string,
+    weapon string,
+    dataDir string,
+) string {
+    return filepath.Join(
+        dataDir,
+        fmt.Sprintf("%s-%s",character,weapon),
+    )
 }
 
 // overwrite target file with the provided data
