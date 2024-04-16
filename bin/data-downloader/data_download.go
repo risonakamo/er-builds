@@ -5,6 +5,7 @@
 // - some set of versions
 // - some number of pages
 // retrieve the data from api and merge with the current data set.
+// how to use: while in this dir, `go run <this file>`
 
 package main
 
