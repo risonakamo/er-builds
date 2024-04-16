@@ -10,8 +10,65 @@ import (
 	"net/url"
 )
 
-// fetch routes for a character
-func getRouteData(character string,weapon string,page int) ErRouteResponse {
+// top level api data fetch function using most filter features.
+// retrieves data for char/weapon with specified number of pages and version filtering.
+func GetRouteData2(
+    character string,
+    weapon string,
+    pages int,
+    versions []string,
+) []ErRoute2 {
+    var routes []ErRoute2=getRouteDataMultiPage(
+        character,
+        weapon,
+        0,
+        pages,
+        true,
+    )
+
+    return filterByVersion(
+        routes,
+        versions,
+    )
+}
+
+// main fetch function, fetching and transforming into the better looking data type.
+// get routes from multiple pages, merging them all into ErRoute2 list.
+// if earlystop given, stop when get a result that is 0 length
+func getRouteDataMultiPage(
+    character string,
+    weapon string,
+    pageStart int,
+    pageEnd int,
+    earlyStop bool,
+) []ErRoute2 {
+    var routes []ErRoute2
+
+    for i := pageStart; i<=pageEnd ; i++ {
+        fmt.Printf("getting page: %d/%d\n",i+1,pageEnd)
+        var newRoutes []ErRoute2=extractErRoutes(getRouteData(character,weapon,i))
+        fmt.Printf("got %d routes\n",len(newRoutes))
+
+        if earlyStop && len(newRoutes)==0 {
+            fmt.Println("got no routes. stopping data retrieval")
+            break
+        }
+
+        routes=append(
+            routes,
+            newRoutes...
+        )
+    }
+
+    return purgeDuplicateRoutes(routes)
+}
+
+// fetch routes for a character.
+func getRouteData(
+    character string,
+    weapon string,
+    page int,
+) ErRouteResponse {
     var e error
 
     // create the request
@@ -51,28 +108,12 @@ func getRouteData(character string,weapon string,page int) ErRouteResponse {
     var data []byte
     data,e=io.ReadAll(resp.Body)
 
+    if e!=nil {
+        panic(e)
+    }
+
     var routeObj ErRouteResponse
     json.Unmarshal(data,&routeObj)
 
     return routeObj
-}
-
-// main fetch function, fetching and transforming into the better looking data type.
-// get routes from multiple pages, merging them all into ErRoute2 list
-func getRouteDataMultiPage(
-    character string,
-    weapon string,
-    pageStart int,
-    pageEnd int,
-) []ErRoute2 {
-    var routes []ErRoute2
-
-    for i := pageStart; i<=pageEnd ; i++ {
-        routes=append(
-            routes,
-            extractErRoutes(getRouteData(character,weapon,i))...
-        )
-    }
-
-    return purgeDuplicateRoutes(routes)
 }

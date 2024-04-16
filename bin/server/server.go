@@ -1,3 +1,5 @@
+// ER builds api web server
+
 package main
 
 import (
@@ -12,7 +14,7 @@ import (
 func main() {
     var here string=go_utils.GetHereDir()
 
-    var datadir string=filepath.Join(here,"../data")
+    var datadir string=filepath.Join(here,"../../data")
 
     var app *fiber.App=fiber.New(fiber.Config{
         CaseSensitive: true,
@@ -45,7 +47,7 @@ func main() {
 
 
     // ---- static ----
-    app.Static("/",filepath.Join(here,"../er-builds-web/build"))
+    app.Static("/",filepath.Join(here,"../../er-builds-web/build"))
 
     app.Listen(":4200")
 }

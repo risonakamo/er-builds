@@ -14,7 +14,8 @@ import (
 // given er route data, try to merge it into the data in the target file,
 // and save the file. the data should be .json.
 // if the file does not exist, will be created
-// merged data will ensure no duplicate Route ids
+// merged data will ensure no duplicate Route ids.
+// ensures the datafile's dir exists
 func MergeDataIntoFile(data []ErRoute2,datafile string) {
     var readData []ErRoute2=ReadRouteDataFile(datafile)
     var originalLen int=len(readData)
@@ -58,12 +59,14 @@ func GetRouteDataFileName(
 ) string {
     return filepath.Join(
         dataDir,
-        fmt.Sprintf("%s-%s",character,weapon),
+        fmt.Sprintf("%s-%s.json",character,weapon),
     )
 }
 
 // overwrite target file with the provided data
 func writeRouteDataFile(data []ErRoute2,datafile string) {
+    os.MkdirAll(filepath.Dir(datafile),0755)
+
     var wfile *os.File
     var e error
     wfile,e=os.Create(datafile)

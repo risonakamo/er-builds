@@ -4,6 +4,6 @@ set -exu
 HERE=$(dirname $(realpath $BASH_SOURCE))
 cd $HERE
 
-cd bin
+cd bin/server
 go build -o server.exe server.go
 ./server.exe
