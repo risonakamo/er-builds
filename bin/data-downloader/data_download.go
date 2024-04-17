@@ -27,6 +27,10 @@ func main() {
     }
     // --- end config ---
 
+    fmt.Println("character:",character)
+    fmt.Println("weapon:",weapon)
+    fmt.Println("versions:",versions)
+    fmt.Println()
 
 
     var here string=go_utils.GetHereDir()

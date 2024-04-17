@@ -63,6 +63,11 @@ func GetRouteDataFileName(
     )
 }
 
+// parse filename into er data file descriptor, or error if bad name
+func ParseRouteDataFileName(filename string) (ErDataFileDescriptor,error) {
+
+}
+
 // overwrite target file with the provided data
 func writeRouteDataFile(data []ErRoute2,datafile string) {
     os.MkdirAll(filepath.Dir(datafile),0755)

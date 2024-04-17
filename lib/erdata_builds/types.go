@@ -95,3 +95,14 @@ type ItemsStatistics struct {
     AverageWinRate float32 `json:"averageWinRate"`
     HighestWinRate float32 `json:"highestWinRate"`
 }
+
+// information about a er routes datafile. currently all header data is
+// stored in the filename. eventually, might add a header to the json? or store
+// seperately?
+type ErDataFileDescriptor struct {
+    Character string `json:"character"`
+    Weapon string `json:"weapon"`
+
+    // is NOT full file path. only filename with extension
+    Filename string `json:"filename"`
+}
