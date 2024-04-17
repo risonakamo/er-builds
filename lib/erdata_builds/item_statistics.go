@@ -6,6 +6,13 @@ import (
 	"k8s.io/apimachinery/pkg/util/sets"
 )
 
+// top level item statistics computation func. computes item statistics and groups
+// by the type.
+func ComputeAllItemStatistics(routes []ErRoute2) GroupedItemStatistics {
+    var itemstats ItemStatisticsDict=computeItemStatistics(routes)
+    return groupItemStatistics(itemstats)
+}
+
 // filter list of routes to only routes with any of the specified versions
 func filterByVersion(routes []ErRoute2,versions []string) []ErRoute2 {
     var versionsSet sets.Set[string]=sets.New[string](versions...)

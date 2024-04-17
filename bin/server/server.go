@@ -27,8 +27,8 @@ func main() {
 
 
     // ---- apis ----
-    // get routes for a character/weapon
-    app.Get("/get-routes",func(c fiber.Ctx) error {
+    // get item statistics for a target character
+    app.Get("/get-builds",func(c fiber.Ctx) error {
         var character string=c.Query("character")
         var weapon string=c.Query("weapon")
 
@@ -42,7 +42,12 @@ func main() {
             datafileName,
         )
 
-        return c.JSON(routeData)
+        var itemStatistics erdata_builds.GroupedItemStatistics=
+            erdata_builds.ComputeAllItemStatistics(
+                routeData,
+            )
+
+        return c.JSON(itemStatistics)
     })
 
 
