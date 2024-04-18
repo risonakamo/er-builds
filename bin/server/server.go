@@ -50,6 +50,15 @@ func main() {
         return c.JSON(itemStatistics)
     })
 
+    // get the available datafiles
+    app.Get("/get-datafiles",func(c fiber.Ctx) error {
+        var datafiles []erdata_builds.ErDataFileDescriptor=erdata_builds.GetErDataFiles(
+            filepath.Join(here,"../../data"),
+        )
+
+        return c.JSON(datafiles)
+    })
+
 
     // ---- static ----
     app.Static("/",filepath.Join(here,"../../er-builds-web/build"))
