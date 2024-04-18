@@ -19,8 +19,8 @@ func Test_getData(t *testing.T) {
 
 // test multi page get
 func Test_multiGet(t *testing.T) {
-    var data1 []ErRoute2=getRouteDataMultiPage("Elena","Rapier",1,1)
-    var data2 []ErRoute2=getRouteDataMultiPage("Elena","Rapier",1,5)
+    var data1 []ErRoute2=getRouteDataMultiPage("Elena","Rapier",1,1,true)
+    var data2 []ErRoute2=getRouteDataMultiPage("Elena","Rapier",1,5,true)
 
     fmt.Println(len(data1))
     fmt.Println(len(data2))
@@ -31,7 +31,7 @@ func Test_multiGet(t *testing.T) {
 // test going through item pipeline
 // writes items.json. check to see if data is correct
 func Test_itemStatPipeline(t *testing.T) {
-    var data []ErRoute2=getRouteDataMultiPage("Elena","Rapier",1,10)
+    var data []ErRoute2=getRouteDataMultiPage("Elena","Rapier",1,10,true)
 
     var filtered []ErRoute2=filterByVersion(
         data,

@@ -5,6 +5,8 @@ package erdata_builds
 import (
 	"fmt"
 	"testing"
+
+	"github.com/k0kubun/pp/v3"
 )
 
 // retrieve data and try to write it to file.
@@ -12,7 +14,18 @@ import (
 // does exist (running it more than once),
 // the other times should update the file by a small amount
 func Test_writeTest(t *testing.T) {
-    var data []ErRoute2=getRouteDataMultiPage("Elena","Rapier",1,10)
+    // var character string="Elena"
+    // var weapon string="Rapier"
+    var character string="Tia"
+    var weapon string="Bat"
+
+    var data []ErRoute2=getRouteDataMultiPage(
+        character,
+        weapon,
+        1,
+        10,
+        true,
+    )
 
     var filtered []ErRoute2=filterByVersion(
         data,
@@ -24,5 +37,14 @@ func Test_writeTest(t *testing.T) {
 
     fmt.Println("found routes:",len(filtered))
 
-    MergeDataIntoFile(filtered,"testdata/elena.json")
+    var filename string=GetRouteDataFileName(character,weapon,"testdata")
+
+    MergeDataIntoFile(filtered,filename)
+}
+
+// test scanning the testdata dir for datafiles. only works if had written some
+func Test_dataDirScan(t *testing.T) {
+    var datafiles []ErDataFileDescriptor=GetErDataFiles("testdata")
+
+    pp.Print(datafiles)
 }

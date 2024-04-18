@@ -9,6 +9,7 @@ import (
 	"io/fs"
 	"os"
 	"path/filepath"
+	"regexp"
 )
 
 // given er route data, try to merge it into the data in the target file,
@@ -64,8 +65,21 @@ func GetRouteDataFileName(
 }
 
 // parse filename into er data file descriptor, or error if bad name
-func ParseRouteDataFileName(filename string) (ErDataFileDescriptor,error) {
+func parseRouteDataFileName(filename string) (ErDataFileDescriptor,error) {
+    var reg *regexp.Regexp=regexp.MustCompile(`(\w+)-(\w+).json`)
 
+    var matches []string=reg.FindStringSubmatch(filename)
+
+    if len(matches)!=3 {
+        return ErDataFileDescriptor{},errors.New("bad match")
+    }
+
+    return ErDataFileDescriptor {
+        Character: matches[1],
+        Weapon: matches[2],
+
+        Filename: filepath.Base(filename),
+    },nil
 }
 
 // overwrite target file with the provided data

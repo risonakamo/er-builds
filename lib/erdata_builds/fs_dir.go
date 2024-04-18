@@ -15,10 +15,23 @@ func GetErDataFiles(datadir string) []ErDataFileDescriptor {
 		panic(e)
 	}
 
+	var foundFiles []ErDataFileDescriptor
+
 	for i := range dirItems	{
 		// only evaluate files
 		if dirItems[i].IsDir() {
 			continue
 		}
+
+		var foundfile ErDataFileDescriptor
+		foundfile,e=parseRouteDataFileName(dirItems[i].Name())
+
+		if e!=nil {
+			continue
+		}
+
+		foundFiles=append(foundFiles,foundfile)
 	}
+
+	return foundFiles
 }
