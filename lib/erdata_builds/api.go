@@ -44,7 +44,7 @@ func getRouteDataMultiPage(
 ) []ErRoute2 {
     var routes []ErRoute2
 
-    for i := pageStart; i<=pageEnd ; i++ {
+    for i := pageStart; i<pageEnd ; i++ {
         fmt.Printf("getting page: %d/%d\n",i+1,pageEnd)
         var newRoutes []ErRoute2=extractErRoutes(getRouteData(character,weapon,i))
         fmt.Printf("got %d routes\n",len(newRoutes))
