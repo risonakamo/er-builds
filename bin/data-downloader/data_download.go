@@ -18,12 +18,13 @@ import (
 
 func main() {
     // --- config ---
-    var character string="Abigail"
-    var weapon string="Axe"
+    var character string="Tia"
+    var weapon string="Bat"
     var pages int=50
     var versions []string=[]string{
         "1.19.0",
         "1.18.0",
+        "1.20.0",
     }
     // --- end config ---
 
