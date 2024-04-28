@@ -56,7 +56,7 @@ func parseCharsString(charString string) []CharacterWeapon {
         if len(split2)!=2 {
             fmt.Println("failed to split character/weapon pair")
             fmt.Println("bad string:",split1[i])
-            panic("failed to parse character/weapon")
+            continue
         }
 
         pairs=append(pairs,CharacterWeapon{
