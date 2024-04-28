@@ -18,8 +18,8 @@ import (
 
 func main() {
     // --- config ---
-    var character string="Tia"
-    var weapon string="Bat"
+    var character string="Haze"
+    var weapon string="AssaultRifle"
     var pages int=50
     var versions []string=[]string{
         "1.19.0",

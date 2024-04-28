@@ -12,9 +12,9 @@ import (
 )
 
 func main() {
-    var here string=go_utils.GetHereDir()
+    var here string=go_utils.GetHereDirExe()
 
-    var datadir string=filepath.Join(here,"../../data")
+    var datadir string=filepath.Join(here,"data")
 
     var app *fiber.App=fiber.New(fiber.Config{
         CaseSensitive: true,
@@ -53,7 +53,7 @@ func main() {
     // get the available datafiles
     app.Get("/get-datafiles",func(c fiber.Ctx) error {
         var datafiles []erdata_builds.ErDataFileDescriptor=erdata_builds.GetErDataFiles(
-            filepath.Join(here,"../../data"),
+            datadir,
         )
 
         return c.JSON(datafiles)
@@ -61,7 +61,7 @@ func main() {
 
 
     // ---- static ----
-    app.Static("/",filepath.Join(here,"../../er-builds-web/build"))
+    app.Static("/",filepath.Join(here,"er-builds-web/build"))
 
     app.Listen(":4200")
 }
