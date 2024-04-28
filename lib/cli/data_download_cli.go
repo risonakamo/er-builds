@@ -7,9 +7,14 @@ import (
 	"strings"
 
 	"github.com/akamensky/argparse"
-	"github.com/kr/pretty"
 	"github.com/rs/zerolog/log"
+	"gopkg.in/yaml.v3"
 )
+
+// data downloader args. just list of character weapon combos to use
+type DataDownloaderArgs struct {
+    Selections []CharacterWeapon
+}
 
 // character/weapon pair
 type CharacterWeapon struct {
@@ -17,13 +22,19 @@ type CharacterWeapon struct {
     Weapon string
 }
 
-func GetDataDownloaderCliArgs() {
+// selection of characters.
+// key: character name
+// val: weapon names for that character
+type CharactersSelection map[string][]string
+
+// get cli args for data downloader tool
+func GetDataDownloaderCliArgs() DataDownloaderArgs {
 	var parser *argparse.Parser=argparse.NewParser(
         "data_download",
         "builds data downloader tool",
     )
 
-    charsString:=parser.String(
+    var charsString *string=parser.String(
         "c",
         "characters",
         &argparse.Options{
@@ -38,8 +49,18 @@ func GetDataDownloaderCliArgs() {
         panic(e)
     }
 
-    var charslist []CharacterWeapon=parseCharsString(*charsString)
-    pretty.Print(charslist)
+    var charslist []CharacterWeapon
+
+    if len(*charsString)>0 {
+        charslist=parseCharsString(*charsString)
+    } else {
+        var charsConfig CharactersSelection=readCharactersSelectConfig("download-builds-config.yml")
+        charslist=characterSelectionsToPairs(charsConfig)
+    }
+
+    return DataDownloaderArgs {
+        Selections: charslist,
+    }
 }
 
 // parse a space-seperated character,weapon list.
@@ -68,4 +89,43 @@ func parseCharsString(charString string) []CharacterWeapon {
     }
 
     return pairs
+}
+
+// read character selection yml file
+func readCharactersSelectConfig(filepath string) CharactersSelection {
+    var data []byte
+    var e error
+    data,e=os.ReadFile(filepath)
+
+    if e!=nil {
+        panic(e)
+    }
+
+    var parsedData CharactersSelection=make(CharactersSelection)
+    e=yaml.Unmarshal(data,&parsedData)
+
+    if e!=nil {
+        panic(e)
+    }
+
+    return parsedData
+}
+
+// convert characters selection dict into character/weapon array
+func characterSelectionsToPairs(selections CharactersSelection) []CharacterWeapon {
+    var res []CharacterWeapon
+
+    // for all selections. selections[i] is character name
+    for i := range selections {
+        // for all weapons of a character.
+        // selections[i][i2] is a weapon
+        for i2 := range selections[i] {
+            res=append(res,CharacterWeapon{
+                Character: i,
+                Weapon: selections[i][i2],
+            })
+        }
+    }
+
+    return res
 }
