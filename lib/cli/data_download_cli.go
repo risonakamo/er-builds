@@ -31,7 +31,10 @@ type CharactersSelection map[string][]string
 func GetDataDownloaderCliArgs() DataDownloaderArgs {
 	var parser *argparse.Parser=argparse.NewParser(
         "data_download",
-        "builds data downloader tool",
+        "builds data downloader tool. "+
+        "If -c not given, will read from config file config/download-builds-config.yml. Otherwise, "+
+        "only uses the character/weapons specified by -c. Use double quotes (\") and spaces to select "+
+        "multiple character/weapons",
     )
 
     var charsString *string=parser.String(
@@ -39,7 +42,7 @@ func GetDataDownloaderCliArgs() DataDownloaderArgs {
         "characters",
         &argparse.Options{
             Help: "comma separated list of Character,Weapon to gather data for. "+
-                "Separate each Character,Weapon with spaces",
+                "Separate each Character,Weapon with spaces. Example: \"Tia,Bat Mai,Whip\"",
         },
     )
 

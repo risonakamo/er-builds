@@ -17,50 +17,54 @@ import (
 	"path/filepath"
 )
 
+const Pages int=50
+
 func main() {
     go_utils.ConfigureDefaultZeroLogger()
     var args cli.DataDownloaderArgs=cli.GetDataDownloaderCliArgs()
 
-    // --- config ---
-    var character string="Haze"
-    var weapon string="AssaultRifle"
-    var pages int=50
-    var versions []string=[]string{
+    var Versions []string=[]string{
         "1.19.0",
         "1.18.0",
         "1.20.0",
     }
-    // --- end config ---
 
-    fmt.Println("character:",character)
-    fmt.Println("weapon:",weapon)
-    fmt.Println("versions:",versions)
+    fmt.Println("versions:",Versions)
     fmt.Println()
 
+    for i := range args.Selections {
+        var character string=args.Selections[i].Character
+        var weapon string=args.Selections[i].Weapon
 
-    var here string=go_utils.GetHereDir()
+        fmt.Println("character:",character)
+        fmt.Println("weapon:",weapon)
+        fmt.Println()
 
-    var datadir string=filepath.Join(here,"../../data")
+        var here string=go_utils.GetHereDir()
 
-    var datafile string=erdata_builds.GetRouteDataFileName(
-        character,
-        weapon,
-        datadir,
-    )
+        var datadir string=filepath.Join(here,"../../data")
 
-    fmt.Println("will write to data file:",datafile)
+        var datafile string=erdata_builds.GetRouteDataFileName(
+            character,
+            weapon,
+            datadir,
+        )
+
+        fmt.Println("will write to data file:",datafile)
 
 
-    fmt.Println("getting data from api...")
-    // retrieve new data for the char/weapon
-    var newRoutes []erdata_builds.ErRoute2=erdata_builds.GetRouteData2(
-        character,
-        weapon,
-        pages,
-        versions,
-    )
+        fmt.Println("getting data from api...")
+        // retrieve new data for the char/weapon
+        var newRoutes []erdata_builds.ErRoute2=erdata_builds.GetRouteData2(
+            character,
+            weapon,
+            Pages,
+            Versions,
+        )
 
-    fmt.Println("writing data")
-    // merge and save into the datafile
-    erdata_builds.MergeDataIntoFile(newRoutes,datafile)
+        fmt.Println("writing data")
+
+        // merge and save into the datafile
+        erdata_builds.MergeDataIntoFile(newRoutes,datafile)
+    }
 }
