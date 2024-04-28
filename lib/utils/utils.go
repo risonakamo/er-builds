@@ -6,6 +6,9 @@ import (
 	"os"
 	"path/filepath"
 	"runtime"
+
+	"github.com/rs/zerolog"
+	"github.com/rs/zerolog/log"
 )
 
 // when called, gives the location of the file that called this function
@@ -27,4 +30,11 @@ func GetHereDirExe() string {
     }
 
     return filepath.Dir(exePath)
+}
+
+// set zerolog global logger default options
+func ConfigureDefaultZeroLogger() {
+    log.Logger=log.Output(zerolog.ConsoleWriter{
+        Out:os.Stdout,
+    })
 }

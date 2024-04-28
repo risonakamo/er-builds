@@ -9,9 +9,13 @@
 
 package main
 
-import "er-builds/lib/cli"
+import (
+	"er-builds/lib/cli"
+	go_utils "er-builds/lib/utils"
+)
 
 func main() {
+    go_utils.ConfigureDefaultZeroLogger()
     cli.GetDataDownloaderCliArgs()
 
     // // --- config ---

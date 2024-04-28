@@ -3,12 +3,12 @@
 package cli
 
 import (
-	"fmt"
 	"os"
 	"strings"
 
 	"github.com/akamensky/argparse"
 	"github.com/kr/pretty"
+	"github.com/rs/zerolog/log"
 )
 
 // character/weapon pair
@@ -54,8 +54,10 @@ func parseCharsString(charString string) []CharacterWeapon {
         var split2 []string=strings.Split(split1[i],",")
 
         if len(split2)!=2 {
-            fmt.Println("failed to split character/weapon pair")
-            fmt.Println("bad string:",split1[i])
+            log.Warn().
+                Str("bad input",split1[i]).
+                Msg("failed to split character/weapon pair, skipping")
+
             continue
         }
 
