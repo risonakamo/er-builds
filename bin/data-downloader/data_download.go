@@ -17,7 +17,7 @@ import (
 	"path/filepath"
 )
 
-const Pages int=50
+const Pages int=80
 
 func main() {
     go_utils.ConfigureDefaultZeroLogger()

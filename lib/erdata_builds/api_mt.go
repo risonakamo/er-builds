@@ -2,7 +2,10 @@
 
 package erdata_builds
 
-import "sync"
+import (
+	"fmt"
+	"sync"
+)
 
 type GetRouteDataJob struct {
 	Character string
@@ -32,6 +35,9 @@ func GetRouteData2Mt(
 	// final result ch
 	var finalResultCh chan []ErRoute2=make(chan []ErRoute2)
 
+	// early stop ch. result collect submits to this if it is early stopping
+	var earlyStopCh chan bool=make(chan bool)
+
 	var workersWg sync.WaitGroup
 
 	// spawn workers
@@ -45,26 +51,49 @@ func GetRouteData2Mt(
 	}
 
 	// spawn collection worker
-	go resultsCollectWorker(routeResultsCh,finalResultCh)
+	go resultsCollectWorker(routeResultsCh,finalResultCh,earlyStopCh)
 
-	// create and submit jobs until reached the limit
+	// create and submit jobs until reached the limit, or a job returned an empty result.
+	// since we are submitting jobs starting at page 0, if a single job returns empty, we should
+	// immediately stop creating new jobs, as we know all new jobs will always return empty.
+	// but, we still need to complete the current jobs, as some of them might be ongoing before
+	// the first zero job was submitted.
 	var currentPage int=0
+
+	jobSubmit:
 	for {
 		if currentPage>=pages {
 			break
 		}
 
-		getRouteDataJobsCh<-GetRouteDataJob{
+		// try to pull from early stop. if successful, trigger the early stop and stop
+		// creating jobs
+		select {
+		case <-earlyStopCh:
+			break jobSubmit
+
+		case getRouteDataJobsCh<-GetRouteDataJob{
 			Character: character,
 			Weapon: weapon,
 			Versions: versions,
 
 			PageStart: currentPage,
 			PageEnd: currentPage+pagesPerWorker,
-		}
+		}:
+			currentPage+=pagesPerWorker
 
-		currentPage+=pagesPerWorker
+		default:
+		}
 	}
+
+	fmt.Println("jobs submitted, waiting for workers")
+
+	// pull from earlystop last time just in case got stuck
+	// select {
+	// case <-earlyStopCh:
+	// default:
+	// }
+
 
 	// all jobs submitted. close the channel to finish workers
 	close(getRouteDataJobsCh)
@@ -76,6 +105,7 @@ func GetRouteData2Mt(
 	close(routeResultsCh)
 
 	// pull the final result from the collector worker and close final result ch
+	fmt.Println("waiting for final result")
 	var finalResult []ErRoute2=<-finalResultCh
 	close(finalResultCh)
 
@@ -109,15 +139,26 @@ func getRouteDataWorker(
 
 // worker to recv results from main route retrieval workers. combines all results into 1 array.
 // upon closing of the results ch, will submit a single result to the final result ch. then quits.
+// if get a result from the results ch that is empty length, submits to earlystop channel, but doesnt
+// stop collecting as there might still be some workers that are still getting non-empty results.
+// only sends early stop signal once.
 // should only have 1 of these.
 func resultsCollectWorker(
 	resultsCh <-chan []ErRoute2,
 	finalResultCh chan<- []ErRoute2,
+	earlyStopCh chan<- bool,
 ) {
 	var collectedResults []ErRoute2
 
 	var workerResult []ErRoute2
+	var sentEarlyStop bool=false
 	for workerResult = range resultsCh {
+		if len(workerResult)==0 && !sentEarlyStop {
+			fmt.Println("collector worker got empty result, early stopping collection")
+			earlyStopCh<-true
+			sentEarlyStop=true
+		}
+
 		collectedResults=append(collectedResults,workerResult...)
 	}
 
