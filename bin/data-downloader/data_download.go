@@ -55,11 +55,14 @@ func main() {
 
         fmt.Println("getting data from api...")
         // retrieve new data for the char/weapon
-        var newRoutes []erdata_builds.ErRoute2=erdata_builds.GetRouteData2(
+        var newRoutes []erdata_builds.ErRoute2=erdata_builds.GetRouteData2Mt(
             character,
             weapon,
             Pages,
             Versions,
+
+            5,
+            3,
         )
 
         fmt.Println("writing data")
