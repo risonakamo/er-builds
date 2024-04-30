@@ -86,15 +86,6 @@ func GetRouteData2Mt(
 		}
 	}
 
-	fmt.Println("jobs submitted, waiting for workers")
-
-	// pull from earlystop last time just in case got stuck
-	// select {
-	// case <-earlyStopCh:
-	// default:
-	// }
-
-
 	// all jobs submitted. close the channel to finish workers
 	close(getRouteDataJobsCh)
 
@@ -105,7 +96,6 @@ func GetRouteData2Mt(
 	close(routeResultsCh)
 
 	// pull the final result from the collector worker and close final result ch
-	fmt.Println("waiting for final result")
 	var finalResult []ErRoute2=<-finalResultCh
 	close(finalResultCh)
 

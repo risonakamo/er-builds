@@ -8,6 +8,8 @@ import (
 	"io"
 	"net/http"
 	"net/url"
+
+	"github.com/rs/zerolog/log"
 )
 
 // top level api data fetch function using most filter features.
@@ -45,12 +47,12 @@ func getRouteDataMultiPage(
     var routes []ErRoute2
 
     for i := pageStart; i<pageEnd ; i++ {
-        fmt.Printf("getting page: %d/%d\n",i+1,pageEnd)
+        log.Info().Msg(fmt.Sprintf("getting page: %d/%d",i+1,pageEnd))
         var newRoutes []ErRoute2=extractErRoutes(getRouteData(character,weapon,i))
-        fmt.Printf("got %d routes\n",len(newRoutes))
+        log.Info().Msg(fmt.Sprintf("-> got %d routes",len(newRoutes)))
 
         if earlyStop && len(newRoutes)==0 {
-            fmt.Println("got no routes. stopping data retrieval")
+            log.Info().Msg("got no routes. stopping data retrieval")
             break
         }
 

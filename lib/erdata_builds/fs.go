@@ -10,6 +10,9 @@ import (
 	"os"
 	"path/filepath"
 	"regexp"
+	"strconv"
+
+	"github.com/fatih/color"
 )
 
 // given er route data, try to merge it into the data in the target file,
@@ -24,10 +27,18 @@ func MergeDataIntoFile(data []ErRoute2,datafile string) {
     readData=append(readData,data...)
 
     readData=purgeDuplicateRoutes(readData)
-    fmt.Println("data file changed by:",len(readData)-originalLen)
+    fmt.Printf(
+        "%s: %s\n",
+        color.CyanString("data file changed by"),
+        color.YellowString(strconv.Itoa(len(readData)-originalLen)),
+    )
+
 
     writeRouteDataFile(readData,datafile)
-    fmt.Println("updated",datafile)
+    fmt.Printf("%s %s\n",
+        color.GreenString("updated"),
+        color.YellowString(datafile),
+    )
 }
 
 // read er route data file. if file does not exist, returns empty

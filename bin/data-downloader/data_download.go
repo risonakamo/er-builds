@@ -4,8 +4,7 @@
 // - target weapon
 // - some set of versions
 // - some number of pages
-// retrieve the data from api and merge with the current data set.
-// how to use: while in this dir, `go run <this file>`
+// retrieve the data from api and merge with the current data set
 
 package main
 
@@ -15,13 +14,19 @@ import (
 	go_utils "er-builds/lib/utils"
 	"fmt"
 	"path/filepath"
+
+	"github.com/fatih/color"
+	"github.com/rs/zerolog"
 )
 
 const Pages int=80
 
 func main() {
     go_utils.ConfigureDefaultZeroLogger()
-    var args cli.DataDownloaderArgs=cli.GetDataDownloaderCliArgs()
+    zerolog.SetGlobalLevel(zerolog.WarnLevel)
+    var here string=go_utils.GetHereDirExe()
+
+    var args cli.DataDownloaderArgs=cli.GetDataDownloaderCliArgs(here,"config")
 
     var Versions []string=[]string{
         "1.19.0",
@@ -36,13 +41,14 @@ func main() {
         var character string=args.Selections[i].Character
         var weapon string=args.Selections[i].Weapon
 
-        fmt.Println("character:",character)
-        fmt.Println("weapon:",weapon)
+        fmt.Printf(
+            "character: %s\n",
+            color.YellowString(character),
+        )
+        fmt.Printf("weapon: %s\n",color.BlueString(weapon))
         fmt.Println()
 
-        var here string=go_utils.GetHereDir()
-
-        var datadir string=filepath.Join(here,"../../data")
+        var datadir string=filepath.Join(here,"data")
 
         var datafile string=erdata_builds.GetRouteDataFileName(
             character,
@@ -50,7 +56,7 @@ func main() {
             datadir,
         )
 
-        fmt.Println("will write to data file:",datafile)
+        fmt.Printf("will write to data file: %s\n",color.YellowString(datafile))
 
 
         fmt.Println("getting data from api...")
@@ -65,9 +71,8 @@ func main() {
             3,
         )
 
-        fmt.Println("writing data")
-
         // merge and save into the datafile
         erdata_builds.MergeDataIntoFile(newRoutes,datafile)
+        fmt.Println()
     }
 }

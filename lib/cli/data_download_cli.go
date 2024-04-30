@@ -4,6 +4,7 @@ package cli
 
 import (
 	"os"
+	"path/filepath"
 	"strings"
 
 	"github.com/akamensky/argparse"
@@ -27,8 +28,11 @@ type CharacterWeapon struct {
 // val: weapon names for that character
 type CharactersSelection map[string][]string
 
-// get cli args for data downloader tool
-func GetDataDownloaderCliArgs() DataDownloaderArgs {
+// get cli args for data downloader tool. configsdir should be relative to here dir
+func GetDataDownloaderCliArgs(
+    hereDir string,
+    configsDir string,
+) DataDownloaderArgs {
 	var parser *argparse.Parser=argparse.NewParser(
         "data_download",
         "builds data downloader tool. "+
@@ -57,7 +61,9 @@ func GetDataDownloaderCliArgs() DataDownloaderArgs {
     if len(*charsString)>0 {
         charslist=parseCharsString(*charsString)
     } else {
-        var charsConfig CharactersSelection=readCharactersSelectConfig("download-builds-config.yml")
+        var charsConfig CharactersSelection=readCharactersSelectConfig(
+            filepath.Join(hereDir,configsDir,"download-builds-config.yml"),
+        )
         charslist=characterSelectionsToPairs(charsConfig)
     }
 
