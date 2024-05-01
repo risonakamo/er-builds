@@ -14,6 +14,7 @@ import (
 	go_utils "er-builds/lib/utils"
 	"fmt"
 	"path/filepath"
+	"strconv"
 
 	"github.com/fatih/color"
 	"github.com/rs/zerolog"
@@ -70,6 +71,8 @@ func main() {
             5,
             3,
         )
+
+        fmt.Printf("got %s routes\n",color.YellowString(strconv.Itoa(len(newRoutes))))
 
         // merge and save into the datafile
         erdata_builds.MergeDataIntoFile(newRoutes,datafile)

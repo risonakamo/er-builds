@@ -3,8 +3,9 @@
 package erdata_builds
 
 import (
-	"fmt"
 	"sync"
+
+	"github.com/rs/zerolog/log"
 )
 
 type GetRouteDataJob struct {
@@ -144,7 +145,7 @@ func resultsCollectWorker(
 	var sentEarlyStop bool=false
 	for workerResult = range resultsCh {
 		if len(workerResult)==0 && !sentEarlyStop {
-			fmt.Println("collector worker got empty result, early stopping collection")
+			log.Info().Msg("collector worker got empty result, early stopping collection")
 			earlyStopCh<-true
 			sentEarlyStop=true
 		}

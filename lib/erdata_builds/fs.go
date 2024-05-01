@@ -13,6 +13,7 @@ import (
 	"strconv"
 
 	"github.com/fatih/color"
+	"github.com/rs/zerolog/log"
 )
 
 // given er route data, try to merge it into the data in the target file,
@@ -48,7 +49,7 @@ func ReadRouteDataFile(datafile string) []ErRoute2 {
     data,e=os.ReadFile(datafile)
 
     if errors.Is(e,fs.ErrNotExist) {
-        fmt.Println("route data file was missing, returning empty")
+        log.Info().Msg("route data file was missing, returning empty")
         return []ErRoute2{}
     }
 
