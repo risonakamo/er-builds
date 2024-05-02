@@ -28,9 +28,12 @@ func upgradeErRoute(route ErRoute,itemInfo ItemInfoDict) ErRoute2 {
         weapons=append(weapons,foundWeapon)
     }
 
+    var upgradedItemInfos []ItemInfo2=upgradeAllItems(weapons)
+
     return ErRoute2 {
         ErRoute: route,
-        ItemInfos: upgradeAllItems(weapons),
+        ItemInfos: upgradedItemInfos,
+        MainWeapon: getMainWeapon(upgradedItemInfos),
     }
 }
 
@@ -77,17 +80,24 @@ func purgeDuplicateRoutes(routes []ErRoute2) []ErRoute2 {
 
 // add additional fields to item info
 func upgradeItemInfo(item ItemInfo) ItemInfo2 {
+    var itemType ItemType
+    var weaponName string
+    itemType,weaponName=extractItemType(item)
+
     return ItemInfo2 {
         ItemInfo: item,
-        ItemType: extractItemType(item),
+        ItemType: itemType,
+        WeaponName: weaponName,
     }
 }
 
-// try to determine item type. defaults to weapon
+// try to determine item type. defaults to weapon.
+// if the weapon is "weapon" type, also returns the actual weapon type value. otherwise, empty.
+//
 // todo: get list of all possible weapons to confirm that something is weapon. right
 // now it defaults to weapon if it doesn't recognise the type - might be an issue if
 // one of the non weapon types changes
-func extractItemType(item ItemInfo) ItemType {
+func extractItemType(item ItemInfo) (ItemType,string) {
     // matches something like: "Epic / Chest\n\nDefense +16\nSkill Amplification..."
     // tries to extract the 2nd word which is the item type
     // [0]: whole match
@@ -106,16 +116,16 @@ func extractItemType(item ItemInfo) ItemType {
 
     switch extractedType {
         case "Chest":
-            return ItemType_chest
+            return ItemType_chest,""
         case "Head":
-            return ItemType_head
+            return ItemType_head,""
         case "Arm":
-            return ItemType_arm
+            return ItemType_arm,""
         case "Leg":
-            return ItemType_leg
+            return ItemType_leg,""
     }
 
-    return ItemType_weapon
+    return ItemType_weapon,extractedType
 }
 
 // convert list of items into item info 2
@@ -129,9 +139,26 @@ func upgradeAllItems(items []ItemInfo) []ItemInfo2 {
     return newitems
 }
 
-// filter routes to only the routes with the specified options
-func filterRoutes(routes []ErRoute2,weapon string) []ErRoute2 {
-    for i := range routes {
-
+// get the main weapon from list of item infos. main weapon is the first item to have weapon filled out.
+func getMainWeapon(items []ItemInfo2) string {
+    for i := range items {
+        if len(items[i].WeaponName)>0 {
+            return items[i].WeaponName
+        }
     }
+
+    panic("could not find main weapon")
+}
+
+// filter routes down to only ones with certain weapon. for cleaning up the api all
+func filterByWeapon(routes []ErRoute2,weapon string) []ErRoute2 {
+    var result []ErRoute2
+
+    for i := range routes {
+        if routes[i].MainWeapon==weapon {
+            result=append(result,routes[i])
+        }
+    }
+
+    return result
 }

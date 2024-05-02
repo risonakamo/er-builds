@@ -59,6 +59,7 @@ type ErRoute2 struct {
     ErRoute
 
     ItemInfos []ItemInfo2
+    MainWeapon string
 }
 
 // info about an item
@@ -77,6 +78,9 @@ type ItemInfo2 struct {
     ItemInfo
 
     ItemType ItemType `json:"itemType"`
+
+    // filled out if item type was not arm, leg, chest, head. otherwise empty.
+    WeaponName string
 }
 
 // statistics of a certain item. computed from a list of ErRoute2

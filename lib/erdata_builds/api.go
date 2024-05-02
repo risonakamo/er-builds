@@ -49,6 +49,8 @@ func getRouteDataMultiPage(
     for i := pageStart; i<pageEnd ; i++ {
         log.Info().Msg(fmt.Sprintf("getting page: %d/%d",i+1,pageEnd))
         var newRoutes []ErRoute2=extractErRoutes(getRouteData(character,weapon,i))
+        // since even after getting the api it still can contain some non matching weapons
+        newRoutes=filterByWeapon(newRoutes,weapon)
         log.Info().Msg(fmt.Sprintf("-> got %d routes",len(newRoutes)))
 
         if earlyStop && len(newRoutes)==0 {
