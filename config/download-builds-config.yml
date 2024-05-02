@@ -1,8 +1,9 @@
 Tia:
   - Bat
-# Abigail:
-#   - Axe
-# Mai:
-#   - Whip
+Abigail:
+  - Axe
+Mai:
+  - Whip
 Emma:
   - Arcana
+  - Shuriken

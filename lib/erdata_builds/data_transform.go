@@ -128,3 +128,10 @@ func upgradeAllItems(items []ItemInfo) []ItemInfo2 {
 
     return newitems
 }
+
+// filter routes to only the routes with the specified options
+func filterRoutes(routes []ErRoute2,weapon string) []ErRoute2 {
+    for i := range routes {
+
+    }
+}
