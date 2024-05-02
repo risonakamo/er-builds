@@ -4,6 +4,7 @@ package go_utils
 
 import (
 	"os"
+	"os/exec"
 	"path/filepath"
 	"runtime"
 
@@ -37,4 +38,14 @@ func ConfigureDefaultZeroLogger() {
     log.Logger=log.Output(zerolog.ConsoleWriter{
         Out:os.Stdout,
     })
+}
+
+// open chrome to specified url
+func OpenChrome(url string) {
+    var cmd *exec.Cmd=exec.Command("chrome.exe",url)
+    var err error=cmd.Run()
+
+    if err!=nil {
+        panic(err)
+    }
 }

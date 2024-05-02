@@ -63,5 +63,6 @@ func main() {
     // ---- static ----
     app.Static("/",filepath.Join(here,"er-builds-web/build"))
 
+    go_utils.OpenChrome("http://localhost:4200")
     app.Listen(":4200")
 }
