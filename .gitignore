@@ -4,3 +4,5 @@
 *storybook.log
 data/*
 !data/keep.txt
+workdir
+output

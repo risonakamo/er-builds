@@ -107,14 +107,14 @@ func readCharactersSelectConfig(filepath string) CharactersSelection {
     data,e=os.ReadFile(filepath)
 
     if e!=nil {
-        panic(e)
+        log.Fatal().Err(e).Msg("failed to find character config")
     }
 
     var parsedData CharactersSelection=make(CharactersSelection)
     e=yaml.Unmarshal(data,&parsedData)
 
     if e!=nil {
-        panic(e)
+        log.Fatal().Err(e).Msg("failed to parse character config")
     }
 
     return parsedData
