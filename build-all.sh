@@ -5,8 +5,8 @@ set -exu
 HERE=$(dirname $(realpath $BASH_SOURCE))
 cd $HERE
 
-go build -o server.exe bin/server/server.go
-go build -o data-downloader.exe bin/data-downloader/data_download.go
+go build -o erbuilds.exe bin/er-builds/er_builds.go
+go build -o builds-downloader.exe bin/builds-downloader/builds_downloader.go
 
 cd er-builds-web
 pnpm build
