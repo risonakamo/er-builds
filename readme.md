@@ -1,22 +1,36 @@
+# readme todo
+- [ ] dev guide
+- [ ] usage guide
+- [ ] link to how to release
+- [x] future features
+- [x] top summary section
+- [x] features list
+- [x] differences to dak.gg
+
 # ER Builds Analysis Tool
-Build data collection and display tool for [Eternal Return](https://store.steampowered.com/app/1049590/Eternal_Return/). Similar to [dak.gg](https://dak.gg/er/characters).
+Item stats display tool for [Eternal Return](https://store.steampowered.com/app/1049590/Eternal_Return/).
 
-ER Builds tool provides methods for user to collect builds data for selected Characters and aggregates them into easily readable statistics to assist with creating builds.
+ER Builds is based on [dak.gg](https://dak.gg/er/characters), but instead of presenting only the top 5 items per item category:
 
-![](todo)
+*(image from dak.gg)*
 
-# Differences to dak.gg
-ER Builds aims to
+![](./doc/img/1.png)
+
+ER Builds presents all the items per category, although it only supports Purple items (for now). This can be useful during build construction when you want to see more than just the top 5 items. Additionally, it presents more statistics than just Pick % and Average Rank.
+
+*(image of ER Builds tool)*
+
+![](./doc/img/2.png)
 
 # Features
-- Data download tool collects data for any number of specified Characters with Game Version and Weapon filters. Collected data is retained for offline use. Data Download can be re-run by user any time to update downloaded data.
--
+- **Webpage display**: Collected information is displayed on a UI page similar to dak.gg.
+- **Multiple Sort Options**: Item statistics can be sorted by various values.
+    - Number of Builds and Build %
+    - Number of Likes
+    - Average and Highest Win Rate
+- **Offline Data Store**: ER Builds collects data from API and stores on disk, so accessing the API is not spammed. User can easily choose which characters they would like to retrieve data for, and can update on demand.
 
-# Builds Display
-ER Builds runs a web UI to display collected builds data.
-
-Instead of displaying individual builds, ER Builds takes an item-based approach, presenting to the user the sorted statistics of each individual item type as they appear in different builds.
-
-![](todo)
-
-This allows users to create new builds while being informed about the most picked items, without being too tied to the currently existing builds, which consist of specific sets of items.
+# Possible Future Features
+- **Support for Yellow Items, Tac Skills, Augments**: Currently, the tool only collects information on Purple builds. It would be useful to know what the pick rates of Yellow Items, Tac Skills and Augments would be, but this requires additional collection of data.
+- **UI For Selecting Characters for Data Collection**: Right now this feature is configured through a file, but a UI can make this better.
+- **Item Stats Display**: The tool does not yet display the stats of an item on hovering over it like dak.gg.
