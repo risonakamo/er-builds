@@ -1,7 +1,7 @@
 # readme todo
-- [ ] dev guide
+- [x] dev guide
 - [ ] usage guide
-- [ ] link to how to release
+- [x] link to how to release
 - [x] future features
 - [x] top summary section
 - [x] features list
@@ -30,7 +30,12 @@ ER Builds presents all the items per category, although it only supports Purple 
     - Average and Highest Win Rate
 - **Offline Data Store**: ER Builds collects data from API and stores on disk, so accessing the API is not spammed. User can easily choose which characters they would like to retrieve data for, and can update on demand.
 
+# Usage
+
 # Possible Future Features
 - **Support for Yellow Items, Tac Skills, Augments**: Currently, the tool only collects information on Purple builds. It would be useful to know what the pick rates of Yellow Items, Tac Skills and Augments would be, but this requires additional collection of data.
 - **UI For Selecting Characters for Data Collection**: Right now this feature is configured through a file, but a UI can make this better.
 - **Item Stats Display**: The tool does not yet display the stats of an item on hovering over it like dak.gg.
+
+# Development Information
+[Development Notes](./doc/dev-notes.md)
