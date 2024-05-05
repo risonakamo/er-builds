@@ -19,13 +19,7 @@ mkdir -p $outputdir
 
 cd ..
 
-# build programs
-go build -o server.exe bin/server/server.go
-go build -o data-downloader.exe bin/data-downloader/data_download.go
-
-# build web
-cd er-builds-web
-pnpm build
+bash build-all.sh
 
 
 # construct output dir
