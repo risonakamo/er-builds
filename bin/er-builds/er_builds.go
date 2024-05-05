@@ -59,10 +59,17 @@ func main() {
         return c.JSON(datafiles)
     })
 
+    // open download config
+    app.Get("/open-downloader-config",func(c fiber.Ctx) error {
+        go_utils.OpenTargetWithDefaultProgram(filepath.Join(here,"config/download-builds-config.yml"))
+
+        return c.SendString("completed")
+    })
+
 
     // ---- static ----
     app.Static("/",filepath.Join(here,"er-builds-web/build"))
 
-    go_utils.OpenChrome("http://localhost:4200")
+    go_utils.OpenTargetWithDefaultProgram("http://localhost:4200")
     app.Listen(":4200")
 }

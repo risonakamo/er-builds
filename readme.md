@@ -8,7 +8,7 @@
 - [x] differences to dak.gg
 
 # ER Builds Analysis Tool
-Item stats display tool for [Eternal Return](https://store.steampowered.com/app/1049590/Eternal_Return/).
+Item stats display tool for [Eternal Return](https://store.steampowered.com/app/1049590/Eternal_Return/). Currently only supports windows.
 
 ER Builds is based on [dak.gg](https://dak.gg/er/characters), but instead of presenting only the top 5 items per item category:
 

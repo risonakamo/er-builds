@@ -49,3 +49,13 @@ func OpenChrome(url string) {
         panic(err)
     }
 }
+
+// try to open web url or file with default program
+func OpenTargetWithDefaultProgram(url string) {
+    var cmd *exec.Cmd=exec.Command("cmd","/c","start",url)
+    var e error=cmd.Run()
+
+    if e!=nil {
+        panic(e)
+    }
+}
