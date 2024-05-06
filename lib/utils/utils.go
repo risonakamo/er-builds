@@ -3,6 +3,7 @@
 package go_utils
 
 import (
+	"bufio"
 	"os"
 	"os/exec"
 	"path/filepath"
@@ -51,9 +52,7 @@ func OpenChrome(url string) {
 }
 
 // try to open web url or file with default program.
-// essentially runs program like it was double clicked, so most console
-// programs will have their own term window instead of actually being
-// subproc'd
+// essentially runs program like it was double clicked
 func OpenTargetWithDefaultProgram(url string) {
     var cmd *exec.Cmd=exec.Command("cmd","/c","start",url)
     var e error=cmd.Run()
@@ -61,4 +60,15 @@ func OpenTargetWithDefaultProgram(url string) {
     if e!=nil {
         panic(e)
     }
+}
+
+// pause until any key is pressed
+func WaitForAnyKey() {
+    var buf []byte=make([]byte,1)
+    os.Stdin.Read(buf)
+}
+
+// pause until enter key is pressed
+func WaitForEnterKey() {
+    bufio.NewReader(os.Stdin).ReadBytes('\n')
 }

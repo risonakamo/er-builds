@@ -70,9 +70,7 @@ func main() {
     // run downloader program
     app.Get("/run-downloader",func(c fiber.Ctx) error {
         fmt.Println("running downloader")
-        go_utils.OpenTargetWithDefaultProgram(
-            filepath.Join(here,"data-downloader.exe"),
-        )
+        go_utils.OpenTargetWithDefaultProgram(filepath.Join(here,"builds-downloader.exe"))
 
         return c.SendString("completed")
     })

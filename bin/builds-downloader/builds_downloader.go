@@ -78,4 +78,8 @@ func main() {
         erdata_builds.MergeDataIntoFile(newRoutes,datafile)
         fmt.Println()
     }
+
+    fmt.Println("completed")
+    fmt.Println("press ENTER to continue")
+    go_utils.WaitForEnterKey()
 }
