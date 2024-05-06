@@ -50,7 +50,10 @@ func OpenChrome(url string) {
     }
 }
 
-// try to open web url or file with default program
+// try to open web url or file with default program.
+// essentially runs program like it was double clicked, so most console
+// programs will have their own term window instead of actually being
+// subproc'd
 func OpenTargetWithDefaultProgram(url string) {
     var cmd *exec.Cmd=exec.Command("cmd","/c","start",url)
     var e error=cmd.Run()

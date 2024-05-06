@@ -61,7 +61,18 @@ func main() {
 
     // open download config
     app.Get("/open-downloader-config",func(c fiber.Ctx) error {
+        fmt.Println("Opening config file")
         go_utils.OpenTargetWithDefaultProgram(filepath.Join(here,"config/download-builds-config.yml"))
+
+        return c.SendString("completed")
+    })
+
+    // run downloader program
+    app.Get("/run-downloader",func(c fiber.Ctx) error {
+        fmt.Println("running downloader")
+        go_utils.OpenTargetWithDefaultProgram(
+            filepath.Join(here,"data-downloader.exe"),
+        )
 
         return c.SendString("completed")
     })
