@@ -28,8 +28,8 @@ cp -r $topdir/config .
 mkdir -p data
 mkdir -p er-builds-web
 cp -r $topdir/er-builds-web/build er-builds-web/
-cp $topdir/data-downloader.exe .
-cp $topdir/server.exe .
+cp $topdir/builds-downloader .
+cp $topdir/erbuilds.exe .
 cp -r $topdir/doc/for-release/* .
 
 rm -rf $outputdir/$releaseName
