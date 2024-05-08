@@ -27,6 +27,8 @@ type ApiCharacter struct {
 // a character-weapon definition in api response
 type ApiCharacterWeapon struct {
 	CharacterId int
+
+	// the name of the weapon
 	ItemSubcategoryId string
 }
 
