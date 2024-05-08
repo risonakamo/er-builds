@@ -1,13 +1,174 @@
-# Tia:
-#   - Bat
-# Abigail:
-#   - Axe
-# Mai:
-#   - Whip
-# Vanya:
-#   - Arcana
-# Emma:
-#   - Arcana
-#   - Shuriken
+Abigail:
+    - Axe
+Adela:
+    - Bat
+    - Rapier
+Adina:
+    - Arcana
+Adriana:
+    - Throw
+Aiden:
+    - TwoHandSword
+Alex:
+    - Tonfa
+    - Shuriken
+    - Pistol
+    - TwoHandSword
+Alonso:
+    - Glove
+Arda:
+    - Arcana
+Aya:
+    - Pistol
+    - AssaultRifle
+    - SniperRifle
+Barbara:
+    - Bat
+Bernice:
+    - SniperRifle
+Bianca:
+    - Arcana
+Camilo:
+    - DualSword
+    - Rapier
+Cathy:
+    - OneHandSword
+    - DualSword
+Celine:
+    - Throw
+Charlotte:
+    - Arcana
+Chiara:
+    - Rapier
+Chloe:
+    - Shuriken
+Daniel:
+    - OneHandSword
+DebiMarlene:
+    - TwoHandSword
+Echion:
+    - VFArm
+Elena:
+    - Rapier
 Eleven:
-  - Hammer
+    - Hammer
+Emma:
+    - Shuriken
+    - Arcana
+Estelle:
+    - Axe
+Eva:
+    - Throw
+Felix:
+    - Spear
+Fiora:
+    - TwoHandSword
+    - Spear
+    - Rapier
+Hart:
+    - Guitar
+Haze:
+    - AssaultRifle
+Hyejin:
+    - Shuriken
+    - Bow
+Hyunwoo:
+    - Glove
+    - Tonfa
+Irem:
+    - Throw
+Isaac:
+    - Tonfa
+Isol:
+    - Pistol
+    - AssaultRifle
+Jackie:
+    - Axe
+    - OneHandSword
+    - TwoHandSword
+    - DualSword
+Jan:
+    - Glove
+    - Tonfa
+Jenny:
+    - Pistol
+Johann:
+    - Arcana
+Karla:
+    - CrossBow
+Katja:
+    - SniperRifle
+Kenneth:
+    - Axe
+Laura:
+    - Whip
+Leni:
+    - Pistol
+Lenox:
+    - Whip
+Leon:
+    - Glove
+    - Tonfa
+LiDailin:
+    - Glove
+    - Nunchaku
+Luke:
+    - Bat
+Lyanh:
+    - OneHandSword
+Magnus:
+    - Bat
+    - Hammer
+Mai:
+    - Whip
+Markus:
+    - Hammer
+    - Axe
+Martina:
+    - Camera
+Nadine:
+    - Bow
+    - CrossBow
+Nathapon:
+    - Camera
+Nicky:
+    - Glove
+Piolo:
+    - Nunchaku
+Priya:
+    - Guitar
+Rio:
+    - Bow
+Rozzi:
+    - Pistol
+Shoichi:
+    - OneHandSword
+Silvia:
+    - Pistol
+Sissela:
+    - Throw
+    - Shuriken
+Sua:
+    - Bat
+    - Hammer
+Tazia:
+    - Shuriken
+Theodore:
+    - SniperRifle
+Tia:
+    - Bat
+Tsubame:
+    - Shuriken
+Vanya:
+    - Arcana
+William:
+    - Throw
+Xiukai:
+    - OneHandSword
+    - Spear
+Yuki:
+    - TwoHandSword
+    - DualSword
+Zahir:
+    - Throw
+    - Shuriken

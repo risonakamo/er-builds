@@ -2,6 +2,12 @@
 
 package aya_gg
 
+import (
+	"os"
+
+	"gopkg.in/yaml.v3"
+)
+
 // simple char data in dict form.
 // key: char name
 // val: list of weapons of that character
@@ -31,7 +37,9 @@ func parseToSimpleCharData(data ApiDataResponse) SimpleCharDataDict {
     return convertWeaponsDictToSimpleCharsDict(weaponsDict,charsDict)
 }
 
-// convert api character weapon to dict of char ids and the weapons of that char
+// convert api character weapon to dict of char ids and the weapons of that char.
+// also maps the weapon name using convert weapon names. todo: would make more sense if
+// the conversion was just done seperately
 func groupWeaponsByCharIds(charWeapons []ApiCharacterWeapon) WeaponsByCharId {
     var weaponsByCharId WeaponsByCharId=make(WeaponsByCharId)
 
@@ -48,7 +56,7 @@ func groupWeaponsByCharIds(charWeapons []ApiCharacterWeapon) WeaponsByCharId {
 
         weaponsByCharId[charId]=append(
             weaponsByCharId[charId],
-            charWeapons[i].ItemSubcategoryId,
+            convertWeaponName(charWeapons[i].ItemSubcategoryId),
         )
     }
 
@@ -82,4 +90,26 @@ func convertWeaponsDictToSimpleCharsDict(
     }
 
     return result
+}
+
+// write the simple datafile
+func writeSimpleDataFile(filename string,data SimpleCharDataDict) {
+    var wfile *os.File
+    var e error
+    wfile,e=os.Create(filename)
+
+    if e!=nil {
+        panic(e)
+    }
+
+    defer wfile.Close()
+
+    var ymldata []byte
+    ymldata,e=yaml.Marshal(data)
+
+    if e!=nil {
+        panic(e)
+    }
+
+    wfile.Write(ymldata)
 }
