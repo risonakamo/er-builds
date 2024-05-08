@@ -12,4 +12,4 @@ tmux send "pnpm watch" Enter
 
 # run server
 tmux split-window -h -c $HERE
-tmux send "bash run-server-dev.sh" Enter
+tmux send "bash run-erbuilds-dev.sh" Enter
