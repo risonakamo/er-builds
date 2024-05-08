@@ -14,7 +14,7 @@ Click "Run Data Downloader" on web page to run data download. This will open a d
 
 Reload page after it is done.
 
-img of the data download happening ![](todo)
+img of the data download happening ![](./img/6.png)
 
 Select the character and weapon in the dropdowns.
 
