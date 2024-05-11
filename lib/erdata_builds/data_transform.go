@@ -5,6 +5,7 @@ package erdata_builds
 import (
 	"fmt"
 	"regexp"
+	"strings"
 
 	"k8s.io/apimachinery/pkg/util/sets"
 )
@@ -102,7 +103,7 @@ func extractItemType(item ItemInfo) (ItemType,string) {
     // tries to extract the 2nd word which is the item type
     // [0]: whole match
     // [1]: the item type
-    var reg *regexp.Regexp=regexp.MustCompile(`\w+ \/ (\w+)`)
+    var reg *regexp.Regexp=regexp.MustCompile(`\w+ \/ (.*)\n`)
     var matches []string=reg.FindStringSubmatch(item.Tooltip)
 
     if len(matches)!=2 {
@@ -139,18 +140,19 @@ func upgradeAllItems(items []ItemInfo) []ItemInfo2 {
     return newitems
 }
 
-// get the main weapon from list of item infos. main weapon is the first item to have weapon filled out.
+// get the main weapon from list of item infos. main weapon is the first item to
+// have weapon filled out. removes all white spaces in the name
 func getMainWeapon(items []ItemInfo2) string {
     for i := range items {
         if len(items[i].WeaponName)>0 {
-            return items[i].WeaponName
+            return strings.ReplaceAll(items[i].WeaponName," ","")
         }
     }
 
     panic("could not find main weapon")
 }
 
-// filter routes down to only ones with certain weapon. for cleaning up the api all
+// filter routes down to only ones with certain weapon. for cleaning up the api call
 func filterByWeapon(routes []ErRoute2,weapon string) []ErRoute2 {
     var result []ErRoute2
 

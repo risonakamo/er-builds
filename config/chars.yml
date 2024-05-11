@@ -44,8 +44,8 @@
 #     - Shuriken
 # Daniel:
 #     - OneHandSword
-# DebiMarlene:
-#     - TwoHandSword
+DebiMarlene:
+    - TwoHandSword
 # Echion:
 #     - VFArm
 # Elena:
@@ -82,11 +82,11 @@ Haze:
 # Isol:
 #     - Pistol
 #     - AssaultRifle
-# Jackie:
-#     - Axe
-#     - OneHandSword
-#     - TwoHandSword
-#     - DualSword
+Jackie:
+    - Axe
+    - OneHandSword
+    - TwoHandSword
+    - DualSword
 # Jan:
 #     - Glove
 #     - Tonfa
@@ -94,8 +94,8 @@ Haze:
 #     - Pistol
 # Johann:
 #     - Arcana
-# Karla:
-#     - CrossBow
+Karla:
+    - CrossBow
 Katja:
     - SniperRifle
 # Kenneth:

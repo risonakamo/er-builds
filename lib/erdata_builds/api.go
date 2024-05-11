@@ -47,8 +47,11 @@ func getRouteDataMultiPage(
     var routes []ErRoute2
 
     for i := pageStart; i<pageEnd ; i++ {
-        log.Info().Msg(fmt.Sprintf("getting page: %d/%d",i+1,pageEnd))
+        log.Info().Msgf("getting page: %d/%d",i+1,pageEnd)
         var newRoutes []ErRoute2=extractErRoutes(getRouteData(character,weapon,i))
+        log.Info().Msgf("got %d unfiltered routes",len(newRoutes))
+        // pp.Print(newRoutes)
+
         // since even after getting the api it still can contain some non matching weapons
         newRoutes=filterByWeapon(newRoutes,weapon)
         log.Info().Msg(fmt.Sprintf("-> got %d routes",len(newRoutes)))
@@ -95,6 +98,7 @@ func getRouteData(
     query.Add("page",fmt.Sprintf("%d",page))
 
     req.URL.RawQuery=query.Encode()
+    log.Info().Msgf("making url request: %s",req.URL)
 
     // make the request
     var client http.Client=http.Client{}

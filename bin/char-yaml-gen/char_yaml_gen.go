@@ -4,6 +4,7 @@ package main
 
 import (
 	"er-builds/lib/aya_gg"
+	go_utils "er-builds/lib/utils"
 	"fmt"
 	"path/filepath"
 )
@@ -21,4 +22,6 @@ func main() {
 	fullSaveLocation,_=filepath.Abs(saveLocation)
 	fmt.Println("saving to:",fullSaveLocation)
 	aya_gg.WriteSimpleDataFile(saveLocation,simpleData)
+
+	go_utils.CommentAllInFile(saveLocation)
 }

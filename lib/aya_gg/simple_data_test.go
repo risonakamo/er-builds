@@ -9,7 +9,7 @@ import (
 func Test_dataConvertTest(t *testing.T) {
     data:=GetAyaGGAllData()
 
-    result:=parseToSimpleCharData(data)
+    result:=ParseToSimpleCharData(data)
 
     pp.Print(result)
 }

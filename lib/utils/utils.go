@@ -72,3 +72,35 @@ func WaitForAnyKey() {
 func WaitForEnterKey() {
     bufio.NewReader(os.Stdin).ReadBytes('\n')
 }
+
+// add # to all lines in a target file
+func CommentAllInFile(filename string) {
+    var file *os.File
+    var e error
+    file,e=os.Open(filename)
+
+    if e!=nil {
+        panic(e)
+    }
+    defer file.Close()
+
+    var reader *bufio.Reader=bufio.NewReader(file)
+
+    var modifedFile string=""
+    for {
+        var line string
+        line,e=reader.ReadString('\n')
+
+        if e!=nil {
+            break
+        }
+
+        modifedFile+="# "+line
+    }
+
+    file.Close()
+
+    var newFile *os.File
+    newFile,e=os.Create(filename)
+    newFile.WriteString(modifedFile)
+}
