@@ -17,7 +17,7 @@ rm -rf $workdir
 mkdir -p $workdir
 mkdir -p $outputdir
 
-cd ..
+cd $topdir/scripts
 
 bash build-all.sh
 
