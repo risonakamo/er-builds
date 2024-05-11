@@ -5,7 +5,6 @@ package erdata_builds
 import (
 	"fmt"
 	"regexp"
-	"strings"
 
 	"k8s.io/apimachinery/pkg/util/sets"
 )
@@ -145,7 +144,15 @@ func upgradeAllItems(items []ItemInfo) []ItemInfo2 {
 func getMainWeapon(items []ItemInfo2) string {
     for i := range items {
         if len(items[i].WeaponName)>0 {
-            return strings.ReplaceAll(items[i].WeaponName," ","")
+            var convertedName string
+            var in bool
+            convertedName,in=WeaponNameToShortName[items[i].WeaponName]
+
+            if !in {
+                convertedName=items[i].WeaponName
+            }
+
+            return convertedName
         }
     }
 
@@ -157,6 +164,7 @@ func filterByWeapon(routes []ErRoute2,weapon string) []ErRoute2 {
     var result []ErRoute2
 
     for i := range routes {
+        // pp.Print(routes[i])
         if routes[i].MainWeapon==weapon {
             result=append(result,routes[i])
         }

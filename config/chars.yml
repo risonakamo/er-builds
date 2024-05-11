@@ -32,7 +32,7 @@
 #     - DualSword
 #     - Rapier
 # Cathy:
-#     - OneHandSword
+#     - Dagger
 #     - DualSword
 # Celine:
 #     - Throw
@@ -43,9 +43,9 @@
 # Chloe:
 #     - Shuriken
 # Daniel:
-#     - OneHandSword
-DebiMarlene:
-    - TwoHandSword
+#     - Dagger
+# DebiMarlene:
+#     - TwoHandSword
 # Echion:
 #     - VFArm
 # Elena:
@@ -82,11 +82,11 @@ Haze:
 # Isol:
 #     - Pistol
 #     - AssaultRifle
-Jackie:
-    - Axe
-    - OneHandSword
-    - TwoHandSword
-    - DualSword
+# Jackie:
+#     - Axe
+#     - Dagger
+#     - TwoHandSword
+#     - DualSword
 # Jan:
 #     - Glove
 #     - Tonfa
@@ -94,8 +94,8 @@ Jackie:
 #     - Pistol
 # Johann:
 #     - Arcana
-Karla:
-    - CrossBow
+# Karla:
+#     - CrossBow
 Katja:
     - SniperRifle
 # Kenneth:
@@ -115,7 +115,7 @@ Katja:
 # Luke:
 #     - Bat
 # Lyanh:
-#     - OneHandSword
+#     - Dagger
 # Magnus:
 #     - Bat
 #     - Hammer
@@ -142,7 +142,7 @@ Katja:
 # Rozzi:
 #     - Pistol
 # Shoichi:
-#     - OneHandSword
+#     - Dagger
 # Silvia:
 #     - Pistol
 # Sissela:
@@ -164,7 +164,7 @@ Katja:
 # William:
 #     - Throw
 # Xiukai:
-#     - OneHandSword
+#     - Dagger
 #     - Spear
 # Yuki:
 #     - TwoHandSword

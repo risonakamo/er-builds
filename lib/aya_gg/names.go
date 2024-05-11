@@ -9,6 +9,7 @@ type WeaponNameMapDict map[string]string
 var WeaponNameMap WeaponNameMapDict=WeaponNameMapDict{
 	"DirectFire":"Shuriken",
 	"HighAngleFire":"Throw",
+	"OneHandSword":"Dagger",
 }
 
 // do weapon name conversion
