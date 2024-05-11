@@ -30,11 +30,33 @@ type SimpleChardata struct {
 }
 
 // convert aya gg data response into list of simple char data
-func parseToSimpleCharData(data ApiDataResponse) SimpleCharDataDict {
+func ParseToSimpleCharData(data ApiDataResponse) SimpleCharDataDict {
     var weaponsDict WeaponsByCharId=groupWeaponsByCharIds(data.Result.CharacterWeapons)
     var charsDict CharsByCharId=groupCharsByCharId(data.Result.Characters)
 
     return convertWeaponsDictToSimpleCharsDict(weaponsDict,charsDict)
+}
+
+// write the simple datafile
+func WriteSimpleDataFile(filename string,data SimpleCharDataDict) {
+    var wfile *os.File
+    var e error
+    wfile,e=os.Create(filename)
+
+    if e!=nil {
+        panic(e)
+    }
+
+    defer wfile.Close()
+
+    var ymldata []byte
+    ymldata,e=yaml.Marshal(data)
+
+    if e!=nil {
+        panic(e)
+    }
+
+    wfile.Write(ymldata)
 }
 
 // convert api character weapon to dict of char ids and the weapons of that char.
@@ -90,26 +112,4 @@ func convertWeaponsDictToSimpleCharsDict(
     }
 
     return result
-}
-
-// write the simple datafile
-func writeSimpleDataFile(filename string,data SimpleCharDataDict) {
-    var wfile *os.File
-    var e error
-    wfile,e=os.Create(filename)
-
-    if e!=nil {
-        panic(e)
-    }
-
-    defer wfile.Close()
-
-    var ymldata []byte
-    ymldata,e=yaml.Marshal(data)
-
-    if e!=nil {
-        panic(e)
-    }
-
-    wfile.Write(ymldata)
 }

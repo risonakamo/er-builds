@@ -11,5 +11,5 @@ tmux new-window -n run -c $HERE/../er-builds-web
 tmux send "pnpm watch" Enter
 
 # run server
-tmux split-window -h -c $HERE/..
-tmux send "bash run-erbuilds-dev.sh" Enter
+tmux split-window -h -c $HERE
+tmux send "bash erbuilds-dev.sh" Enter

@@ -1,9 +1,24 @@
-// exe to generate the builds download yml
+// exe to generate the builds download yml. generates to the config dir
 
 package main
 
-import "er-builds/lib/aya_gg"
+import (
+	"er-builds/lib/aya_gg"
+	"fmt"
+	"path/filepath"
+)
 
 func main() {
-	aya_gg.GetAyaGGToFile("chars.yml")
+	var saveLocation string="../../config/chars.yml"
+
+	fmt.Println("retrieving data...")
+	var data aya_gg.ApiDataResponse=aya_gg.GetAyaGGAllData()
+
+	fmt.Println("parsing data...")
+	var simpleData aya_gg.SimpleCharDataDict=aya_gg.ParseToSimpleCharData(data)
+
+	var fullSaveLocation string
+	fullSaveLocation,_=filepath.Abs(saveLocation)
+	fmt.Println("saving to:",fullSaveLocation)
+	aya_gg.WriteSimpleDataFile(saveLocation,simpleData)
 }
