@@ -36,7 +36,7 @@ func GetDataDownloaderCliArgs(
 	var parser *argparse.Parser=argparse.NewParser(
         "data_download",
         "builds data downloader tool. "+
-        "If -c not given, will read from config file config/download-builds-config.yml. Otherwise, "+
+        "If -c not given, will read from config file config/chars.yml. Otherwise, "+
         "only uses the character/weapons specified by -c. Use double quotes (\") and spaces to select "+
         "multiple character/weapons",
     )
@@ -62,7 +62,7 @@ func GetDataDownloaderCliArgs(
         charslist=parseCharsString(*charsString)
     } else {
         var charsConfig CharactersSelection=readCharactersSelectConfig(
-            filepath.Join(hereDir,configsDir,"download-builds-config.yml"),
+            filepath.Join(hereDir,configsDir,"chars.yml"),
         )
         charslist=characterSelectionsToPairs(charsConfig)
     }

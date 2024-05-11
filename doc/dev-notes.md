@@ -26,8 +26,13 @@ Runs web ui build in watch mode and runs server in tmux
 ## Build and run single go program
 How to build and run single program. After build, the program will stay in the top dir.
 
-- `bash run-erbuilds-dev.sh`
-- `bash run-downloader-dev.sh`
+- `bash erbuilds-dev.sh run`
+- `bash downloader-dev.sh run`
+
+If exclude `run`, it will only build without running
+
+## Chars yml file
+The `chars.yml` is used to specify what to download. It can be regenerated with all the current chars/weapons by using `run-char-yml-gen.sh`. Make sure to comment out all the lines after it is generated.
 
 # Generating Release
 [how to create release](../release/readme.md)

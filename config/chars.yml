@@ -67,8 +67,8 @@
 #     - Rapier
 # Hart:
 #     - Guitar
-# Haze:
-#     - AssaultRifle
+Haze:
+    - AssaultRifle
 # Hyejin:
 #     - Shuriken
 #     - Bow
@@ -96,8 +96,8 @@
 #     - Arcana
 # Karla:
 #     - CrossBow
-# Katja:
-#     - SniperRifle
+Katja:
+    - SniperRifle
 # Kenneth:
 #     - Axe
 # Laura:
