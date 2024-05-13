@@ -1,174 +1,179 @@
-# Abigail:
-#     - Axe
-# Adela:
-#     - Bat
-#     - Rapier
-# Adina:
-#     - Arcana
-# Adriana:
-#     - Throw
-# Aiden:
-#     - TwoHandSword
-# Alex:
-#     - Tonfa
-#     - Shuriken
-#     - Pistol
-#     - TwoHandSword
-# Alonso:
-#     - Glove
-# Arda:
-#     - Arcana
-# Aya:
-#     - Pistol
-#     - AssaultRifle
-#     - SniperRifle
-# Barbara:
-#     - Bat
-# Bernice:
-#     - SniperRifle
-# Bianca:
-#     - Arcana
-# Camilo:
-#     - DualSword
-#     - Rapier
-# Cathy:
-#     - Dagger
-#     - DualSword
-# Celine:
-#     - Throw
-# Charlotte:
-#     - Arcana
-# Chiara:
-#     - Rapier
-# Chloe:
-#     - Shuriken
-# Daniel:
-#     - Dagger
-# DebiMarlene:
-#     - TwoHandSword
-# Echion:
-#     - VFArm
-# Elena:
-#     - Rapier
-# Eleven:
-#     - Hammer
-# Emma:
-#     - Shuriken
-#     - Arcana
-# Estelle:
-#     - Axe
-# Eva:
-#     - Throw
-# Felix:
-#     - Spear
-# Fiora:
-#     - TwoHandSword
-#     - Spear
-#     - Rapier
-# Hart:
-#     - Guitar
-Haze:
-    - AssaultRifle
-# Hyejin:
-#     - Shuriken
-#     - Bow
-# Hyunwoo:
-#     - Glove
-#     - Tonfa
-# Irem:
-#     - Throw
-# Isaac:
-#     - Tonfa
-# Isol:
-#     - Pistol
-#     - AssaultRifle
-# Jackie:
-#     - Axe
-#     - Dagger
-#     - TwoHandSword
-#     - DualSword
-# Jan:
-#     - Glove
-#     - Tonfa
-# Jenny:
-#     - Pistol
-# Johann:
-#     - Arcana
-# Karla:
-#     - CrossBow
-Katja:
-    - SniperRifle
-# Kenneth:
-#     - Axe
-# Laura:
-#     - Whip
-# Leni:
-#     - Pistol
-# Lenox:
-#     - Whip
-# Leon:
-#     - Glove
-#     - Tonfa
-# LiDailin:
-#     - Glove
-#     - Nunchaku
-# Luke:
-#     - Bat
-# Lyanh:
-#     - Dagger
-# Magnus:
-#     - Bat
-#     - Hammer
-# Mai:
-#     - Whip
-# Markus:
-#     - Hammer
-#     - Axe
-# Martina:
-#     - Camera
-# Nadine:
-#     - Bow
-#     - CrossBow
-# Nathapon:
-#     - Camera
-# Nicky:
-#     - Glove
-# Piolo:
-#     - Nunchaku
-# Priya:
-#     - Guitar
-# Rio:
-#     - Bow
-# Rozzi:
-#     - Pistol
-# Shoichi:
-#     - Dagger
-# Silvia:
-#     - Pistol
-# Sissela:
-#     - Throw
-#     - Shuriken
-# Sua:
-#     - Bat
-#     - Hammer
-# Tazia:
-#     - Shuriken
-# Theodore:
-#     - SniperRifle
-# Tia:
-#     - Bat
-# Tsubame:
-#     - Shuriken
-# Vanya:
-#     - Arcana
-# William:
-#     - Throw
-# Xiukai:
-#     - Dagger
-#     - Spear
-# Yuki:
-#     - TwoHandSword
-#     - DualSword
-# Zahir:
-#     - Throw
-#     - Shuriken
+versions:
+    - 1.19.0
+    - 1.20.0
+    - 1.21.0
+characters:
+    # Abigail:
+    #     - Axe
+    # Adela:
+    #     - Bat
+    #     - Rapier
+    # Adina:
+    #     - Arcana
+    # Adriana:
+    #     - Throw
+    # Aiden:
+    #     - TwoHandSword
+    # Alex:
+    #     - Tonfa
+    #     - Shuriken
+    #     - Pistol
+    #     - TwoHandSword
+    # Alonso:
+    #     - Glove
+    # Arda:
+    #     - Arcana
+    # Aya:
+    #     - Pistol
+    #     - AssaultRifle
+    #     - SniperRifle
+    # Barbara:
+    #     - Bat
+    # Bernice:
+    #     - SniperRifle
+    # Bianca:
+    #     - Arcana
+    # Camilo:
+    #     - DualSword
+    #     - Rapier
+    # Cathy:
+    #     - Dagger
+    #     - DualSword
+    # Celine:
+    #     - Throw
+    # Charlotte:
+    #     - Arcana
+    # Chiara:
+    #     - Rapier
+    # Chloe:
+    #     - Shuriken
+    # Daniel:
+    #     - Dagger
+    # DebiMarlene:
+    #     - TwoHandSword
+    # Echion:
+    #     - VFArm
+    # Elena:
+    #     - Rapier
+    Eleven:
+        - Hammer
+    # Emma:
+    #     - Shuriken
+    #     - Arcana
+    # Estelle:
+    #     - Axe
+    # Eva:
+    #     - Throw
+    # Felix:
+    #     - Spear
+    # Fiora:
+    #     - TwoHandSword
+    #     - Spear
+    #     - Rapier
+    # Hart:
+    #     - Guitar
+    Haze:
+        - AssaultRifle
+    # Hyejin:
+    #     - Shuriken
+    #     - Bow
+    # Hyunwoo:
+    #     - Glove
+    #     - Tonfa
+    # Irem:
+    #     - Throw
+    # Isaac:
+    #     - Tonfa
+    # Isol:
+    #     - Pistol
+    #     - AssaultRifle
+    # Jackie:
+    #     - Axe
+    #     - Dagger
+    #     - TwoHandSword
+    #     - DualSword
+    # Jan:
+    #     - Glove
+    #     - Tonfa
+    # Jenny:
+    #     - Pistol
+    # Johann:
+    #     - Arcana
+    # Karla:
+    #     - CrossBow
+    Katja:
+        - SniperRifle
+    # Kenneth:
+    #     - Axe
+    # Laura:
+    #     - Whip
+    # Leni:
+    #     - Pistol
+    # Lenox:
+    #     - Whip
+    # Leon:
+    #     - Glove
+    #     - Tonfa
+    # LiDailin:
+    #     - Glove
+    #     - Nunchaku
+    # Luke:
+    #     - Bat
+    # Lyanh:
+    #     - Dagger
+    # Magnus:
+    #     - Bat
+    #     - Hammer
+    # Mai:
+    #     - Whip
+    # Markus:
+    #     - Hammer
+    #     - Axe
+    # Martina:
+    #     - Camera
+    # Nadine:
+    #     - Bow
+    #     - CrossBow
+    # Nathapon:
+    #     - Camera
+    # Nicky:
+    #     - Glove
+    # Piolo:
+    #     - Nunchaku
+    # Priya:
+    #     - Guitar
+    # Rio:
+    #     - Bow
+    # Rozzi:
+    #     - Pistol
+    # Shoichi:
+    #     - Dagger
+    # Silvia:
+    #     - Pistol
+    # Sissela:
+    #     - Throw
+    #     - Shuriken
+    # Sua:
+    #     - Bat
+    #     - Hammer
+    # Tazia:
+    #     - Shuriken
+    # Theodore:
+    #     - SniperRifle
+    Tia:
+        - Bat
+    # Tsubame:
+    #     - Shuriken
+    # Vanya:
+    #     - Arcana
+    # William:
+    #     - Throw
+    # Xiukai:
+    #     - Dagger
+    #     - Spear
+    # Yuki:
+    #     - TwoHandSword
+    #     - DualSword
+    # Zahir:
+    #     - Throw
+    #     - Shuriken

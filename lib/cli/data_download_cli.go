@@ -15,6 +15,7 @@ import (
 // data downloader args. just list of character weapon combos to use
 type DataDownloaderArgs struct {
     Selections []CharacterWeapon
+    Versions []string
 }
 
 // character/weapon pair
@@ -27,6 +28,12 @@ type CharacterWeapon struct {
 // key: character name
 // val: weapon names for that character
 type CharactersSelection map[string][]string
+
+// config yml used to select versions and characters/weapons to download
+type CharactersSelectionConfig struct {
+    Versions []string
+    CharacterSelections CharactersSelection `yaml:"characters"`
+}
 
 // get cli args for data downloader tool. configsdir should be relative to here dir
 func GetDataDownloaderCliArgs(
@@ -58,17 +65,19 @@ func GetDataDownloaderCliArgs(
 
     var charslist []CharacterWeapon
 
+    var config CharactersSelectionConfig=readCharactersSelectConfig(
+        filepath.Join(hereDir,configsDir,"chars.yml"),
+    )
+
     if len(*charsString)>0 {
         charslist=parseCharsString(*charsString)
     } else {
-        var charsConfig CharactersSelection=readCharactersSelectConfig(
-            filepath.Join(hereDir,configsDir,"chars.yml"),
-        )
-        charslist=characterSelectionsToPairs(charsConfig)
+        charslist=characterSelectionsToPairs(config.CharacterSelections)
     }
 
     return DataDownloaderArgs {
         Selections: charslist,
+        Versions: config.Versions,
     }
 }
 
@@ -101,7 +110,7 @@ func parseCharsString(charString string) []CharacterWeapon {
 }
 
 // read character selection yml file
-func readCharactersSelectConfig(filepath string) CharactersSelection {
+func readCharactersSelectConfig(filepath string) CharactersSelectionConfig {
     var data []byte
     var e error
     data,e=os.ReadFile(filepath)
@@ -110,7 +119,7 @@ func readCharactersSelectConfig(filepath string) CharactersSelection {
         log.Fatal().Err(e).Msg("failed to find character config")
     }
 
-    var parsedData CharactersSelection=make(CharactersSelection)
+    var parsedData CharactersSelectionConfig
     e=yaml.Unmarshal(data,&parsedData)
 
     if e!=nil {

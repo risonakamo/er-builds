@@ -29,13 +29,7 @@ func main() {
 
     var args cli.DataDownloaderArgs=cli.GetDataDownloaderCliArgs(here,"config")
 
-    var Versions []string=[]string{
-        "1.19.0",
-        "1.18.0",
-        "1.20.0",
-    }
-
-    fmt.Println("versions:",Versions)
+    fmt.Println("versions:",args.Versions)
     fmt.Println()
 
     for i := range args.Selections {
@@ -66,7 +60,7 @@ func main() {
             character,
             weapon,
             Pages,
-            Versions,
+            args.Versions,
 
             5,
             3,
