@@ -1,12 +1,3 @@
-# readme todo
-- [x] dev guide
-- [ ] usage guide
-- [x] link to how to release
-- [x] future features
-- [x] top summary section
-- [x] features list
-- [x] differences to dak.gg
-
 # ER Builds Analysis Tool
 Item stats display tool for [Eternal Return](https://store.steampowered.com/app/1049590/Eternal_Return/). Currently only supports windows.
 
