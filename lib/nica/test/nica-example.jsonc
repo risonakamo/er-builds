@@ -1,0 +1,38 @@
+// https://api.nicashow.fun/build/50069
+{
+    "recommendWeaponRoute": {
+        "id": 50069,
+        "title": "연구중",
+        "userNum": 755492,
+        "userNickname": "아비게일조아",
+        "characterCode": 67,
+        "slotId": 0,
+        "weaponType": 14,
+        "weaponCodes": "[105404,204412,203403,201410,202307]",
+        "traitCodes": "[7000401,7010601,7010701,7210401,7210801]",
+        "lateGameItemCodes": "{\"0\":[202511,105501,201503,203510,204410],\"1\":[105702,204413]}",
+        "remoteTransferItemCodes": "[401114]",
+        "tacticalSkillGroupCode": 130,
+        "paths": "[60,20]",
+        "count": 0,
+        "version": "1.18.0",
+        "teamMode": 0,
+        "languageCode": "ko",
+        "routeVersion": 3,
+        "share": true,
+        "updateDtm": 1712516002000,
+        "v2Like": 1,
+        "v2WinRate": 0.0,
+        "v2SeasonId": 0,
+        "v2AccumulateLike": 1,
+        "v2AccumulateWinRate": 0.0,
+        "v2AccumulateSeasonId": 0
+    },
+    "recommendWeaponRouteDesc": {
+        "recommendWeaponRouteId": 50069,
+        "skillPath": "q,e,w,q,t,r,q,q,t,q,r,w,w,w,w,r,e,e,e,e",
+        "desc": "아비게일 템 양보 페르소나 나오고 \n\n1. 피빛망 \n2. 낙원 or 페르소나 \n3.용비 or 진칼\n4.용비\n5.글슈 (생나 팀원 주는게 이득)",
+        "easyCharacterDescList": null,
+        "hardCharacterDescList": null
+    }
+}
