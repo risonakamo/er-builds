@@ -70,6 +70,9 @@ func main() {
 
         // merge and save into the datafile
         erdata_builds.MergeDataIntoFile(newRoutes,datafile)
+
+        fmt.Println()
+        fmt.Println("---------------------")
         fmt.Println()
     }
 

@@ -3,12 +3,9 @@
 package erdata_builds
 
 import (
-	"encoding/json"
 	"fmt"
-	"io"
-	"net/http"
-	"net/url"
 
+	"github.com/imroc/req/v3"
 	"github.com/rs/zerolog/log"
 )
 
@@ -76,52 +73,21 @@ func getRouteData(
     weapon string,
     page int,
 ) ErRouteResponse {
+    var client *req.Client=req.C()
+
     var e error
-
-    // create the request
-    var req *http.Request
-    req,e=http.NewRequest(
-        http.MethodGet,
-        "https://er-node.dakgg.io/api/v0/routes",
-        nil,
-    )
-
-    if e!=nil {
-        panic(e)
-    }
-
-    // fill in url queries
-    var query url.Values=req.URL.Query()
-    query.Add("hl","en")
-    query.Add("character",character)
-    query.Add("weaponType",weapon)
-    query.Add("page",fmt.Sprintf("%d",page))
-
-    req.URL.RawQuery=query.Encode()
-    log.Info().Msgf("making url request: %s",req.URL)
-
-    // make the request
-    var client http.Client=http.Client{}
-
-    var resp *http.Response
-    resp,e=client.Do(req)
+    var result ErRouteResponse
+    _,e=client.R().
+        AddQueryParam("hl","en").
+        AddQueryParam("character",character).
+        AddQueryParam("weaponType",weapon).
+        AddQueryParam("page",fmt.Sprintf("%d",page)).
+        SetSuccessResult(&result).
+        Get("https://er-node.dakgg.io/api/v0/routes")
 
     if e!=nil {
         panic(e)
     }
 
-    defer resp.Body.Close()
-
-    // parse request into obj
-    var data []byte
-    data,e=io.ReadAll(resp.Body)
-
-    if e!=nil {
-        panic(e)
-    }
-
-    var routeObj ErRouteResponse
-    json.Unmarshal(data,&routeObj)
-
-    return routeObj
+    return result
 }

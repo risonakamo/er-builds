@@ -1,10 +1,10 @@
 versions:
-    - 1.19.0
+    # - 1.19.0
     - 1.20.0
     - 1.21.0
 characters:
-    # Abigail:
-    #     - Axe
+    Abigail:
+        - Axe
     # Adela:
     #     - Bat
     #     - Rapier
@@ -55,8 +55,8 @@ characters:
     #     - VFArm
     # Elena:
     #     - Rapier
-    Eleven:
-        - Hammer
+    # Eleven:
+    #     - Hammer
     # Emma:
     #     - Shuriken
     #     - Arcana

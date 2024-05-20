@@ -3,9 +3,7 @@
 package aya_gg
 
 import (
-	"encoding/json"
-	"io"
-	"net/http"
+	"github.com/imroc/req/v3"
 )
 
 // top level response from aya gg api
@@ -34,43 +32,17 @@ type ApiCharacterWeapon struct {
 
 // get aya gg "all" data
 func GetAyaGGAllData() ApiDataResponse {
+	var client *req.Client=req.C()
+
+	var result ApiDataResponse
 	var e error
-
-	var req *http.Request
-	req,e=http.NewRequest(
-		http.MethodGet,
-		"https://aya.gg/erar/static/all",
-		nil,
-	)
+	_,e=client.R().
+		SetSuccessResult(&result).
+		Get("https://aya.gg/erar/static/all")
 
 	if e!=nil {
 		panic(e)
 	}
 
-	var client http.Client=http.Client{}
-
-	var resp *http.Response
-	resp,e=client.Do(req)
-
-	if e!=nil {
-		panic(e)
-	}
-
-	defer resp.Body.Close()
-
-	var data []byte
-	data,e=io.ReadAll(resp.Body)
-
-	if e!=nil {
-		panic(e)
-	}
-
-	var allData ApiDataResponse
-	e=json.Unmarshal(data,&allData)
-
-	if e!=nil {
-		panic(e)
-	}
-
-	return allData
+	return result
 }
