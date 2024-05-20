@@ -3,10 +3,9 @@
 package nica
 
 import (
-	"encoding/json"
-	"fmt"
-	"io"
-	"net/http"
+	"strconv"
+
+	"github.com/imroc/req/v3"
 )
 
 // raw response from nica api
@@ -31,49 +30,20 @@ type NicaBuild struct {
     Paths []int
 }
 
-// retrieve target build id from nica api
+// retrieve target build id from nica api. v2 of func. trying out req lib
 func getBuild(buildId int) BuildResponseRaw {
-    var reqUrl string=fmt.Sprintf(
-        "https://api.nicashow.fun/build/%d",
-        buildId,
-    )
+    var client *req.Client=req.C()
 
+    var result BuildResponseRaw
     var e error
-    var req *http.Request
-    req,e=http.NewRequest(
-        http.MethodGet,
-        reqUrl,
-        nil,
-    )
+    _,e=client.R().
+        SetPathParam("buildId",strconv.Itoa(buildId)).
+        SetSuccessResult(&result).
+        Get("https://api.nicashow.fun/build/{buildId}")
 
     if e!=nil {
         panic(e)
     }
 
-    var client http.Client=http.Client{}
-
-    var resp *http.Response
-    resp,e=client.Do(req)
-
-    if e!=nil {
-        panic(e)
-    }
-
-    defer resp.Body.Close()
-
-    var data []byte
-    data,e=io.ReadAll(resp.Body)
-
-    if e!=nil {
-        panic(e)
-    }
-
-    var parsedData BuildResponseRaw
-    e=json.Unmarshal(data,&parsedData)
-
-    if e!=nil {
-        panic(e)
-    }
-
-    return parsedData
+    return result
 }
