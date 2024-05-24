@@ -102,5 +102,10 @@ func CommentAllInFile(filename string) {
 
     var newFile *os.File
     newFile,e=os.Create(filename)
+
+    if e!=nil {
+        panic(e)
+    }
+
     newFile.WriteString(modifedFile)
 }
