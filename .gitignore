@@ -7,3 +7,4 @@ data/*
 workdir
 output
 all.json
+oer-config.yml
