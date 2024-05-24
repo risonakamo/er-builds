@@ -119,7 +119,7 @@ func extractItemType(item ItemInfo) (ItemType,string) {
             return ItemType_chest,""
         case "Head":
             return ItemType_head,""
-        case "Arm":
+        case "Arm","Arm/Accessory":
             return ItemType_arm,""
         case "Leg":
             return ItemType_leg,""

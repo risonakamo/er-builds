@@ -1,10 +1,10 @@
 versions:
     # - 1.19.0
-    - 1.20.0
-    - 1.21.0
+    # - 1.20.0
+    - 1.22.0
 characters:
-    Abigail:
-        - Axe
+    # Abigail:
+    #     - Axe
     # Adela:
     #     - Bat
     #     - Rapier
@@ -55,8 +55,8 @@ characters:
     #     - VFArm
     # Elena:
     #     - Rapier
-    # Eleven:
-    #     - Hammer
+    Eleven:
+        - Hammer
     # Emma:
     #     - Shuriken
     #     - Arcana
@@ -72,8 +72,8 @@ characters:
     #     - Rapier
     # Hart:
     #     - Guitar
-    Haze:
-        - AssaultRifle
+    # Haze:
+    #     - AssaultRifle
     # Hyejin:
     #     - Shuriken
     #     - Bow
@@ -101,8 +101,8 @@ characters:
     #     - Arcana
     # Karla:
     #     - CrossBow
-    Katja:
-        - SniperRifle
+    # Katja:
+    #     - SniperRifle
     # Kenneth:
     #     - Axe
     # Laura:
@@ -124,8 +124,8 @@ characters:
     # Magnus:
     #     - Bat
     #     - Hammer
-    # Mai:
-    #     - Whip
+    Mai:
+        - Whip
     # Markus:
     #     - Hammer
     #     - Axe
