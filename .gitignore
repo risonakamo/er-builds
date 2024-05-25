@@ -8,3 +8,5 @@ workdir
 output
 all.json
 oer-config.yml
+out.log
+saved-langfile.txt

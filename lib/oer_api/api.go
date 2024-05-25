@@ -2,7 +2,6 @@ package oer_api
 
 import (
 	"github.com/imroc/req/v3"
-	"github.com/k0kubun/pp/v3"
 )
 
 // reponse from get language file api. this response further contains another url
@@ -20,13 +19,13 @@ const (
 	ErLang_japanese ErLang="Japanese"
 )
 
-func getLanguageFile(apiKey string,language ErLang) {
+// get raw language file from api. language file is a giant string
+func getLanguageFile(apiKey string,language ErLang) string {
 	var client *req.Client=req.C()
 
 	var result LanguageFileUrlResponse
 	var e error
-	var resp *req.Response
-	resp,e=client.R().
+	_,e=client.R().
 		SetPathParam("lang",language).
 		SetHeader("x-api-key",apiKey).
 		SetHeader("accept","application/json").
@@ -37,16 +36,13 @@ func getLanguageFile(apiKey string,language ErLang) {
 		panic(e)
 	}
 
-	pp.Print(resp.String())
+	var resp *req.Response
+	resp,e=client.R().
+		Get(result.Data.L10Path)
 
-	// var result2 string
-	// _,e=client.R().
-	// 	SetSuccessResult(&result2).
-	// 	Get(result.Data.L10Path)
+	if e!=nil {
+		panic(e)
+	}
 
-	// if e!=nil {
-	// 	panic(e)
-	// }
-
-	// pp.Print(result2)
+	return resp.String()
 }

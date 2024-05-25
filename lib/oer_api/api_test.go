@@ -1,7 +1,6 @@
 package oer_api
 
 import (
-	"fmt"
 	"testing"
 )
 
@@ -12,6 +11,8 @@ func Test_langApi(t *testing.T) {
 		t.Fatal("failed to read api key")
 	}
 
-	fmt.Println("what",configFile)
-	getLanguageFile(configFile.ApiKey,ErLang_english)
+	var langfile string=getLanguageFile(configFile.ApiKey,ErLang_english)
+	// fmt.Println(langfile)
+
+	writeLangFile("test/saved-langfile.txt",langfile)
 }
