@@ -6,7 +6,7 @@ import go_utils "er-builds/lib/utils"
 
 // yml config file that needs to be provided to use oer api
 type OerApiConfig struct {
-	ApiKey string
+	ApiKey string `yaml:"apiKey"`
 }
 
 // get oer config
