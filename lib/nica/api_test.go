@@ -7,7 +7,7 @@ import (
 )
 
 func Test_apiGet(t *testing.T) {
-	result:=getBuild(50069)
+	result:=getBuild(4529)
 
 	pp.Print(result)
 }

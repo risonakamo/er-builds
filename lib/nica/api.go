@@ -20,16 +20,6 @@ type BuildResponseRaw struct {
     }
 }
 
-// cleaned up version of a raw build response
-type NicaBuild struct {
-    Id int
-    WeaponCodes []int
-    TraitCodes []int
-    LateGameItemCodes []int
-    TacticalSkillGroupCode int
-    Paths []int
-}
-
 // retrieve target build id from nica api. v2 of func. trying out req lib
 func getBuild(buildId int) BuildResponseRaw {
     var client *req.Client=req.C()
