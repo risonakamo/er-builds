@@ -1,3 +1,5 @@
+// funcs handling lang file data struct format
+
 package oer_api
 
 import (

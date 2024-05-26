@@ -1,5 +1,4 @@
 // general shared go util funcs
-
 package go_utils
 
 import (
