@@ -4,6 +4,7 @@ package nica
 
 import (
 	"encoding/json"
+	"er-builds/lib/dak_gg"
 	"er-builds/lib/erdata_builds"
 )
 
@@ -26,7 +27,8 @@ type NicaBuild struct {
 
 // upgraded form of nica build
 type NicaBuild2 struct {
-	NicaBuild
+	// original build id
+	Id int
 
 	// converting available information in the nica build to list of
 	// item infos
@@ -45,9 +47,42 @@ func convRawToNicaBuild(rawBuild BuildResponseRaw) NicaBuild {
 	}
 }
 
-// parse nica build contents to create nica build 2
-func upgradeNicaBuildTo2(build NicaBuild) NicaBuild2 {
+// parse nica build contents to create nica build 2.
+// requires additional info:
+// - list of all possible trait skills from dakgg
+func upgradeNicaBuildTo2(
+	build NicaBuild,
+	traitSkills dak_gg.TraitSkillMap,
+) NicaBuild2 {
+	var itemInfos []erdata_builds.ItemInfo2
 
+	for i := range build.TraitCodes {
+		var traitInfo dak_gg.TraitSkill
+		var in bool
+		traitInfo,in=traitSkills[build.TraitCodes[i]]
+
+		if !in {
+			continue
+		}
+
+		itemInfos=append(itemInfos,erdata_builds.ItemInfo2{
+			ItemInfo: erdata_builds.ItemInfo{
+				Id: traitInfo.Id,
+				Name: traitInfo.Name,
+				Tooltip: traitInfo.Tooltip,
+				ImageUrl: traitInfo.ImageUrl,
+				BackgroundImageUrl: "",
+			},
+
+			ItemType: erdata_builds.ItemType_augment,
+			WeaponName: "",
+		})
+	}
+
+	return NicaBuild2{
+		Id: build.Id,
+		ItemInfos: itemInfos,
+	}
 }
 
 // parse an int array string
