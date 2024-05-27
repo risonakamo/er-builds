@@ -19,11 +19,15 @@ type GroupedItemStatistics map[ItemType][]ItemsStatistics
 
 // possible types of items
 type ItemType string
-const ItemType_weapon ItemType="weapon"
-const ItemType_head ItemType="head"
-const ItemType_chest ItemType="chest"
-const ItemType_arm ItemType="arm"
-const ItemType_leg ItemType="leg"
+const (
+    ItemType_weapon ItemType="weapon"
+    ItemType_head ItemType="head"
+    ItemType_chest ItemType="chest"
+    ItemType_arm ItemType="arm"
+    ItemType_leg ItemType="leg"
+    ItemType_tacskill ItemType="tacskill"
+    ItemType_augment ItemType="augment"
+)
 
 // top level response when requesting for routes from route api
 type ErRouteResponse struct {
@@ -73,7 +77,14 @@ type ItemInfo struct {
     BackgroundImageUrl string `json:"backgroundImageUrl"`
 }
 
-// upgraded item with type field added
+// upgraded item with type field added. item info 2 can represent
+//
+// - equipmment (armour/weapon)
+// - tac skill
+// - augment (main and sub)
+//
+// this is because item info is just the id, name, tooltip, and icon, of which
+// all of these have it
 type ItemInfo2 struct {
     ItemInfo
 
