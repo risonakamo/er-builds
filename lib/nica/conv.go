@@ -6,6 +6,8 @@ import (
 	"encoding/json"
 	"er-builds/lib/dak_gg"
 	"er-builds/lib/erdata_builds"
+
+	"github.com/rs/zerolog/log"
 )
 
 // cleaned up version of a raw build response
@@ -86,11 +88,17 @@ func upgradeNicaBuildTo2(
 }
 
 // parse an int array string
+// if input str is empty, returns empty array
 func parseIntArrayStr(intarrayStr string) []int {
+	if len(intarrayStr)==0 {
+		return []int{}
+	}
+
 	var result []int
 	var e error=json.Unmarshal([]byte(intarrayStr),&result)
 
 	if e!=nil {
+		log.Error().Msgf("bad input int array input: %v",intarrayStr)
 		panic(e)
 	}
 
@@ -101,7 +109,12 @@ func parseIntArrayStr(intarrayStr string) []int {
 // all the keys of the map will be lost.
 // used for the lategame item codes, which is stored as multi level
 // int arrays, but we don't care about the levels
+// if input str is empty, returns empty array
 func parseIntMapStr(intMapStr string) []int {
+	if len(intMapStr)==0 {
+		return []int{}
+	}
+
 	var mapResult map[string][]int
 	var e error=json.Unmarshal([]byte(intMapStr),&mapResult)
 
