@@ -65,7 +65,7 @@ func GetDataDownloaderCliArgs(
 
     var charslist []CharacterWeapon
 
-    var config CharactersSelectionConfig=readCharactersSelectConfig(
+    var config CharactersSelectionConfig=ReadCharactersSelectConfig(
         filepath.Join(hereDir,configsDir,"chars.yml"),
     )
 
@@ -110,7 +110,7 @@ func parseCharsString(charString string) []CharacterWeapon {
 }
 
 // read character selection yml file
-func readCharactersSelectConfig(filepath string) CharactersSelectionConfig {
+func ReadCharactersSelectConfig(filepath string) CharactersSelectionConfig {
     var data []byte
     var e error
     data,e=os.ReadFile(filepath)

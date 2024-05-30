@@ -5,6 +5,7 @@
 package main
 
 import (
+	"er-builds/lib/cli"
 	"er-builds/lib/dak_gg"
 	"er-builds/lib/erdata_builds"
 	"er-builds/lib/nica"
@@ -15,34 +16,50 @@ import (
 )
 
 func main() {
-	// --- config
-	var buildsDataDir string="../../data"
-	var datafileName string="Mai-Whip.json"
-	// --- end config
-
 	go_utils.ConfigureDefaultZeroLogger()
 
-	// --- auto config vars
-	var selectedDataFile string=filepath.Join(buildsDataDir,datafileName)
+	// --- config
+	var buildsDataDir string="../../data"
+
 	var nicaBuildsDir string=filepath.Join(buildsDataDir,"nica")
 	os.MkdirAll(nicaBuildsDir,0755)
 
+	var charSelectConfig cli.CharactersSelectionConfig=cli.
+		ReadCharactersSelectConfig("../../config/chars.yml")
+	// --- end config
 
 
-	var routedata []erdata_builds.ErRoute2=erdata_builds.ReadRouteDataFile(selectedDataFile)
+	var traitSkillsInfos dak_gg.TraitSkillMap=dak_gg.GetTraitSkillsInfoMap()
 
-	traitSkillsInfos:=dak_gg.GetTraitSkillsInfoMap()
+	for character := range charSelectConfig.CharacterSelections {
+		for weaponI := range charSelectConfig.CharacterSelections[character] {
+			var weapon string=charSelectConfig.CharacterSelections[character][weaponI]
 
-	var nicaBuilds []nica.NicaBuild2
+			fmt.Println("getting for:",character,weapon)
 
-	for i := range routedata {
-		fmt.Println("getting",routedata[i].Id)
-		nicaBuilds=append(nicaBuilds,nica.GetBuild2(routedata[i].Id,traitSkillsInfos))
+			var routeDataFilename string=erdata_builds.GetRouteDataFileName(
+				character,
+				weapon,
+				buildsDataDir,
+			)
+
+			var routedata []erdata_builds.ErRoute2=erdata_builds.ReadRouteDataFile(routeDataFilename)
+
+			var nicaBuilds []nica.NicaBuild2
+
+			for routeI := range routedata {
+				fmt.Println("getting",routedata[routeI].Id)
+				nicaBuilds=append(nicaBuilds,nica.GetBuild2(
+					routedata[routeI].Id,
+					traitSkillsInfos,
+				))
+			}
+
+			fmt.Println("writing file")
+			nica.WriteNicaBuilds(
+				filepath.Join(nicaBuildsDir,routeDataFilename),
+				nicaBuilds,
+			)
+		}
 	}
-
-	fmt.Println("writing file")
-	nica.WriteNicaBuilds(
-		filepath.Join(nicaBuildsDir,datafileName),
-		nicaBuilds,
-	)
 }
