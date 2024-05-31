@@ -16,6 +16,7 @@ func GetRouteData2(
     weapon string,
     pages int,
     versions []string,
+    client *req.Client,
 ) []ErRoute2 {
     var routes []ErRoute2=getRouteDataMultiPage(
         character,
@@ -23,6 +24,7 @@ func GetRouteData2(
         0,
         pages,
         true,
+        client,
     )
 
     return filterByVersion(
@@ -40,12 +42,13 @@ func getRouteDataMultiPage(
     pageStart int,
     pageEnd int,
     earlyStop bool,
+    client *req.Client,
 ) []ErRoute2 {
     var routes []ErRoute2
 
     for i := pageStart; i<pageEnd ; i++ {
         log.Info().Msgf("getting page: %d/%d",i+1,pageEnd)
-        var newRoutes []ErRoute2=extractErRoutes(getRouteData(character,weapon,i))
+        var newRoutes []ErRoute2=extractErRoutes(getRouteData(character,weapon,i,client))
         log.Info().Msgf("got %d unfiltered routes",len(newRoutes))
         // pp.Print(newRoutes)
 
@@ -72,9 +75,8 @@ func getRouteData(
     character string,
     weapon string,
     page int,
+    client *req.Client,
 ) ErRouteResponse {
-    var client *req.Client=req.C()
-
     var e error
     var result ErRouteResponse
     _,e=client.R().
