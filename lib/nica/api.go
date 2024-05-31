@@ -20,10 +20,8 @@ type BuildResponseRaw struct {
     }
 }
 
-// retrieve target build id from nica api. v2 of func. trying out req lib
-func getBuild(buildId int) BuildResponseRaw {
-    var client *req.Client=req.C()
-
+// retrieve target build id from nica api. v2 of func
+func getBuild(buildId int,client *req.Client) BuildResponseRaw {
     var result BuildResponseRaw
     var e error
     _,e=client.R().

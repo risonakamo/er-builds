@@ -24,13 +24,13 @@ func GroupTraitSkillsById(traitSkills []TraitSkill) TraitSkillMap {
 // in the front.
 // \/\/cdn.dak.gg/assets/er/game-assets/1.22.0/TraitSkillIcon_31200.png
 // becomes
-// /er/game-assets/1.22.0/TraitSkillIcon_31200.png
+// /assets/er/game-assets/1.22.0/TraitSkillIcon_31200.png
 // MUTATES the input array
 func fixTraitSkillsUrls(traitSkills []TraitSkill) []TraitSkill {
 	for i := range traitSkills {
 		traitSkills[i].ImageUrl=strings.TrimPrefix(
 			traitSkills[i].ImageUrl,
-			"//cdn.dak.gg/assets",
+			"//cdn.dak.gg",
 		)
 	}
 
