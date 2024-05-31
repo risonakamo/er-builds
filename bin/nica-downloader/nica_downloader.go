@@ -13,6 +13,8 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+
+	"github.com/imroc/req/v3"
 )
 
 func main() {
@@ -30,6 +32,8 @@ func main() {
 
 
 	var traitSkillsInfos dak_gg.TraitSkillMap=dak_gg.GetTraitSkillsInfoMap()
+
+	var client *req.Client=req.C()
 
 	for character := range charSelectConfig.CharacterSelections {
 		for weaponI := range charSelectConfig.CharacterSelections[character] {
@@ -52,6 +56,7 @@ func main() {
 				nicaBuilds=append(nicaBuilds,nica.GetBuild2(
 					routedata[routeI].Id,
 					traitSkillsInfos,
+					client,
 				))
 			}
 

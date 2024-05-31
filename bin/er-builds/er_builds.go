@@ -13,6 +13,8 @@ import (
 )
 
 func main() {
+    go_utils.ConfigureDefaultZeroLogger()
+
     var here string=go_utils.GetHereDirExe()
 
     var datadir string=filepath.Join(here,"data")
