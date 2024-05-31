@@ -56,8 +56,9 @@ func main() {
 			}
 
 			fmt.Println("writing file")
+			var nicaBuildFilename string=nica.GetNicaBuildsFilename(character,weapon)
 			nica.WriteNicaBuilds(
-				filepath.Join(nicaBuildsDir,routeDataFilename),
+				filepath.Join(nicaBuildsDir,nicaBuildFilename),
 				nicaBuilds,
 			)
 		}
