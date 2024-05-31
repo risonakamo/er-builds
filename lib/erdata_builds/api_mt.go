@@ -5,6 +5,7 @@ package erdata_builds
 import (
 	"sync"
 
+	"github.com/imroc/req/v3"
 	"github.com/rs/zerolog/log"
 )
 
@@ -114,6 +115,7 @@ func getRouteDataWorker(
 ) {
 	defer wg.Done()
 
+	var client *req.Client=req.C()
 	var job GetRouteDataJob
 	for job = range jobsCh {
 		var routes []ErRoute2=getRouteDataMultiPage(
@@ -122,6 +124,7 @@ func getRouteDataWorker(
 			job.PageStart,
 			job.PageEnd,
 			true,
+			client,
 		)
 
 		submitCh<-filterByVersion(routes,job.Versions)
