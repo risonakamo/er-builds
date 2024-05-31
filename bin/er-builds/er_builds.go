@@ -4,6 +4,7 @@ package main
 
 import (
 	"er-builds/lib/erdata_builds"
+	"er-builds/lib/nica"
 	go_utils "er-builds/lib/utils"
 	"fmt"
 	"path/filepath"
@@ -15,6 +16,7 @@ func main() {
     var here string=go_utils.GetHereDirExe()
 
     var datadir string=filepath.Join(here,"data")
+    var nicaDatadir string=filepath.Join(datadir,"nica")
 
     var app *fiber.App=fiber.New(fiber.Config{
         CaseSensitive: true,
@@ -38,9 +40,19 @@ func main() {
             datadir,
         )
 
+        var nicaDataFilename string=filepath.Join(
+            nicaDatadir,nica.GetNicaBuildsFilename(character,weapon),
+        )
+
+        // get data from the main builds data file
         var routeData []erdata_builds.ErRoute2=erdata_builds.ReadRouteDataFile(
             datafileName,
         )
+
+        // try to get nica data file. might fail
+        var nicaData []nica.NicaBuild2=nica.ReadNicaBuilds(nicaDataFilename)
+
+        routeData=nica.CombineWithErRoutes(routeData,nicaData)
 
         var itemStatistics erdata_builds.GroupedItemStatistics=
             erdata_builds.ComputeAllItemStatistics(

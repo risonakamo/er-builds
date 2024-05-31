@@ -35,11 +35,6 @@ func computeItemStatistics(routes []ErRoute2) ItemStatisticsDict {
     for i := range routes {
         var route ErRoute2=routes[i]
 
-        // for all items in a single route
-        if len(routes[i].ItemInfos)!=5 {
-            panic("strange item length")
-        }
-
         for i2 := range routes[i].ItemInfos {
             var item ItemInfo2=routes[i].ItemInfos[i2]
 

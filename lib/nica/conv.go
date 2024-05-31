@@ -10,6 +10,11 @@ import (
 	"github.com/rs/zerolog/log"
 )
 
+// nica build 2s keyed by their id
+// key: id of nica build
+// val: the nica build
+type NicaBuild2Dict map[int]NicaBuild2
+
 // cleaned up version of a raw build response
 type NicaBuild struct {
     Id int
@@ -128,4 +133,14 @@ func parseIntMapStr(intMapStr string) []int {
 	}
 
 	return collected
+}
+
+// convert nica build array into map
+func groupNicaBuildsById(builds []NicaBuild2) NicaBuild2Dict {
+	var result NicaBuild2Dict=make(NicaBuild2Dict)
+	for buildI := range builds {
+		result[builds[buildI].Id]=builds[buildI]
+	}
+
+	return result
 }
