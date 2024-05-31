@@ -1,6 +1,8 @@
 // nica downloader program. using the same config as builds downloader, tries
 // to download corresponding nica data for all builds of a target character/weapon. builds downloader
 // needs to be run first to get the list of builds
+//
+// looks for folders relative to exe
 
 package main
 
@@ -20,14 +22,18 @@ import (
 func main() {
 	go_utils.ConfigureDefaultZeroLogger()
 
+	var here string=go_utils.GetHereDirExe()
+
 	// --- config
-	var buildsDataDir string="../../data"
+	var buildsDataDir string=filepath.Join(here,"data")
 
 	var nicaBuildsDir string=filepath.Join(buildsDataDir,"nica")
 	os.MkdirAll(nicaBuildsDir,0755)
 
 	var charSelectConfig cli.CharactersSelectionConfig=cli.
-		ReadCharactersSelectConfig("../../config/chars.yml")
+		ReadCharactersSelectConfig(
+			filepath.Join(here,"config/chars.yml"),
+		)
 	// --- end config
 
 

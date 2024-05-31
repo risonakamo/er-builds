@@ -55,8 +55,8 @@ characters:
     #     - VFArm
     # Elena:
     #     - Rapier
-    Eleven:
-        - Hammer
+    # Eleven:
+    #     - Hammer
     # Emma:
     #     - Shuriken
     #     - Arcana
@@ -124,8 +124,8 @@ characters:
     # Magnus:
     #     - Bat
     #     - Hammer
-    Mai:
-        - Whip
+    # Mai:
+    #     - Whip
     # Markus:
     #     - Hammer
     #     - Axe
