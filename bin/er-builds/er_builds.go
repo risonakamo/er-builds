@@ -89,6 +89,14 @@ func main() {
         return c.SendString("completed")
     })
 
+    // run nica program
+    app.Get("/run-nica-downloader",func(c fiber.Ctx) error {
+        fmt.Println("running nica download")
+        go_utils.OpenTargetWithDefaultProgram(filepath.Join(here,"nica-downloader.exe"))
+
+        return c.SendString("completed")
+    })
+
 
     // ---- static ----
     app.Static("/",filepath.Join(here,"er-builds-web/build"))

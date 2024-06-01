@@ -120,4 +120,9 @@ func main() {
 			)
 		}
 	}
+
+	fmt.Println()
+	fmt.Println("completed")
+	fmt.Println("press ENTER to continue")
+	go_utils.WaitForEnterKey()
 }
