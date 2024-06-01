@@ -106,6 +106,8 @@ type ItemsStatistics struct {
 
     Likes int `json:"likes"`
 
+    BuildLikeRatio float32 `json:"buildLikeRatio"`
+
     TotalWinRate float32 `json:"totalWinRate"`
     AverageWinRate float32 `json:"averageWinRate"`
     HighestWinRate float32 `json:"highestWinRate"`

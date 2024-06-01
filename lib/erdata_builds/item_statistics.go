@@ -51,6 +51,8 @@ func computeItemStatistics(routes []ErRoute2) ItemStatisticsDict {
                     Likes: 0,
                     BuildsPercentage: 0,
 
+                    BuildLikeRatio: 0,
+
                     TotalWinRate: 0,
                     AverageWinRate: 0,
                     HighestWinRate: 0,
@@ -61,6 +63,7 @@ func computeItemStatistics(routes []ErRoute2) ItemStatisticsDict {
             stats.Total+=1
             stats.Likes+=route.Likes
             stats.BuildsPercentage=(float32(stats.Total)/float32(len(routes)))*100
+            stats.BuildLikeRatio=float32(stats.Likes)/float32(stats.Total)
             stats.TotalWinRate+=route.WinRate
             stats.AverageWinRate=stats.TotalWinRate/float32(stats.Total)
             stats.HighestWinRate=max(stats.HighestWinRate,route.WinRate)
