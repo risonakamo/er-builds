@@ -66,6 +66,7 @@ func main() {
 				filepath.Join(nicaBuildsDir,nicaBuildFilename),
 			)
 
+			// getting new builds
 			var buildsToGet []int=nica.NicaBuildDiff(routedata,existingNicaBuilds)
 
 			var newNicaBuilds []nica.NicaBuild2
