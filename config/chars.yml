@@ -71,8 +71,8 @@ characters:
     #     - Rapier
     # Hart:
     #     - Guitar
-    # Haze:
-    #     - AssaultRifle
+    Haze:
+        - AssaultRifle
     # Hyejin:
     #     - Shuriken
     #     - Bow

@@ -7,8 +7,6 @@ import (
 	"errors"
 	"fmt"
 	"os"
-
-	"github.com/rs/zerolog/log"
 )
 
 // create filename to access a nica builds json file
@@ -32,7 +30,7 @@ func ReadNicaBuilds(filename string) []NicaBuild2 {
 	data,e=go_utils.ReadJson[[]NicaBuild2](filename)
 
 	if errors.Is(e,os.ErrNotExist) {
-		log.Warn().Msgf("nica build did not exist - ignoring: %s",filename)
+		// log.Warn().Msgf("nica build did not exist - ignoring: %s",filename)
 		return []NicaBuild2{}
 	}
 

@@ -15,14 +15,18 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"strconv"
 
+	"github.com/fatih/color"
 	"github.com/imroc/req/v3"
+	"github.com/rs/zerolog"
 )
 
 const Workers int=10
 
 func main() {
 	go_utils.ConfigureDefaultZeroLogger()
+	zerolog.SetGlobalLevel(zerolog.WarnLevel)
 
 	var here string=go_utils.GetHereDirExe()
 
@@ -48,7 +52,11 @@ func main() {
 		for weaponI := range charSelectConfig.CharacterSelections[character] {
 			var weapon string=charSelectConfig.CharacterSelections[character][weaponI]
 
-			fmt.Println("getting for:",character,weapon)
+			fmt.Println()
+			fmt.Printf("getting nica builds: %s %s\n",
+				color.BlueString(character),
+				color.BlueString(weapon),
+			)
 
 			// determine the route data file
 			var routeDataFilename string=erdata_builds.GetRouteDataFileName(
@@ -58,20 +66,30 @@ func main() {
 			)
 
 			// determine nica builds filename
-			var nicaBuildFilename string=nica.GetNicaBuildsFilename(character,weapon)
+			var nicaBuildFilename string=filepath.Join(
+				nicaBuildsDir,
+				nica.GetNicaBuildsFilename(character,weapon),
+			)
 
 			// read the route data file to know what build ids to get
 			var routedata []erdata_builds.ErRoute2=erdata_builds.ReadRouteDataFile(routeDataFilename)
 
 			// read the nica builds data to know what builds we already have
 			var existingNicaBuilds []nica.NicaBuild2=nica.ReadNicaBuilds(
-				filepath.Join(nicaBuildsDir,nicaBuildFilename),
+				nicaBuildFilename,
 			)
 
 			// getting new builds
 			var buildsToGet []int=nica.NicaBuildDiff(routedata,existingNicaBuilds)
 
-			fmt.Println("getting",len(buildsToGet),"builds")
+			if len(buildsToGet)==0 {
+				fmt.Println(color.YellowString("no builds to get, skipping"))
+				continue
+			}
+
+			fmt.Printf("getting %s builds...\n",
+				color.CyanString(strconv.Itoa(len(buildsToGet))),
+			)
 
 			var newNicaBuilds []nica.NicaBuild2=nica.GetBuilds2_mt(
 				buildsToGet,
@@ -85,10 +103,12 @@ func main() {
 			// since all the builds we get should not already be in the current nica builds
 			existingNicaBuilds=append(existingNicaBuilds,newNicaBuilds...)
 
-			fmt.Println("writing file")
+
+
+			fmt.Println("saving nica build file:",nicaBuildFilename)
 
 			nica.WriteNicaBuilds(
-				filepath.Join(nicaBuildsDir,nicaBuildFilename),
+				nicaBuildFilename,
 				existingNicaBuilds,
 			)
 		}

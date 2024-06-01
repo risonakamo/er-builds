@@ -4,7 +4,6 @@ package nica
 
 import (
 	"er-builds/lib/dak_gg"
-	"fmt"
 	"sync"
 
 	"github.com/imroc/req/v3"
@@ -77,7 +76,6 @@ func getBuildWorker(
 	defer wg.Done()
 
 	for job := range jobsCh {
-		fmt.Println("getting:",job)
 		var build NicaBuild2=GetBuild2(
 			job,
 			traitSkills,
