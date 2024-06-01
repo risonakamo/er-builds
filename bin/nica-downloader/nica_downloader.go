@@ -22,7 +22,7 @@ import (
 	"github.com/rs/zerolog"
 )
 
-const Workers int=10
+const Workers int=5
 
 func main() {
 	go_utils.ConfigureDefaultZeroLogger()
