@@ -7,6 +7,7 @@ import (
 	"sync"
 
 	"github.com/imroc/req/v3"
+	"github.com/rs/zerolog/log"
 )
 
 func GetBuilds2_mt(
@@ -82,7 +83,14 @@ func getBuildWorker(
 			client,
 		)
 
-		jobSubmitCh<-build
+		if len(build.ItemInfos)==0 {
+			log.Warn().
+			Int("build id",job).
+			Msg("got an empty build")
+		} else {
+			jobSubmitCh<-build
+		}
+
 	}
 }
 

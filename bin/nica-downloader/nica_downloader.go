@@ -83,7 +83,7 @@ func main() {
 			var buildsToGet []int=nica.NicaBuildDiff(routedata,existingNicaBuilds)
 
 			if len(buildsToGet)==0 {
-				fmt.Println(color.YellowString("no builds to get, skipping"))
+				fmt.Println(color.YellowString("no new builds to get"))
 				continue
 			}
 
@@ -99,13 +99,20 @@ func main() {
 				Workers,
 			)
 
+			if len(newNicaBuilds)==0 {
+				color.Yellow("no new builds downloaded")
+				continue
+			}
+
 			// merge new builds with the existing builds. don't care about de-duplication for now,
 			// since all the builds we get should not already be in the current nica builds
 			existingNicaBuilds=append(existingNicaBuilds,newNicaBuilds...)
 
 
 
-			fmt.Println("saving nica build file:",nicaBuildFilename)
+			fmt.Println("saving nica build file:",
+				color.GreenString(nicaBuildFilename),
+			)
 
 			nica.WriteNicaBuilds(
 				nicaBuildFilename,
