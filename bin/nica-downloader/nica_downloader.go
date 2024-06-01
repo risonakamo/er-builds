@@ -19,6 +19,8 @@ import (
 	"github.com/imroc/req/v3"
 )
 
+const Workers int=10
+
 func main() {
 	go_utils.ConfigureDefaultZeroLogger()
 
@@ -69,19 +71,15 @@ func main() {
 			// getting new builds
 			var buildsToGet []int=nica.NicaBuildDiff(routedata,existingNicaBuilds)
 
-			var newNicaBuilds []nica.NicaBuild2
-
 			fmt.Println("getting",len(buildsToGet),"builds")
 
-			for buildToGetI := range buildsToGet {
-				fmt.Println("getting",buildsToGet[buildToGetI])
+			var newNicaBuilds []nica.NicaBuild2=nica.GetBuilds2_mt(
+				buildsToGet,
+				traitSkillsInfos,
+				client,
 
-				newNicaBuilds=append(newNicaBuilds,nica.GetBuild2(
-					buildsToGet[buildToGetI],
-					traitSkillsInfos,
-					client,
-				))
-			}
+				Workers,
+			)
 
 			// merge new builds with the existing builds. don't care about de-duplication for now,
 			// since all the builds we get should not already be in the current nica builds

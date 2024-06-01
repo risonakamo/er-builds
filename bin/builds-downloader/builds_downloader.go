@@ -21,6 +21,8 @@ import (
 )
 
 const Pages int=80
+const Workers int=5
+const PagesPerWorker int=3
 
 func main() {
     go_utils.ConfigureDefaultZeroLogger()
@@ -62,8 +64,8 @@ func main() {
             Pages,
             args.Versions,
 
-            5,
-            3,
+            Workers,
+            PagesPerWorker,
         )
 
         fmt.Printf("got %s routes\n",color.YellowString(strconv.Itoa(len(newRoutes))))

@@ -4,6 +4,7 @@ package nica
 
 import (
 	"er-builds/lib/dak_gg"
+	"fmt"
 	"sync"
 
 	"github.com/imroc/req/v3"
@@ -22,8 +23,12 @@ func GetBuilds2_mt(
 	// workers submit results to here
 	var buildResultCh chan NicaBuild2=make(chan NicaBuild2)
 
+	// final array of collected results appears here
+	var finalResultCh chan []NicaBuild2=make(chan []NicaBuild2)
+
 	var workerWg sync.WaitGroup
 
+	// start main getter workers
 	for range workers {
 		workerWg.Add(1)
 		go getBuildWorker(
@@ -34,6 +39,29 @@ func GetBuilds2_mt(
 			&workerWg,
 		)
 	}
+
+	// start result collector
+	go resultCollectWorker(buildResultCh,finalResultCh)
+
+	// submit all builds
+	for buildIdI := range buildIds {
+		jobsCh<-buildIds[buildIdI]
+	}
+
+	// all builds submitted. close the jobs ch
+	close(jobsCh)
+
+	// wait for all workers to finish
+	workerWg.Wait()
+
+	// close results ch to get collector to send out result
+	close(buildResultCh)
+
+	// get the final result
+	var finalResult []NicaBuild2=<-finalResultCh
+	close(finalResultCh)
+
+	return finalResult
 }
 
 // build getter worker. gets jobs from jobs ch, gets the build and submits
@@ -49,6 +77,7 @@ func getBuildWorker(
 	defer wg.Done()
 
 	for job := range jobsCh {
+		fmt.Println("getting:",job)
 		var build NicaBuild2=GetBuild2(
 			job,
 			traitSkills,
@@ -57,4 +86,18 @@ func getBuildWorker(
 
 		jobSubmitCh<-build
 	}
+}
+
+// recvs builds on result ch and collects into array. upon
+// results channel closing, submits array into final results ch
+func resultCollectWorker(
+	resultsCh <-chan NicaBuild2,
+	finalResultCh chan<- []NicaBuild2,
+) {
+	var collected []NicaBuild2
+	for build := range resultsCh {
+		collected=append(collected,build)
+	}
+
+	finalResultCh<-collected
 }
