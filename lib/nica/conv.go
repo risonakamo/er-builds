@@ -107,7 +107,7 @@ func upgradeNicaBuildTo2(
 				Id: itemId,
 				Name: itemName,
 				Tooltip: "",
-				ImageUrl: "",
+				ImageUrl: dak_gg.CreateItemIconUrl(itemId),
 				BackgroundImageUrl: "",
 			},
 
