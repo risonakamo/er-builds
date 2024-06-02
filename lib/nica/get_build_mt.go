@@ -4,6 +4,7 @@ package nica
 
 import (
 	"er-builds/lib/dak_gg"
+	"er-builds/lib/oer_api"
 	"sync"
 
 	"github.com/imroc/req/v3"
@@ -13,6 +14,7 @@ import (
 func GetBuilds2_mt(
 	buildIds []int,
 	traitSkills dak_gg.TraitSkillMap,
+	langfileDict oer_api.OerLangDict,
 	client *req.Client,
 
 	workers int,
@@ -35,6 +37,7 @@ func GetBuilds2_mt(
 			jobsCh,
 			buildResultCh,
 			traitSkills,
+			langfileDict,
 			client,
 			&workerWg,
 		)
@@ -70,6 +73,7 @@ func getBuildWorker(
 	jobsCh <-chan int,
 	jobSubmitCh chan<- NicaBuild2,
 	traitSkills dak_gg.TraitSkillMap,
+	langfileDict oer_api.OerLangDict,
 	client *req.Client,
 
 	wg *sync.WaitGroup,
@@ -80,6 +84,7 @@ func getBuildWorker(
 		var build NicaBuild2=GetBuild2(
 			job,
 			traitSkills,
+			langfileDict,
 			client,
 		)
 

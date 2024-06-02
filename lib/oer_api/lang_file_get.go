@@ -8,7 +8,7 @@ import (
 )
 
 // get the name of an item. error if could not find.
-func getItemName(langdict OerLangDict,itemId int) (string,error) {
+func GetItemName(langdict OerLangDict,itemId int) (string,error) {
     var val string
     var in bool
     val,in=langdict.Nested["Item"].Nested["Name"].Fields[strconv.Itoa(itemId)]

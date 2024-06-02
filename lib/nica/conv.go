@@ -6,6 +6,7 @@ import (
 	"encoding/json"
 	"er-builds/lib/dak_gg"
 	"er-builds/lib/erdata_builds"
+	"er-builds/lib/oer_api"
 
 	"github.com/rs/zerolog/log"
 )
@@ -57,12 +58,15 @@ func convRawToNicaBuild(rawBuild BuildResponseRaw) NicaBuild {
 // parse nica build contents to create nica build 2.
 // requires additional info:
 // - list of all possible trait skills from dakgg
+// - optional: langfile dict. if not available, skips parsing of late game items
 func upgradeNicaBuildTo2(
 	build NicaBuild,
 	traitSkills dak_gg.TraitSkillMap,
+	langDict oer_api.OerLangDict,
 ) NicaBuild2 {
 	var itemInfos []erdata_builds.ItemInfo2
 
+	// converting trait selections to item info2s
 	for i := range build.TraitCodes {
 		var traitInfo dak_gg.TraitSkill
 		var in bool
@@ -82,6 +86,32 @@ func upgradeNicaBuildTo2(
 			},
 
 			ItemType: erdata_builds.ItemType_augment,
+			WeaponName: "",
+		})
+	}
+
+	// converting late game item codes to item info2s
+	var itemId int
+	for _,itemId = range build.LateGameItemCodes {
+		var itemName string
+		var e error
+		itemName,e=oer_api.GetItemName(langDict,itemId)
+
+		if e!=nil {
+			log.Warn().Msgf("failed to find late game item code: %i",itemId)
+			continue
+		}
+
+		itemInfos=append(itemInfos,erdata_builds.ItemInfo2{
+			ItemInfo: erdata_builds.ItemInfo{
+				Id: itemId,
+				Name: itemName,
+				Tooltip: "",
+				ImageUrl: "",
+				BackgroundImageUrl: "",
+			},
+
+			ItemType: erdata_builds.ItemType_late	,
 			WeaponName: "",
 		})
 	}

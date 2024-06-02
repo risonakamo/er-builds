@@ -25,6 +25,12 @@ const (
     ItemType_chest ItemType="chest"
     ItemType_arm ItemType="arm"
     ItemType_leg ItemType="leg"
+
+    // temp. for now, not able to figure out the item type of late game items,
+    // as it could be anything. so for now put them all together in the same
+    // category
+    ItemType_late ItemType="late"
+
     ItemType_tacskill ItemType="tacskill"
     ItemType_augment ItemType="augment"
 )

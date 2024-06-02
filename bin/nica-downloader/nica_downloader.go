@@ -11,6 +11,7 @@ import (
 	"er-builds/lib/dak_gg"
 	"er-builds/lib/erdata_builds"
 	"er-builds/lib/nica"
+	"er-builds/lib/oer_api"
 	go_utils "er-builds/lib/utils"
 	"fmt"
 	"os"
@@ -37,9 +38,13 @@ func main() {
 	os.MkdirAll(nicaBuildsDir,0755)
 
 	var charSelectConfig cli.CharactersSelectionConfig=cli.
-		ReadCharactersSelectConfig(
-			filepath.Join(here,"config/chars.yml"),
-		)
+	ReadCharactersSelectConfig(
+		filepath.Join(here,"config/chars.yml"),
+	)
+
+	var langfileDict oer_api.OerLangDict=oer_api.ReadLangFileToDict(
+		filepath.Join(here,"config/saved-langfile.txt"),
+	)
 	// --- end config
 
 
@@ -94,6 +99,7 @@ func main() {
 			var newNicaBuilds []nica.NicaBuild2=nica.GetBuilds2_mt(
 				buildsToGet,
 				traitSkillsInfos,
+				langfileDict,
 				client,
 
 				Workers,

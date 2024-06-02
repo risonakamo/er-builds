@@ -7,19 +7,37 @@ import (
 	"strings"
 )
 
-// map of oer lang dicts
-type OerLangDictDict map[string]OerLangDict
-
-// leaf fields of oer lang dict
-type OerLangDictFields map[string]string
-
-// oerlang dict. infinite nested dictionary
+// oerlang dict. infinite nested dictionary. top level of oer lang dict
 type OerLangDict struct {
 	// contains additional levels
 	Nested OerLangDictDict
 
 	// contains leaf levels and their string values
 	Fields OerLangDictFields
+}
+
+// map of oer lang dicts. NOT the top level
+type OerLangDictDict map[string]OerLangDict
+
+// leaf fields of oer lang dict
+type OerLangDictFields map[string]string
+
+// read lang file into dict
+func ReadLangFileToDict(filename string) OerLangDict {
+	return parseLangFile(readLangFile(filename))
+}
+
+// get langfile string from file
+func readLangFile(filename string) string {
+	var data []byte
+	var e error
+	data,e=os.ReadFile(filename)
+
+	if e!=nil {
+		panic(e)
+	}
+
+	return string(data)
 }
 
 // parse langfile string into langfile dict
@@ -87,19 +105,6 @@ func writeLangFile(filename string,langfile string) {
 	defer wfile.Close()
 
 	wfile.Write([]byte(langfile))
-}
-
-// get langfile string from file
-func readLangFile(filename string) string {
-	var data []byte
-	var e error
-	data,e=os.ReadFile(filename)
-
-	if e!=nil {
-		panic(e)
-	}
-
-	return string(data)
 }
 
 // make new lang dict
