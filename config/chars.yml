@@ -2,8 +2,8 @@ versions:
     - 1.22.0
     - 1.22.1
 characters:
-    Abigail:
-        - Axe
+    # Abigail:
+    #     - Axe
     # Adela:
     #     - Bat
     #     - Rapier
@@ -56,9 +56,9 @@ characters:
     #     - Rapier
     # Eleven:
     #     - Hammer
-    Emma:
-        - Shuriken
-        - Arcana
+    # Emma:
+    #     - Shuriken
+    #     - Arcana
     # Estelle:
     #     - Axe
     # Eva:
@@ -71,8 +71,8 @@ characters:
     #     - Rapier
     # Hart:
     #     - Guitar
-    Haze:
-        - AssaultRifle
+    # Haze:
+    #     - AssaultRifle
     # Hyejin:
     #     - Shuriken
     #     - Bow

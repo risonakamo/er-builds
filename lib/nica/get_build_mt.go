@@ -88,10 +88,9 @@ func getBuildWorker(
 			client,
 		)
 
-		if len(build.ItemInfos)==0 {
+		if build.Id==0 {
 			log.Warn().
-			Int("build id",job).
-			Msg("got an empty build")
+			Msg("got build with ID 0")
 		} else {
 			jobSubmitCh<-build
 		}
