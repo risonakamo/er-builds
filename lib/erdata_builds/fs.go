@@ -20,17 +20,18 @@ import (
 // and save the file. the data should be .json.
 // if the file does not exist, will be created
 // merged data will ensure no duplicate Route ids.
+// new data will be prioritised over old data.
 // ensures the datafile's dir exists
 func MergeDataIntoFile(data []ErRoute2,datafile string) {
     var readData []ErRoute2=ReadRouteDataFile(datafile)
     var originalLen int=len(readData)
 
-    readData=append(readData,data...)
+    readData=append(data,readData...)
 
     readData=purgeDuplicateRoutes(readData)
     fmt.Printf(
         "%s: %s\n",
-        color.CyanString("data file changed by"),
+        color.CyanString("gained routes"),
         color.YellowString(strconv.Itoa(len(readData)-originalLen)),
     )
 
