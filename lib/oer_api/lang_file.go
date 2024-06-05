@@ -3,11 +3,15 @@
 package oer_api
 
 import (
+	"errors"
 	"os"
 	"strings"
+
+	"github.com/rs/zerolog/log"
 )
 
 // oerlang dict. infinite nested dictionary. top level of oer lang dict
+// see newLangDict() to construct
 type OerLangDict struct {
 	// contains additional levels
 	Nested OerLangDictDict
@@ -22,22 +26,36 @@ type OerLangDictDict map[string]OerLangDict
 // leaf fields of oer lang dict
 type OerLangDictFields map[string]string
 
-// read lang file into dict
+// read lang file into dict. if file not found, does not crash, returns empty dict
 func ReadLangFileToDict(filename string) OerLangDict {
-	return parseLangFile(readLangFile(filename))
+	var langfileText string
+	var e error
+	langfileText,e=readLangFile(filename)
+
+	if e!=nil {
+		// if lang file not found, return empty
+		if errors.Is(e,os.ErrNotExist) {
+			log.Warn().Msg("lang file did not exist")
+			return newLangDict()
+		}
+
+		panic(e)
+	}
+
+	return parseLangFile(langfileText)
 }
 
 // get langfile string from file
-func readLangFile(filename string) string {
+func readLangFile(filename string) (string,error) {
 	var data []byte
 	var e error
 	data,e=os.ReadFile(filename)
 
 	if e!=nil {
-		panic(e)
+		return "",e
 	}
 
-	return string(data)
+	return string(data),nil
 }
 
 // parse langfile string into langfile dict

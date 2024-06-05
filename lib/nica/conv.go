@@ -90,30 +90,33 @@ func upgradeNicaBuildTo2(
 		})
 	}
 
-	// converting late game item codes to item info2s
-	var itemId int
-	for _,itemId = range build.LateGameItemCodes {
-		var itemName string
-		var e error
-		itemName,e=oer_api.GetItemName(langDict,itemId)
+	// converting late game item codes to item info2s. only done if the lang dict
+	// is not empty
+	if len(langDict.Fields)!=0 {
+		var itemId int
+		for _,itemId = range build.LateGameItemCodes {
+			var itemName string
+			var e error
+			itemName,e=oer_api.GetItemName(langDict,itemId)
 
-		if e!=nil {
-			log.Warn().Msgf("failed to find late game item code: %i",itemId)
-			continue
+			if e!=nil {
+				log.Warn().Msgf("failed to find late game item code: %i",itemId)
+				continue
+			}
+
+			itemInfos=append(itemInfos,erdata_builds.ItemInfo2{
+				ItemInfo: erdata_builds.ItemInfo{
+					Id: itemId,
+					Name: itemName,
+					Tooltip: "",
+					ImageUrl: dak_gg.CreateItemIconUrl(itemId),
+					BackgroundImageUrl: "",
+				},
+
+				ItemType: erdata_builds.ItemType_late	,
+				WeaponName: "",
+			})
 		}
-
-		itemInfos=append(itemInfos,erdata_builds.ItemInfo2{
-			ItemInfo: erdata_builds.ItemInfo{
-				Id: itemId,
-				Name: itemName,
-				Tooltip: "",
-				ImageUrl: dak_gg.CreateItemIconUrl(itemId),
-				BackgroundImageUrl: "",
-			},
-
-			ItemType: erdata_builds.ItemType_late	,
-			WeaponName: "",
-		})
 	}
 
 	return NicaBuild2{
