@@ -31,7 +31,7 @@ func main() {
 
 
     // ---- apis ----
-    // get item statistics for a target character
+    // get item statistics for a target character/weapon
     app.Get("/get-builds",func(c fiber.Ctx) error {
         var character string=c.Query("character")
         var weapon string=c.Query("weapon")

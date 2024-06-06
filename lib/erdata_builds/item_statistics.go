@@ -3,6 +3,8 @@
 package erdata_builds
 
 import (
+	"fmt"
+
 	"k8s.io/apimachinery/pkg/util/sets"
 )
 
@@ -32,19 +34,28 @@ func computeItemStatistics(routes []ErRoute2) ItemStatisticsDict {
     var collectedStats ItemStatisticsDict=make(ItemStatisticsDict)
 
     // for all routes
-    for i := range routes {
-        var route ErRoute2=routes[i]
+    for routeI := range routes {
+        var route ErRoute2=routes[routeI]
 
-        for i2 := range routes[i].ItemInfos {
-            var item ItemInfo2=routes[i].ItemInfos[i2]
+        var seenItems sets.Set[string]=sets.New[string]()
+        for itemInfoI := range routes[routeI].ItemInfos {
+            var item ItemInfo2=routes[routeI].ItemInfos[itemInfoI]
+
+            var itemId string=createItemStatisticsDictId(item.Id,item.ItemType)
+
+            if seenItems.Has(itemId) {
+                continue
+            }
+
+            seenItems.Insert(itemId)
 
             var in bool
-            _,in=collectedStats[item.Id]
+            _,in=collectedStats[itemId]
 
             // initialise if have not seen this item before. use the route's
             // statistics
             if !in {
-                collectedStats[item.Id]=&ItemsStatistics {
+                collectedStats[itemId]=&ItemsStatistics {
                     Item: item,
 
                     Total: 0,
@@ -59,7 +70,7 @@ func computeItemStatistics(routes []ErRoute2) ItemStatisticsDict {
                 }
             }
 
-            var stats *ItemsStatistics=collectedStats[item.Id]
+            var stats *ItemsStatistics=collectedStats[itemId]
             stats.Total+=1
             stats.Likes+=route.Likes
             stats.BuildsPercentage=(float32(stats.Total)/float32(len(routes)))*100
@@ -94,4 +105,9 @@ func groupItemStatistics(itemStats ItemStatisticsDict) GroupedItemStatistics {
     }
 
     return grouped
+}
+
+// create id to index into item statistics dict
+func createItemStatisticsDictId(itemId int,itemType ItemType) string {
+    return fmt.Sprintf("%d_%s",itemId,itemType)
 }

@@ -8,9 +8,9 @@ package erdata_builds
 type ItemInfoDict map[string]ItemInfo
 
 // map of multiple item statistics
-// key: item's ID
+// key: item's ID as a string: {itemType}_{itemId}
 // val: the item's statistics
-type ItemStatisticsDict map[int]*ItemsStatistics
+type ItemStatisticsDict map[string]*ItemsStatistics
 
 // list of item statistics grouped by their type
 // key: the item type
