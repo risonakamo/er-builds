@@ -21,6 +21,7 @@ import (
 	"github.com/fatih/color"
 	"github.com/imroc/req/v3"
 	"github.com/rs/zerolog"
+	"github.com/rs/zerolog/log"
 )
 
 const Workers int=5
@@ -45,6 +46,10 @@ func main() {
 	var langfileDict oer_api.OerLangDict=oer_api.ReadLangFileToDict(
 		filepath.Join(here,"config/saved-langfile.txt"),
 	)
+
+	if len(langfileDict.Nested)==0 {
+		log.Warn().Msg("was not able to read langfile - might be missing data")
+	}
 	// --- end config
 
 
