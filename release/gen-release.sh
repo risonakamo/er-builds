@@ -6,7 +6,8 @@ HERE=$(dirname $(realpath $BASH_SOURCE))
 cd $HERE
 
 # --- config
-releaseName=er_builds-1.0.0
+releaseName=er_builds-1.1.0
+# --- end config
 
 
 workdir=$HERE/workdir
@@ -24,13 +25,21 @@ bash build-all.sh
 
 # construct output dir
 cd $workdir
-cp -r $topdir/config .
-mkdir -p data
-mkdir -p er-builds-web
-cp -r $topdir/er-builds-web/build er-builds-web/
+
 cp $topdir/builds-downloader .
 cp $topdir/erbuilds.exe .
+cp $topdir/nica-downloader.exe .
 cp -r $topdir/doc/for-release/* .
+cp $topdir/version.md .
+
+mkdir -p config
+cp -r $topdir/config/chars.yml config
+cp -r $topdir/config/saved-langfile.txt config
+
+mkdir -p data
+
+mkdir -p er-builds-web
+cp -r $topdir/er-builds-web/build er-builds-web/
 
 rm -rf $outputdir/$releaseName
 mv $workdir $outputdir/$releaseName
