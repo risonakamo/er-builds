@@ -45,6 +45,21 @@ func ReadLangFileToDict(filename string) OerLangDict {
 	return parseLangFile(langfileText)
 }
 
+// write langfile string to txt file
+func WriteLangFile(filename string,langfile string) {
+	var wfile *os.File
+	var e error
+	wfile,e=os.Create(filename)
+
+	if e!=nil {
+		panic(e)
+	}
+
+	defer wfile.Close()
+
+	wfile.Write([]byte(langfile))
+}
+
 // get langfile string from file
 func readLangFile(filename string) (string,error) {
 	var data []byte
@@ -108,21 +123,6 @@ func setInLangDict(dict OerLangDict,keys []string,value string) {
 			dict=dict.Nested[keys[i]]
 		}
 	}
-}
-
-// write langfile string to txt file
-func writeLangFile(filename string,langfile string) {
-	var wfile *os.File
-	var e error
-	wfile,e=os.Create(filename)
-
-	if e!=nil {
-		panic(e)
-	}
-
-	defer wfile.Close()
-
-	wfile.Write([]byte(langfile))
 }
 
 // make new lang dict

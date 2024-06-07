@@ -10,7 +10,7 @@ type OerApiConfig struct {
 }
 
 // get oer config
-func readOerConfig(filename string) OerApiConfig {
+func ReadOerConfig(filename string) OerApiConfig {
 	var res OerApiConfig
 	var e error
 	res,e=go_utils.ReadYaml[OerApiConfig](filename)

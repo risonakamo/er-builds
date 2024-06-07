@@ -22,7 +22,7 @@ const (
 )
 
 // get raw language file from api. language file is a giant string
-func getLanguageFile(apiKey string,language ErLang) string {
+func GetLanguageFile(apiKey string,language ErLang) string {
 	var client *req.Client=req.C()
 
 	var result LanguageFileUrlResponse
@@ -36,6 +36,10 @@ func getLanguageFile(apiKey string,language ErLang) string {
 
 	if e!=nil {
 		panic(e)
+	}
+
+	if len(result.Data.L10Path)==0 {
+		panic("lang file url was empty")
 	}
 
 	var resp *req.Response

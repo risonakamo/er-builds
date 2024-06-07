@@ -1,0 +1,5 @@
+# config for using dev tools. not needed if not using dev tools.
+# make a copy of this file and remove the -ex
+
+# replace this with your api key
+apiKey: asdasd
