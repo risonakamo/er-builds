@@ -43,6 +43,8 @@ func main() {
 		filepath.Join(here,"config/chars.yml"),
 	)
 
+	var gameVersion string=cli.FindHighestGameVersion(charSelectConfig.Versions)
+
 	var langfileDict oer_api.OerLangDict=oer_api.ReadLangFileToDict(
 		filepath.Join(here,"config/saved-langfile.txt"),
 	)
@@ -105,6 +107,7 @@ func main() {
 				buildsToGet,
 				traitSkillsInfos,
 				langfileDict,
+				gameVersion,
 				client,
 
 				Workers,

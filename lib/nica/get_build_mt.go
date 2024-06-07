@@ -15,6 +15,7 @@ func GetBuilds2_mt(
 	buildIds []int,
 	traitSkills dak_gg.TraitSkillMap,
 	langfileDict oer_api.OerLangDict,
+	gameVersion string,
 	client *req.Client,
 
 	workers int,
@@ -38,6 +39,7 @@ func GetBuilds2_mt(
 			buildResultCh,
 			traitSkills,
 			langfileDict,
+			gameVersion,
 			client,
 			&workerWg,
 		)
@@ -74,6 +76,7 @@ func getBuildWorker(
 	jobSubmitCh chan<- NicaBuild2,
 	traitSkills dak_gg.TraitSkillMap,
 	langfileDict oer_api.OerLangDict,
+	gameVersion string,
 	client *req.Client,
 
 	wg *sync.WaitGroup,
@@ -85,6 +88,7 @@ func getBuildWorker(
 			job,
 			traitSkills,
 			langfileDict,
+			gameVersion,
 			client,
 		)
 

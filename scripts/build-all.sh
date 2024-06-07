@@ -8,6 +8,7 @@ cd $HERE
 bash downloader-dev.sh
 bash erbuilds-dev.sh
 bash nica-downloader-dev.sh
+bash langfile-download-dev.sh
 
 cd ..
 cd er-builds-web

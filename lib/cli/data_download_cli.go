@@ -9,6 +9,7 @@ import (
 
 	"github.com/akamensky/argparse"
 	"github.com/rs/zerolog/log"
+	"golang.org/x/mod/semver"
 	"gopkg.in/yaml.v3"
 )
 
@@ -146,4 +147,10 @@ func characterSelectionsToPairs(selections CharactersSelection) []CharacterWeapo
     }
 
     return res
+}
+
+// get the highest version number. mutates the list to be sorted
+func FindHighestGameVersion(versions []string) string {
+    semver.Sort(versions)
+    return versions[len(versions)-1]
 }

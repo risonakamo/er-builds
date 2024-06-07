@@ -13,6 +13,7 @@ func GetBuild2(
     buildId int,
     traitSkills dak_gg.TraitSkillMap,
     langfileDict oer_api.OerLangDict,
+    gameVersion string,
     client *req.Client,
 ) NicaBuild2 {
     return upgradeNicaBuildTo2(
@@ -21,5 +22,6 @@ func GetBuild2(
         ),
         traitSkills,
         langfileDict,
+        gameVersion,
     )
 }

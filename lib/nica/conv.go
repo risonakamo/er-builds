@@ -63,6 +63,7 @@ func upgradeNicaBuildTo2(
 	build NicaBuild,
 	traitSkills dak_gg.TraitSkillMap,
 	langDict oer_api.OerLangDict,
+	gameVersion string,
 ) NicaBuild2 {
 	var itemInfos []erdata_builds.ItemInfo2
 
@@ -109,7 +110,7 @@ func upgradeNicaBuildTo2(
 					Id: itemId,
 					Name: itemName,
 					Tooltip: "",
-					ImageUrl: dak_gg.CreateItemIconUrl(itemId),
+					ImageUrl: dak_gg.CreateItemIconUrl(itemId,gameVersion),
 					BackgroundImageUrl: "",
 				},
 
