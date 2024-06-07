@@ -3,8 +3,10 @@
 package go_utils
 
 import (
+	"compress/gzip"
 	"encoding/json"
 	"errors"
+	"io"
 	"io/fs"
 	"os"
 
@@ -102,4 +104,48 @@ func WriteJson(filename string,data any) error {
 
 	wfile.Write(jsondata)
 	return nil
+}
+
+// write a string to a file, with gzip compression
+func WriteStringToCompressedFile(filename string,data string) error {
+	var wfile *os.File
+	var e error
+	wfile,e=os.Create(filename)
+
+	if e!=nil {
+		return e
+	}
+	defer wfile.Close()
+
+	var gzipWriter *gzip.Writer=gzip.NewWriter(wfile)
+	defer gzipWriter.Close()
+
+	_,e=gzipWriter.Write([]byte(data))
+
+	return e
+}
+
+// read a compressed string file
+func ReadCompressedStringFile(filename string) (string,error) {
+	var rfile *os.File
+	var e error
+	rfile,e=os.Open(filename)
+
+	if e!=nil {
+		return "",nil
+	}
+	defer rfile.Close()
+
+	var gzipReader *gzip.Reader
+	gzipReader,e=gzip.NewReader(rfile)
+
+	if e!=nil {
+		return "",e
+	}
+	defer gzipReader.Close()
+
+	var data []byte
+	data,e=io.ReadAll(gzipReader)
+
+	return string(data),e
 }

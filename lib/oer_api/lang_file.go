@@ -3,6 +3,7 @@
 package oer_api
 
 import (
+	go_utils "er-builds/lib/utils"
 	"errors"
 	"os"
 	"strings"
@@ -47,30 +48,20 @@ func ReadLangFileToDict(filename string) OerLangDict {
 
 // write langfile string to txt file
 func WriteLangFile(filename string,langfile string) {
-	var wfile *os.File
-	var e error
-	wfile,e=os.Create(filename)
+	var e error=go_utils.WriteStringToCompressedFile(filename,langfile)
 
 	if e!=nil {
 		panic(e)
 	}
-
-	defer wfile.Close()
-
-	wfile.Write([]byte(langfile))
 }
 
 // get langfile string from file
 func readLangFile(filename string) (string,error) {
-	var data []byte
+	var result string
 	var e error
-	data,e=os.ReadFile(filename)
+	result,e=go_utils.ReadCompressedStringFile(filename)
 
-	if e!=nil {
-		return "",e
-	}
-
-	return string(data),nil
+	return result,e
 }
 
 // parse langfile string into langfile dict

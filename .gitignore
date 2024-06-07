@@ -10,4 +10,5 @@ all.json
 oer-config.yml
 out.log
 saved-langfile.txt
+!config/saved-langfile.txt
 dev-config.yml
